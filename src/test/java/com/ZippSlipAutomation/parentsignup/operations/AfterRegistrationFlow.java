@@ -62,10 +62,10 @@ public class AfterRegistrationFlow {
 		System.out.println("Electronic Pin has been added");
 
 		parentSignUpFlowRepository.getElectronicPinAddedButton().getElement().click();
-		Thread.sleep(3000);
+		Thread.sleep(5000);
 
 		parentSignUpFlowRepository.getWelcomeOkButton().getElement().click();
-		Thread.sleep(1000);
+		Thread.sleep(4000);
 
 	}
 
