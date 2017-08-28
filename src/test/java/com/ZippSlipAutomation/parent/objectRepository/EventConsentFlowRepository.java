@@ -7,7 +7,7 @@ import com.ZippSlipAutomation.utilities.ReturnElement;
 
 public class EventConsentFlowRepository {
 
-	@FindBy(xpath = ".//*[@id='MainContent_EventListViewControl1_aViewAll']/span")
+	@FindBy(xpath = ".//*[@id='MenuSchool']/ul/li[3]/a/span")
 	private WebElement oViewAllButton;
 
 	public ReturnElement getViewAllButton() {
