@@ -1,8 +1,6 @@
 package com.ZippSlipAutomation.admin.operations;
 
-import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.WebElement;
+
 import org.openqa.selenium.support.PageFactory;
 
 import com.ZippSlipAutomation.admin.objectRepository.EventPageRepository;
