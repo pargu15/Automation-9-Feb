@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" total="1" passed="1">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Default suite" duration-ms="29594" started-at="2017-03-31T07:40:22Z" finished-at="2017-03-31T07:40:52Z">
+    <groups>
+    </groups>
+    <test name="Default test" duration-ms="29594" started-at="2017-03-31T07:40:22Z" finished-at="2017-03-31T07:40:52Z">
+      <class name="testpackage.App">
+        <test-method status="PASS" signature="setUp()[pri:0, instance:testpackage.App@5b275dab]" name="setUp" is-config="true" duration-ms="18134" started-at="2017-03-31T13:10:22Z" finished-at="2017-03-31T13:10:41Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="simpleTest()[pri:0, instance:testpackage.App@5b275dab]" name="simpleTest" duration-ms="11223" started-at="2017-03-31T13:10:41Z" finished-at="2017-03-31T13:10:52Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- simpleTest -->
+        <test-method status="PASS" signature="afterTest()[pri:0, instance:testpackage.App@5b275dab]" name="afterTest" is-config="true" duration-ms="218" started-at="2017-03-31T13:10:52Z" finished-at="2017-03-31T13:10:52Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterTest -->
+      </class> <!-- testpackage.App -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>
