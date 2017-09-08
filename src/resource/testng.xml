@@ -4,9 +4,9 @@
   <test verbose="2" name="Default test">
     <classes>
       <class name="com.ZippSlipAutomation.admin.maintestpackage.EnglishCreateActivityMainClass"/>
-      <class name="com.ZippSlipAutomation.parentsignup.maintestpackage.ParentSignUpMainClass"/>
-      <class name="com.ZippSlipAutomation.parent.maintestpackage.EnglishEventConsentMainClass"/> 
-      <class name="com.ZippSlipAutomation.admin.maintestpackage.EnglishUnpublishActivityMainClass"/> 
+      <!-- class name="com.ZippSlipAutomation.parentsignup.maintestpackage.ParentSignUpMainClass"/-->
+      <!-- class name="com.ZippSlipAutomation.parent.maintestpackage.EnglishEventConsentMainClass"/--> 
+      <!-- class name="com.ZippSlipAutomation.admin.maintestpackage.EnglishUnpublishActivityMainClass"/--> 
     </classes>
   </test> <!-- Default test -->
 </suite> <!-- Default suite -->

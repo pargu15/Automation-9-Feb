@@ -67,7 +67,6 @@ public class CreateActivityActions {
 	public void verifyPopupOnSeeAllForms() throws InterruptedException {
 
 		eventPageRepository.getSeeAllFormsButton().getElement().click();
-
 		commonFunctions.verifyElementIsPresent(eventPageRepository.getSeeAllFormsPopup());
 		eventPageRepository.getCancelButtonInFormsPopup().getElement().click();
 
@@ -82,9 +81,26 @@ public class CreateActivityActions {
 		Thread.sleep(2000);
 
 	}
-
+	
+	
 	public void verifyCurrentlySelectedForms() throws Exception {
+		eventPageRepository.getSeeAllFormsButton().getElement().click();
+		Thread.sleep(2000);
+		excelReadEvent.readFromExcel(1, CommonVariables.rownumber);
+		eventPageRepository.getSearchformTextbox().getElement().sendKeys(excelReadEvent.getFormName());
+		eventPageRepository.getSearchformButton().getElement().click();
+		eventPageRepository.getRequiredformButton().getElement().click();
+		eventPageRepository.getFormOkConfirmationButton().getElement().click();
+		if (eventPageRepository.getCurrentSelectedFormsSection().getElement().getText()
+				.contains(excelReadEvent.getFormName())) {
+			System.out.println("Form has been attached");
+		} else {
+			System.err.println("Form has not been attached");
+		}
+	}
 
+	/*
+	public void verifyCurrentlySelectedForms() throws Exception {
 		excelReadEvent.readFromExcel(1, CommonVariables.rownumber);
 		eventPageRepository.getCheckboxCorrospondingToForm(excelReadEvent.getFormName()).getElement().click();
 		if (eventPageRepository.getCurrentSelectedFormsSection().getElement().getText()
@@ -96,7 +112,7 @@ public class CreateActivityActions {
 
 		Thread.sleep(1000);
 	}
-
+*/
 	public void verifySectionOnAdvancedSettingsButton() throws InterruptedException {
 
 		eventPageRepository.getAdvancedSettings().getElement().click();

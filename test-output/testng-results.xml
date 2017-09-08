@@ -1,25 +1,81 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" total="1" passed="1">
+<testng-results skipped="0" failed="0" total="15" passed="15">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="29594" started-at="2017-03-31T07:40:22Z" finished-at="2017-03-31T07:40:52Z">
+  <suite name="Default suite" duration-ms="149036" started-at="2017-09-08T11:29:26Z" finished-at="2017-09-08T11:31:55Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="29594" started-at="2017-03-31T07:40:22Z" finished-at="2017-03-31T07:40:52Z">
-      <class name="testpackage.App">
-        <test-method status="PASS" signature="setUp()[pri:0, instance:testpackage.App@5b275dab]" name="setUp" is-config="true" duration-ms="18134" started-at="2017-03-31T13:10:22Z" finished-at="2017-03-31T13:10:41Z">
+    <test name="Default test" duration-ms="149036" started-at="2017-09-08T11:29:26Z" finished-at="2017-09-08T11:31:55Z">
+      <class name="com.ZippSlipAutomation.admin.maintestpackage.EnglishCreateActivityMainClass">
+        <test-method status="PASS" signature="driverInitiate()[pri:0, instance:com.ZippSlipAutomation.admin.maintestpackage.EnglishCreateActivityMainClass@4501b7af]" name="driverInitiate" is-config="true" duration-ms="34426" started-at="2017-09-08T16:59:26Z" finished-at="2017-09-08T17:00:01Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- setUp -->
-        <test-method status="PASS" signature="simpleTest()[pri:0, instance:testpackage.App@5b275dab]" name="simpleTest" duration-ms="11223" started-at="2017-03-31T13:10:41Z" finished-at="2017-03-31T13:10:52Z">
+        </test-method> <!-- driverInitiate -->
+        <test-method status="PASS" signature="selectActivityType()[pri:0, instance:com.ZippSlipAutomation.admin.maintestpackage.EnglishCreateActivityMainClass@4501b7af]" name="selectActivityType" duration-ms="20884" started-at="2017-09-08T17:00:01Z" finished-at="2017-09-08T17:00:22Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- simpleTest -->
-        <test-method status="PASS" signature="afterTest()[pri:0, instance:testpackage.App@5b275dab]" name="afterTest" is-config="true" duration-ms="218" started-at="2017-03-31T13:10:52Z" finished-at="2017-03-31T13:10:52Z">
+        </test-method> <!-- selectActivityType -->
+        <test-method status="PASS" signature="verifyEventNameIsMandatory()[pri:0, instance:com.ZippSlipAutomation.admin.maintestpackage.EnglishCreateActivityMainClass@4501b7af]" name="verifyEventNameIsMandatory" duration-ms="10609" started-at="2017-09-08T17:00:22Z" finished-at="2017-09-08T17:00:32Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- afterTest -->
-      </class> <!-- testpackage.App -->
+        </test-method> <!-- verifyEventNameIsMandatory -->
+        <test-method status="PASS" signature="verifyConfirmationPopupForNoLocation()[pri:0, instance:com.ZippSlipAutomation.admin.maintestpackage.EnglishCreateActivityMainClass@4501b7af]" name="verifyConfirmationPopupForNoLocation" duration-ms="1177" started-at="2017-09-08T17:00:32Z" finished-at="2017-09-08T17:00:33Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyConfirmationPopupForNoLocation -->
+        <test-method status="PASS" signature="verifyFieldsOnConfirmPopupForNoLocation()[pri:0, instance:com.ZippSlipAutomation.admin.maintestpackage.EnglishCreateActivityMainClass@4501b7af]" name="verifyFieldsOnConfirmPopupForNoLocation" duration-ms="5307" started-at="2017-09-08T17:00:33Z" finished-at="2017-09-08T17:00:39Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyFieldsOnConfirmPopupForNoLocation -->
+        <test-method status="PASS" signature="verifyPopupOnSeeAllForms()[pri:0, instance:com.ZippSlipAutomation.admin.maintestpackage.EnglishCreateActivityMainClass@4501b7af]" name="verifyPopupOnSeeAllForms" duration-ms="8399" started-at="2017-09-08T17:00:39Z" finished-at="2017-09-08T17:00:47Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyPopupOnSeeAllForms -->
+        <test-method status="PASS" signature="selectParticipantType()[pri:0, instance:com.ZippSlipAutomation.admin.maintestpackage.EnglishCreateActivityMainClass@4501b7af]" name="selectParticipantType" duration-ms="2189" started-at="2017-09-08T17:00:47Z" finished-at="2017-09-08T17:00:49Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- selectParticipantType -->
+        <test-method status="PASS" signature="verifyCurrentlySelectedForms()[pri:0, instance:com.ZippSlipAutomation.admin.maintestpackage.EnglishCreateActivityMainClass@4501b7af]" name="verifyCurrentlySelectedForms" duration-ms="4715" started-at="2017-09-08T17:00:49Z" finished-at="2017-09-08T17:00:54Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyCurrentlySelectedForms -->
+        <test-method status="PASS" signature="verifySectionOnAdvancedSettingsButton()[pri:0, instance:com.ZippSlipAutomation.admin.maintestpackage.EnglishCreateActivityMainClass@4501b7af]" name="verifySectionOnAdvancedSettingsButton" duration-ms="1419" started-at="2017-09-08T17:00:54Z" finished-at="2017-09-08T17:00:55Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifySectionOnAdvancedSettingsButton -->
+        <test-method status="PASS" signature="verifyAttachmentsSection()[pri:0, instance:com.ZippSlipAutomation.admin.maintestpackage.EnglishCreateActivityMainClass@4501b7af]" name="verifyAttachmentsSection" duration-ms="5745" started-at="2017-09-08T17:00:55Z" finished-at="2017-09-08T17:01:01Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyAttachmentsSection -->
+        <test-method status="PASS" signature="verifyFieldsInPaymentsSection()[pri:0, instance:com.ZippSlipAutomation.admin.maintestpackage.EnglishCreateActivityMainClass@4501b7af]" name="verifyFieldsInPaymentsSection" duration-ms="1325" started-at="2017-09-08T17:01:01Z" finished-at="2017-09-08T17:01:02Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyFieldsInPaymentsSection -->
+        <test-method status="PASS" signature="verifyFeeTable()[pri:0, instance:com.ZippSlipAutomation.admin.maintestpackage.EnglishCreateActivityMainClass@4501b7af]" name="verifyFeeTable" duration-ms="2243" started-at="2017-09-08T17:01:02Z" finished-at="2017-09-08T17:01:05Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyFeeTable -->
+        <test-method status="PASS" signature="verifyTotalFees()[pri:0, instance:com.ZippSlipAutomation.admin.maintestpackage.EnglishCreateActivityMainClass@4501b7af]" name="verifyTotalFees" duration-ms="1936" started-at="2017-09-08T17:01:05Z" finished-at="2017-09-08T17:01:07Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyTotalFees -->
+        <test-method status="PASS" signature="verifyCashInstructionsTextbox()[pri:0, instance:com.ZippSlipAutomation.admin.maintestpackage.EnglishCreateActivityMainClass@4501b7af]" name="verifyCashInstructionsTextbox" duration-ms="1882" started-at="2017-09-08T17:01:07Z" finished-at="2017-09-08T17:01:09Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyCashInstructionsTextbox -->
+        <test-method status="PASS" signature="directToCommunicationPage()[pri:0, instance:com.ZippSlipAutomation.admin.maintestpackage.EnglishCreateActivityMainClass@4501b7af]" name="directToCommunicationPage" duration-ms="8363" started-at="2017-09-08T17:01:09Z" finished-at="2017-09-08T17:01:17Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- directToCommunicationPage -->
+        <test-method status="PASS" signature="communicationsPageFunctionality()[pri:0, instance:com.ZippSlipAutomation.admin.maintestpackage.EnglishCreateActivityMainClass@4501b7af]" name="communicationsPageFunctionality" duration-ms="30503" started-at="2017-09-08T17:01:17Z" finished-at="2017-09-08T17:01:47Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- communicationsPageFunctionality -->
+        <test-method status="PASS" signature="driverExit()[pri:0, instance:com.ZippSlipAutomation.admin.maintestpackage.EnglishCreateActivityMainClass@4501b7af]" name="driverExit" is-config="true" duration-ms="7874" started-at="2017-09-08T17:01:47Z" finished-at="2017-09-08T17:01:55Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- driverExit -->
+      </class> <!-- com.ZippSlipAutomation.admin.maintestpackage.EnglishCreateActivityMainClass -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
