@@ -97,6 +97,7 @@ public class CreateActivityActions {
 		} else {
 			System.err.println("Form has not been attached");
 		}
+		Thread.sleep(1000);
 	}
 
 	/*
