@@ -328,6 +328,21 @@ public class CommonFunctions {
 			}
 		} while (!eventcorrect);
 	}
+	
+	// Overloaded function Click on the event correct
+		public void clickOnEvent(String childname) throws Exception {
+			Thread.sleep(5000);
+			boolean eventcorrect = false;
+			do {
+				if (checkEventOnPage(childname)) {
+					eventcorrect = true;
+					Thread.sleep(15000);
+				} else {
+					eventConsentFlowRepository.getNextButton().getElement().click();
+					Thread.sleep(15000);
+				}
+			} while (!eventcorrect);
+		}
 
 	// To verify if the element is present on the page or not
 	public void verifyElementIsPresent(ReturnElement object) {
@@ -364,6 +379,31 @@ public class CommonFunctions {
 		}
 		return eventdisplay;
 	}
+	
+	// Overloaded funtion to Check if the event is correct on the page
+		public boolean checkEventOnPage(String childName) throws Exception {
+			Thread.sleep(2000);
+			ExcelReadEvent excelReadEvent = new ExcelReadEvent();
+			excelReadEvent.readFromExcel(1, CommonVariables.rownumber);
+			String eventname = excelReadEvent.getEventName();
+			
+			boolean eventdisplay = false;
+			List<WebElement> MobileDevices = DriverInitiation.getDriver().findElements(By.id("hlEventName"));
+
+			for (WebElement singlerow : MobileDevices) {
+				
+				if (singlerow.getText().contains(eventname)) {
+					eventdisplay = true;
+					System.out.println("Event is present");
+					WebElement oClickonEvent = DriverInitiation.getDriver()
+							.findElement(By.xpath(".//a[@id='hlEventName' and text()='" + eventname + "']/parent::*/parent::*/following-sibling::td[1]/a[@id='anchor' and text()='" + childName + "']/parent::*/preceding-sibling::td[1]//a[@id='hlEventName']"));
+					oClickonEvent.click();
+					break;
+				}
+			}
+			return eventdisplay;
+		}
+	
 	
 	// Reading from excel and return the value on the basis of a key
 	public String readExcel(String sheetName, String searchedString) {
