@@ -581,7 +581,7 @@ public class CommonFunctions {
 		return eventdisplay;
 	}
 	
-	// Overloaded funtion to Check if the event is correct on the page
+	// Overloaded function to Check if the event is correct on the page
 		public boolean checkEventOnPage(String childname) throws Exception {
 			Thread.sleep(2000);
 			ExcelReadEvent excelReadEvent = new ExcelReadEvent();
