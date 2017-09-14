@@ -55,12 +55,12 @@ public class AfterRegistrationFlow {
 		Thread.sleep(1000);
 		parentSignUpFlowRepository.getConfirmElectronicPin().getElement()
 				.sendKeys(excelReadEvent.getConfirmElectronicPin());
-		Thread.sleep(1000);
+		Thread.sleep(2000);
 		parentSignUpFlowRepository.getAddElectronicPin().getElement().click();
-		Thread.sleep(3000);
+		Thread.sleep(5000);
 
 		System.out.println("Electronic Pin has been added");
-
+		Thread.sleep(2000);
 		parentSignUpFlowRepository.getElectronicPinAddedButton().getElement().click();
 		Thread.sleep(5000);
 
