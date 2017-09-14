@@ -150,21 +150,7 @@ public class EnglishEventConsentMainClass {
 
 			// Click on the event name from the list
 			commonFunctions.clickOnEvent(childname);
-
-			excelReadEvent.readFromExcel(2, CommonVariables.rownumber);
-
-			if (excelReadEvent.getEventConsentResponse().contains("Yes")) {
-				System.out.println("Response entered from user is Yes");
-				commonFunctions.respondYesForFormEvent();
-				System.out.println("Responded Yes");
-			}
-
-			else if (excelReadEvent.getEventConsentResponse().contains("No")) {
-				System.out.println("Response entered from user is No");
-				Thread.sleep(5000);
-				eventConsentFlowRepository.getRespondNoButton().getElement().click();
-				System.out.println("Responded No");
-			}
+			commonFunctions.respondYesForFormEventforProductionData(childname);
 			Thread.sleep(2000);
 		}
 		
@@ -177,6 +163,7 @@ public class EnglishEventConsentMainClass {
 	private void Logout(String user,String userchild) throws Exception {
 	
 		try{
+			Thread.sleep(2000);
 			LoginRepository.clickOnLogoutButton();
 			System.out.println("Consent completed for parent " + user + " & his/her child " + userchild  );
 		}

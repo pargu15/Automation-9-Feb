@@ -314,6 +314,207 @@ public class CommonFunctions {
 		}
 	}
 
+	//Test
+	
+	public void respondYesForFormEventforProductionData(String childname) throws Exception {
+
+		ExcelReadEvent excelReadEvent = new ExcelReadEvent();
+		excelReadEvent.readFromExcel(1, CommonVariables.rownumber);
+
+		waitUntilElementDisplayed(eventConsentFlowRepository.getBackButton().getElement());
+		try {
+			eventConsentFlowRepository.getRespondYesButton().getElement().click();
+			Thread.sleep(5000);
+
+			eventConsentFlowRepository.getOkConfirmAfterYesResponse().getElement().click();
+			Thread.sleep(10000);
+		}
+
+		catch (Exception e) {
+			eventConsentFlowRepository.getRespondYesForFormEvent().getElement().click();
+			Thread.sleep(10000);
+		}
+
+		List<WebElement> Questions = DriverInitiation.getDriver()
+				.findElements(By.xpath("//*[contains(@id,'_lblQuestionText')]"));
+
+		System.out.println("Questions present in the form are: ");
+
+		for (WebElement singlerow : Questions) {
+			System.out.println(singlerow.getText());
+		}
+
+		if (CommonVariables.recipient == URLTypes.socialenglishparent) {
+
+			excelReadEvent.readFromExcel(2, CommonVariables.rownumber);
+
+			if (excelReadEvent.getEventName().contains("Event For Automation With A Form In Which Data Is Blank")) {
+
+				eventConsentFlowRepository.getSaveNNextButton().getElement().click();
+				Thread.sleep(3000);
+
+				if (checkForErrorMessage()) {
+
+					socialEventFormDataEntryRepository.getTextQuestion().getElement()
+							.sendKeys(childname);
+					Thread.sleep(1000);
+
+					socialEventFormDataEntryRepository.getSingleSelectOptionOne().getElement().click();
+					Thread.sleep(1000);
+
+					socialEventFormDataEntryRepository.getMultiSelectOptionOne().getElement().click();
+					Thread.sleep(1000);
+
+					selectFromDropDown(socialEventFormDataEntryRepository.getDropDownQuestion().getElement(), 1);
+
+					socialEventFormDataEntryRepository.getPhoneQuestion().getElement()
+							.sendKeys(excelReadEvent.getPhoneNumber());
+					Thread.sleep(1000);
+
+					socialEventFormDataEntryRepository.getDateQuestion().getElement()
+							.sendKeys(excelReadEvent.getDateQuestion());
+					Thread.sleep(1000);
+
+					socialEventFormDataEntryRepository.getEmailQuestion().getElement()
+							.sendKeys(excelReadEvent.getEmailQuestion());
+					Thread.sleep(1000);
+
+					socialEventFormDataEntryRepository.getFirstNameQuestion().getElement()
+							.sendKeys(childname);
+					Thread.sleep(1000);
+
+					socialEventFormDataEntryRepository.getLastNameQuestion().getElement()
+							.sendKeys(excelReadEvent.getLastNameQuestion());
+					Thread.sleep(1000);
+
+				}
+
+			} else if (excelReadEvent.getEventName()
+					.contains("Event For Automation With A Form Which Have All Data Prefilled")) {
+
+				verifyElementIsPresent(socialEventFormDataVerifyRepository.getTextQuestionCheckPrefilled());
+				verifyElementIsPresent(socialEventFormDataVerifyRepository.getSingleSelectAnsCheckPrefilled());
+				verifyElementIsPresent(socialEventFormDataVerifyRepository.getPhoneAnsCheckPrefilled());
+				verifyElementIsPresent(socialEventFormDataVerifyRepository.getDateAnsCheckPrefilled());
+				verifyElementIsPresent(socialEventFormDataVerifyRepository.getEMailAnsCheckPrefilled());
+				verifyElementIsPresent(socialEventFormDataVerifyRepository.getFirstNameCheckPrefilled());
+				verifyElementIsPresent(socialEventFormDataVerifyRepository.getLastNameCheckPrefilled());
+
+				if (socialEventFormDataVerifyRepository.getDropDownAnsCheckPrefilled().getElement().getText()
+						.contains("Male")) {
+					System.out.println("Drop down data is correct");
+				} else {
+					System.err.println("Drop down data is not correct");
+				}
+
+			}
+
+			else {
+				System.err.println("Form specified is not present");
+
+			}
+
+		}
+
+		else if (CommonVariables.recipient == URLTypes.prodenglishparent) {
+
+			excelReadEvent.readFromExcel(2, CommonVariables.rownumber);
+
+			if (excelReadEvent.getEventName().contains("Event For Automation With A Form In Which Data Is Blank")) {
+
+				eventConsentFlowRepository.getSaveNNextButton().getElement().click();
+				Thread.sleep(3000);
+
+				if (checkForErrorMessage()) {
+
+					prodEventFormDataEntryRepository.getTextQuestion().getElement()
+							.sendKeys(childname);
+					Thread.sleep(1000);
+
+					prodEventFormDataEntryRepository.getSingleSelectOptionOne().getElement().click();
+					Thread.sleep(1000);
+
+					prodEventFormDataEntryRepository.getMultiSelectOptionOne().getElement().click();
+					Thread.sleep(1000);
+
+					selectFromDropDown(prodEventFormDataEntryRepository.getDropDownQuestion().getElement(), 1);
+
+					prodEventFormDataEntryRepository.getPhoneQuestion().getElement()
+							.sendKeys(excelReadEvent.getPhoneNumber());
+					Thread.sleep(1000);
+
+					prodEventFormDataEntryRepository.getDateQuestion().getElement()
+							.sendKeys(excelReadEvent.getDateQuestion());
+					Thread.sleep(1000);
+
+
+					prodEventFormDataEntryRepository.getEmailQuestion().getElement()
+							.sendKeys(excelReadEvent.getEmailQuestion());
+					Thread.sleep(1000);
+
+					prodEventFormDataEntryRepository.getFirstNameQuestion().getElement()
+							.sendKeys(childname);
+					Thread.sleep(1000);
+
+					prodEventFormDataEntryRepository.getLastNameQuestion().getElement()
+							.sendKeys(excelReadEvent.getLastNameQuestion());
+					Thread.sleep(1000);
+
+				}
+
+			} else if (excelReadEvent.getEventName()
+					.contains("Event For Automation With A Form Which Have All Data Prefilled")) {
+
+				verifyElementIsPresent(prodEventFormDataVerifyRepository.getTextQuestionCheckPrefilled());
+				verifyElementIsPresent(prodEventFormDataVerifyRepository.getSingleSelectAnsCheckPrefilled());
+				verifyElementIsPresent(prodEventFormDataVerifyRepository.getPhoneAnsCheckPrefilled());
+				verifyElementIsPresent(prodEventFormDataVerifyRepository.getDateAnsCheckPrefilled());
+				verifyElementIsPresent(prodEventFormDataVerifyRepository.getEMailAnsCheckPrefilled());
+				verifyElementIsPresent(prodEventFormDataVerifyRepository.getFirstNameCheckPrefilled());
+				verifyElementIsPresent(prodEventFormDataVerifyRepository.getLastNameCheckPrefilled());
+
+				if (prodEventFormDataVerifyRepository.getDropDownAnsCheckPrefilled().getElement().getText()
+						.contains("None")) {
+					System.out.println("Drop down data is correct");
+				} else {
+					System.err.println("Drop down data is not correct");
+				}
+			}
+
+			else {
+				System.err.println("Form specified is not present");
+
+			}
+
+		}
+
+		eventConsentFlowRepository.getSaveNNextButton().getElement().click();
+		Thread.sleep(15000);
+
+	//	eventConsentFlowRepository.getZippNoteTextBox().getElement().sendKeys("Testing note");
+		Thread.sleep(2000);
+
+		try {
+			eventConsentFlowRepository.getAcceptNPay().getElement().click();
+			Thread.sleep(6000);
+		} catch (Exception e) {
+			eventConsentFlowRepository.getSubmitFormsButton().getElement().click();
+			Thread.sleep(2000);
+		}
+
+		try {
+			
+			waitUntilElementDisplayed(eventConsentFlowRepository.getDontShowMessageButton().getElement());
+			eventConsentFlowRepository.getDontShowMessageButton().getElement().click();
+			Thread.sleep(2000);
+			eventConsentFlowRepository.getFinalOkButton().getElement().click();
+			Thread.sleep(3000);
+			System.out.println("Moving to verification part....");
+		} catch (Exception e) {
+			System.out.println("Moving to verification part....");
+		}
+	}
+	
 	// Click on the event correct
 	public void clickOnEvent() throws Exception {
 		Thread.sleep(5000);
@@ -381,7 +582,7 @@ public class CommonFunctions {
 	}
 	
 	// Overloaded funtion to Check if the event is correct on the page
-		public boolean checkEventOnPage(String childName) throws Exception {
+		public boolean checkEventOnPage(String childname) throws Exception {
 			Thread.sleep(2000);
 			ExcelReadEvent excelReadEvent = new ExcelReadEvent();
 			excelReadEvent.readFromExcel(1, CommonVariables.rownumber);
@@ -396,7 +597,7 @@ public class CommonFunctions {
 					eventdisplay = true;
 					System.out.println("Event is present");
 					WebElement oClickonEvent = DriverInitiation.getDriver()
-							.findElement(By.xpath(".//a[@id='hlEventName' and text()='" + eventname + "']/parent::*/parent::*/following-sibling::td[1]/a[@id='anchor' and text()='" + childName + "']/parent::*/preceding-sibling::td[1]//a[@id='hlEventName']"));
+							.findElement(By.xpath(".//a[@id='hlEventName' and text()='" + eventname + "']/parent::*/parent::*/following-sibling::td[1]/a[@id='anchor' and text()='" + childname + "']/parent::*/preceding-sibling::td[1]//a[@id='hlEventName']"));
 					oClickonEvent.click();
 					break;
 				}
