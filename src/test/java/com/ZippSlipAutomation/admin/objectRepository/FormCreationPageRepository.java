@@ -3,6 +3,7 @@ package com.ZippSlipAutomation.admin.objectRepository;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+
 import com.ZippSlipAutomation.utilities.DriverInitiation;
 import com.ZippSlipAutomation.utilities.ReturnElement;
 
@@ -28,6 +29,13 @@ public class FormCreationPageRepository {
 
 	}
 	
+	@FindBy(id = "btnNext")
+	private WebElement oNextButton;
+
+	public ReturnElement getNextButton() {
+		return new ReturnElement(oNextButton, Thread.currentThread().getStackTrace()[1].getMethodName());
+
+	}
 	
 	@FindBy(id = "txtName")
 	private WebElement oFormName;
@@ -56,4 +64,88 @@ public class FormCreationPageRepository {
 
 	}
 	
+	
+	@FindBy(xpath = ".//*[@id='pnlStep2']/div[1]/div[1]/div[2]/div/div[1]") 
+	
+	private WebElement oParagraph;
+
+	public ReturnElement getParagraphControl() {
+		return new ReturnElement(oParagraph, Thread.currentThread().getStackTrace()[1].getMethodName());
+	}
+	
+	@FindBy(xpath = ".//*[@id='pnlStep2']/div[1]/div[1]/div[2]/div/div[2]") 
+	
+	private WebElement oTextBox;
+
+	public ReturnElement getTextBoxControl() {
+		return new ReturnElement(oTextBox, Thread.currentThread().getStackTrace()[1].getMethodName());
+	}
+	
+	@FindBy(xpath = ".//*[@id='pnlStep2']/div[1]/div[1]/div[2]/div/div[3]") 
+	
+	private WebElement oSingleSelect;
+
+	public ReturnElement getSingleSelectControl() {
+		return new ReturnElement(oSingleSelect, Thread.currentThread().getStackTrace()[1].getMethodName());
+	}
+	
+	@FindBy(xpath = ".//*[@id='pnlStep2']/div[1]/div[1]/div[2]/div/div[4]") 
+	
+	private WebElement oMultipleSelect;
+
+	public ReturnElement getMultipleSelectControl() {
+		return new ReturnElement(oMultipleSelect, Thread.currentThread().getStackTrace()[1].getMethodName());
+	}
+	
+	@FindBy(xpath = ".//*[@id='pnlStep2']/div[1]/div[1]/div[2]/div/div[5]") 
+	
+	private WebElement oDropDown;
+
+	public ReturnElement getDropDownControl() {
+		return new ReturnElement(oDropDown, Thread.currentThread().getStackTrace()[1].getMethodName());
+	}
+	
+	@FindBy(xpath = ".//*[@id='pnlStep2']/div[1]/div[1]/div[2]/div/div[6]") 
+	
+	private WebElement oPhonePicker;
+
+	public ReturnElement getPhoneControl() {
+		return new ReturnElement(oPhonePicker, Thread.currentThread().getStackTrace()[1].getMethodName());
+	}
+	
+	@FindBy(xpath = ".//*[@id='pnlStep2']/div[1]/div[1]/div[2]/div/div[7]") 
+	
+	private WebElement oDatePicker;
+
+	public ReturnElement getDatePickerControl() {
+		return new ReturnElement(oDatePicker, Thread.currentThread().getStackTrace()[1].getMethodName());
+	}
+	
+	
+	@FindBy(xpath = ".//*[@id='pnlStep2']/div[1]/div[1]/div[2]/div/div[8]") 
+	
+	private WebElement oEmailPicker;
+
+	public ReturnElement getEmailControl() {
+		return new ReturnElement(oEmailPicker, Thread.currentThread().getStackTrace()[1].getMethodName());
+	}
+	
+	@FindBy(xpath = ".//*[@id='pnlStep2']/div[1]/div[1]/div[2]/div/div[9]") 
+	
+	private WebElement oNamePicker;
+
+	public ReturnElement getNameControl() {
+		return new ReturnElement(oNamePicker, Thread.currentThread().getStackTrace()[1].getMethodName());
+	}
+	
+	
+	@FindBy(xpath = ".//*[@id='pnlStep2']/div[1]/div[1]/div[2]/div/div[10]") 
+	
+	private WebElement oAddressPicker;
+
+	public ReturnElement getAddressPickerControl() {
+		return new ReturnElement(oAddressPicker, Thread.currentThread().getStackTrace()[1].getMethodName());
+	}
+	
+
 }
