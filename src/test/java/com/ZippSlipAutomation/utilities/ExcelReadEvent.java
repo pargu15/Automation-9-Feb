@@ -26,6 +26,8 @@ public class ExcelReadEvent {
 	private String EventConsentResponse;
 	private String ActivityType;
 	private String FormName;
+	private String NewFormName;
+	private String NewFormDescription;
 	private String TextQuestion;
 	private String PhoneNumber;
 	private String DateQuestion;
@@ -253,9 +255,25 @@ public class ExcelReadEvent {
 	public String getEventName() {
 		return EventName;
 	}
-
+	
 	public void setEventName(String eventName) {
 		EventName = eventName;
+	}
+
+	public String getNewFormName() {
+		return  NewFormName;
+	}
+
+	public void setNewFormName(String newFormName) {
+		NewFormName = newFormName;
+	}
+	
+	public String getFormDescription() {
+		return  NewFormDescription;
+	}
+
+	public void setFormDescription(String newFormDescription) {
+		NewFormDescription = newFormDescription;
 	}
 
 	public String getLocation() {
@@ -483,6 +501,10 @@ public class ExcelReadEvent {
 			setEnrolledStatus(singlerow[2]);
 			break;	
 			
+		case 10:
+			setNewFormName(singlerow[0]);
+			setFormDescription(singlerow[1]);
+			break;	
 		default:
 			break;
 
