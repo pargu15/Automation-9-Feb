@@ -4,6 +4,9 @@ package com.ZippSlipAutomation.admin.operations;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.PageFactory;
 
 import com.ZippSlipAutomation.admin.objectRepository.EventPageRepository;
@@ -17,9 +20,8 @@ public class CreateFormActions {
 	CommonFunctions commonFunctions = new CommonFunctions();
 	FormCreationPageRepository formCreationPageRepository = PageFactory.initElements(DriverInitiation.getDriver(),
 			FormCreationPageRepository.class);
-
-	EventPageRepository eventPageRepository = PageFactory.initElements(DriverInitiation.getDriver(),
-			EventPageRepository.class);
+	
+	Actions action = new Actions(DriverInitiation.getDriver());
 	
 	ExcelReadEvent excelReadEvent = new ExcelReadEvent();
 
@@ -41,7 +43,7 @@ public class CreateFormActions {
 	public void verifyFormNameIsMandatory() throws Exception {
 
 		excelReadEvent.readFromExcel(1, CommonVariables.rownumber);
-		eventPageRepository.getNextButton().getElement().click();
+		formCreationPageRepository.getNextButton().getElement().click();
 		Thread.sleep(2000);
 		commonFunctions.verifyElementIsPresent(formCreationPageRepository.getErrorMessageForFormname());
 		
@@ -57,9 +59,30 @@ public class CreateFormActions {
 		Thread.sleep(1000);
 		formCreationPageRepository.getFormDescription().getElement().sendKeys(excelReadEvent.getFormName());
 		Thread.sleep(1000);
-		eventPageRepository.getNextButton().getElement().click();
+		formCreationPageRepository.getNextButton().getElement().click();
+		Thread.sleep(3000);
+		action.doubleClick(formCreationPageRepository.getParagraphControl().getElement()).build().perform();
+		Thread.sleep(1000);
+		action.doubleClick(formCreationPageRepository.getTextBoxControl().getElement()).build().perform();
+		Thread.sleep(1000);
+		action.doubleClick(formCreationPageRepository.getSingleSelectControl().getElement()).build().perform();
+		Thread.sleep(1000);
+		action.doubleClick(formCreationPageRepository.getMultipleSelectControl().getElement()).build().perform();
+		Thread.sleep(1000);
+		action.doubleClick(formCreationPageRepository.getDropDownControl().getElement()).build().perform();
+		Thread.sleep(1000);
+		action.doubleClick(formCreationPageRepository.getPhoneControl().getElement()).build().perform();
+		Thread.sleep(1000);
+		action.doubleClick(formCreationPageRepository.getDatePickerControl().getElement()).build().perform();
+		Thread.sleep(1000);
+		action.doubleClick(formCreationPageRepository.getEmailControl().getElement()).build().perform();
+		Thread.sleep(1000);
+		action.doubleClick(formCreationPageRepository.getNameControl().getElement()).build().perform();
+		Thread.sleep(1000);
+		action.doubleClick(formCreationPageRepository.getAddressPickerControl().getElement()).build().perform();
 		Thread.sleep(1000);
 		
+	
 	}
 	
 	
