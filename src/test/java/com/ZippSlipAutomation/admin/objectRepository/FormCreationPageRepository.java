@@ -37,6 +37,7 @@ public class FormCreationPageRepository {
 
 	}
 	
+	
 	@FindBy(id = "txtName")
 	private WebElement oFormName;
 
@@ -148,7 +149,7 @@ public class FormCreationPageRepository {
 	}
 	
 
-	@FindBy(xpath = ".//*[contains(@id,'label')]") 
+	@FindBy(xpath = ".//*[contains(@id,'label') and contains(@controltype,'label')]") 
 
 	private WebElement oParagraphQuesInput;
 
@@ -156,7 +157,7 @@ public class FormCreationPageRepository {
 		return new ReturnElement(oParagraphQuesInput, Thread.currentThread().getStackTrace()[1].getMethodName());
 	}
 	
-	@FindBy(xpath = ".//*[contains(@id,'text')]") 
+	@FindBy(xpath = ".//*[contains(@id,'text') and contains(@controltype,'text')]") 
 	
 	private WebElement oTextBoxQuesInput;
 
@@ -164,7 +165,7 @@ public class FormCreationPageRepository {
 		return new ReturnElement(oTextBoxQuesInput, Thread.currentThread().getStackTrace()[1].getMethodName());
 	}
 	
-	@FindBy(xpath = ".//*[contains(@id,'radio')]") 
+	@FindBy(xpath = ".//*[contains(@id,'radio') and contains(@controltype,'radio')]") 
 	
 	private WebElement oSingleSelectQuesInput;
 
@@ -172,7 +173,7 @@ public class FormCreationPageRepository {
 		return new ReturnElement(oSingleSelectQuesInput, Thread.currentThread().getStackTrace()[1].getMethodName());
 	}
 	
-	@FindBy(xpath = ".//*[contains(@id,'checkbox')]") 
+	@FindBy(xpath = ".//*[contains(@id,'checkbox') and contains(@controltype,'checkbox')]") 
 	
 	private WebElement oMultipleSelectQuesInput;
 
@@ -180,7 +181,7 @@ public class FormCreationPageRepository {
 		return new ReturnElement(oMultipleSelectQuesInput, Thread.currentThread().getStackTrace()[1].getMethodName());
 	}
 	
-	@FindBy(xpath = ".//*[contains(@id,'select')]") 
+	@FindBy(xpath = ".//*[contains(@id,'select') and contains(@controltype,'select')]") 
 	
 	private WebElement oDropDownQuesInput;
 
@@ -188,7 +189,7 @@ public class FormCreationPageRepository {
 		return new ReturnElement(oDropDownQuesInput, Thread.currentThread().getStackTrace()[1].getMethodName());
 	}
 	
-	@FindBy(xpath = ".//*[contains(@id,'phone')]") 
+	@FindBy(xpath = ".//*[contains(@id,'phone') and contains(@controltype,'phone')]") 
 	
 	private WebElement oPhonePickerQuesInput;
 
@@ -196,7 +197,7 @@ public class FormCreationPageRepository {
 		return new ReturnElement(oPhonePickerQuesInput, Thread.currentThread().getStackTrace()[1].getMethodName());
 	}
 	
-	@FindBy(xpath = ".//*[contains(@id,'date')]") 
+	@FindBy(xpath = ".//*[contains(@id,'date') and contains(@controltype,'date')]") 
 	
 	private WebElement oDatePickerQuesInput;
 
@@ -205,7 +206,7 @@ public class FormCreationPageRepository {
 	}
 	
 	
-	@FindBy(xpath = ".//*[contains(@id,'email')]") 
+	@FindBy(xpath = ".//*[contains(@id,'email') and contains(@controltype,'email')]") 
 	
 	private WebElement oEmailPickerQuesInput;
 
@@ -213,8 +214,8 @@ public class FormCreationPageRepository {
 		return new ReturnElement(oEmailPickerQuesInput, Thread.currentThread().getStackTrace()[1].getMethodName());
 	}
 	
-	@FindBy(xpath = ".//*[contains(@id,'name')]") 
 	
+	@FindBy(xpath = ".//*[contains(@id,'name') and contains(@controltype,'name')]") 
 	private WebElement oNamePickerQuesInput;
 
 	public ReturnElement getNameControlQuesInput() {
@@ -222,7 +223,7 @@ public class FormCreationPageRepository {
 	}
 	
 	
-	@FindBy(xpath = ".//*[contains(@id,'address')]") 
+	@FindBy(xpath = ".//*[contains(@id,'address') and contains(@controltype,'address')]") 
 	
 	private WebElement oAddressPickerQuesInput;
 
@@ -283,6 +284,22 @@ public class FormCreationPageRepository {
 
 	public ReturnElement getMiddlenameCheckBox() {
 		return new ReturnElement(oHideMiddlename, Thread.currentThread().getStackTrace()[1].getMethodName());
+	}
+	
+	@FindBy(id = "btnSavePublish")
+	private WebElement oSavePublishButton;
+
+	public ReturnElement getSavePublishButton() {
+		return new ReturnElement(oSavePublishButton, Thread.currentThread().getStackTrace()[1].getMethodName());
+
+	}
+	
+	@FindBy(id = "chkIsMandatory")
+	private WebElement oMandatoryCheckBox;
+
+	public ReturnElement getMandatoryCheckBox() {
+		return new ReturnElement(oMandatoryCheckBox, Thread.currentThread().getStackTrace()[1].getMethodName());
+
 	}
 	
 }

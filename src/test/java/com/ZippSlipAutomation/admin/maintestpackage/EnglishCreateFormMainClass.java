@@ -1,7 +1,12 @@
 package com.ZippSlipAutomation.admin.maintestpackage;
 
+import java.io.IOException;
+
+import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
+
+import com.ZippSlipAutomation.admin.objectRepository.LoginRepository;
 import com.ZippSlipAutomation.admin.operations.CreateFormActions;
 import com.ZippSlipAutomation.admin.operations.LoginPage;
 import com.ZippSlipAutomation.utilities.CommonFunctions;
@@ -118,20 +123,12 @@ public class EnglishCreateFormMainClass {
 		createFormActions.addAddressPickerControl();
 	}
 
-/*
-	@Test(priority = 3)
-	public void addFormContollers() throws Exception {
-		CreateFormActions createFormActions = new CreateFormActions();
-		createFormActions.addControllers();
+	@AfterClass
+	public static void driverExit() throws IOException, InterruptedException {
+
+		Thread.sleep(5000);
+		LoginRepository.clickOnLogoutButton();
+		System.out.println("End of Script");
+
 	}
-	
-	@Test(priority = 3)
-	public void updateFormContollers() throws Exception {
-		CreateFormActions createFormActions = new CreateFormActions();
-		createFormActions.updateControllers();
-	}
-	*/
-
-
-
 }

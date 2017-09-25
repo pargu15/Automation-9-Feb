@@ -5,6 +5,7 @@ import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.PageFactory;
@@ -25,6 +26,7 @@ public class CreateFormActions {
 	
 	ExcelReadEvent excelReadEvent = new ExcelReadEvent();
 
+	JavascriptExecutor jse = (JavascriptExecutor)DriverInitiation.getDriver();
 	public void selectCreateFormLink() throws Exception {
 		
 		commonFunctions.waitUntilElementDisplayed(formCreationPageRepository.getFormList().getElement());
@@ -49,12 +51,7 @@ public class CreateFormActions {
 		
 		DateTimeFormatter dtf = DateTimeFormatter.ofPattern("dd/MM/yyyy");
 		LocalDate localDate = LocalDate.now();
-		/*
-		formCreationPageRepository.getNewFormName().getElement().sendKeys(excelReadEvent.getNewFormName() + " " + dtf.format(localDate));
-		Thread.sleep(1000);
-		formCreationPageRepository.getFormDescription().getElement().sendKeys(excelReadEvent.getFormDescription());
-		Thread.sleep(1000);
-		*/
+		
 		formCreationPageRepository.getNewFormName().getElement().sendKeys(excelReadEvent.getFormName() + " " + dtf.format(localDate));
 		Thread.sleep(1000);
 		formCreationPageRepository.getFormDescription().getElement().sendKeys(excelReadEvent.getFormName());
@@ -71,6 +68,7 @@ public class CreateFormActions {
 		action.doubleClick(formCreationPageRepository.getParagraphQuesInput().getElement()).build().perform();
 		Thread.sleep(1000);
 		formCreationPageRepository.getQuestionText().getElement().sendKeys("Test");
+	//	formCreationPageRepository.getMandatoryCheckBox().getElement().click();
 		formCreationPageRepository.getPopupSaveButton().getElement().click();
 		Thread.sleep(1000);
 	}
@@ -82,6 +80,7 @@ public class CreateFormActions {
 		action.doubleClick(formCreationPageRepository.getTextBoxQuesInput().getElement()).build().perform();
 		Thread.sleep(1000);
 		formCreationPageRepository.getQuestionText().getElement().sendKeys("What is the reason for the change request.");
+		formCreationPageRepository.getMandatoryCheckBox().getElement().click();
 		formCreationPageRepository.getPopupSaveButton().getElement().click();
 		Thread.sleep(1000);
 
@@ -94,6 +93,7 @@ public class CreateFormActions {
 		action.doubleClick(formCreationPageRepository.getSingleSelectControlQuesInput().getElement()).build().perform();
 		Thread.sleep(1000);
 		formCreationPageRepository.getQuestionText().getElement().sendKeys("What is the best way to notify you if your form is approved?");
+		formCreationPageRepository.getMandatoryCheckBox().getElement().click();
 		formCreationPageRepository.getOptionTextArea().getElement().sendKeys("Email");
 		formCreationPageRepository.getAddOptionButton().getElement().click();
 		formCreationPageRepository.getOptionTextArea().getElement().sendKeys("SMS");
@@ -108,9 +108,12 @@ public class CreateFormActions {
 
 		action.doubleClick(formCreationPageRepository.getMultipleSelectControl().getElement()).build().perform();
 		Thread.sleep(1000);
+		jse.executeScript("window.scrollBy(0,250)", "");
+		//jse.executeScript("scroll(0, 250);");
 		action.doubleClick(formCreationPageRepository.getMultipleSelectControlQuesInput().getElement()).build().perform();
-		Thread.sleep(1000);
+		Thread.sleep(2000);
 		formCreationPageRepository.getQuestionText().getElement().sendKeys("What best describes your request?");
+		formCreationPageRepository.getMandatoryCheckBox().getElement().click();
 		formCreationPageRepository.getOptionTextArea().getElement().sendKeys("NewStudent");
 		formCreationPageRepository.getAddOptionButton().getElement().click();
 		formCreationPageRepository.getOptionTextArea().getElement().sendKeys("ChangeOfAddress");
@@ -125,9 +128,11 @@ public class CreateFormActions {
 
 		action.doubleClick(formCreationPageRepository.getDropDownControl().getElement()).build().perform();
 		Thread.sleep(1000);
+		jse.executeScript("window.scrollBy(0,250)", "");
 		action.doubleClick(formCreationPageRepository.getDropDownControlQuesInput().getElement()).build().perform();
 		Thread.sleep(1000);
 		formCreationPageRepository.getQuestionText().getElement().sendKeys("Do you want to receive follow ups on the form");
+		formCreationPageRepository.getMandatoryCheckBox().getElement().click();
 		formCreationPageRepository.getOptionTextArea().getElement().sendKeys("Yes");
 		formCreationPageRepository.getAddOptionButton().getElement().click();
 		formCreationPageRepository.getOptionTextArea().getElement().sendKeys("No");
@@ -140,9 +145,11 @@ public class CreateFormActions {
 
 		action.doubleClick(formCreationPageRepository.getPhoneControl().getElement()).build().perform();
 		Thread.sleep(1000);
+		jse.executeScript("window.scrollBy(0,250)", "");
 		action.doubleClick(formCreationPageRepository.getPhoneControlQuesInput().getElement()).build().perform();
 		Thread.sleep(1000);
 		formCreationPageRepository.getQuestionText().getElement().sendKeys("Parent Contact Number");
+		formCreationPageRepository.getMandatoryCheckBox().getElement().click();
 		formCreationPageRepository.getPopupSaveButton().getElement().click();
 		Thread.sleep(1000);
 	}	
@@ -151,9 +158,11 @@ public class CreateFormActions {
 
 		action.doubleClick(formCreationPageRepository.getDatePickerControl().getElement()).build().perform();
 		Thread.sleep(1000);
+		jse.executeScript("window.scrollBy(0,250)", "");
 		action.doubleClick(formCreationPageRepository.getDatePickerControlQuesInput().getElement()).build().perform();
 		Thread.sleep(1000);
 		formCreationPageRepository.getQuestionText().getElement().sendKeys("Parent Date of Birth");
+		formCreationPageRepository.getMandatoryCheckBox().getElement().click();
 		formCreationPageRepository.getPopupSaveButton().getElement().click();
 		Thread.sleep(1000);
 		
@@ -162,9 +171,11 @@ public class CreateFormActions {
 	public void addEmailControl() throws Exception {
 		action.doubleClick(formCreationPageRepository.getEmailControl().getElement()).build().perform();
 		Thread.sleep(1000);
-		action.doubleClick(formCreationPageRepository.getDatePickerControlQuesInput().getElement()).build().perform();
+		jse.executeScript("window.scrollBy(0,250)", "");
+		action.doubleClick(formCreationPageRepository.getEmailControlQuesInput().getElement()).build().perform();
 		Thread.sleep(1000);
-		formCreationPageRepository.getQuestionText().getElement().sendKeys("Parent Date of Birth");
+		formCreationPageRepository.getQuestionText().getElement().sendKeys("Parent Email Address");
+		formCreationPageRepository.getMandatoryCheckBox().getElement().click();
 		formCreationPageRepository.getPopupSaveButton().getElement().click();
 		Thread.sleep(1000);
 	}
@@ -173,9 +184,11 @@ public class CreateFormActions {
 
 		action.doubleClick(formCreationPageRepository.getNameControl().getElement()).build().perform();
 		Thread.sleep(1000);
+		jse.executeScript("window.scrollBy(0,100)", "");
 		action.doubleClick(formCreationPageRepository.getNameControlQuesInput().getElement()).build().perform();
 		Thread.sleep(1000);
 		formCreationPageRepository.getQuestionText().getElement().sendKeys("Parent Name");
+		formCreationPageRepository.getMandatoryCheckBox().getElement().click();
 		formCreationPageRepository.getTitleCheckBox().getElement().click();
 		formCreationPageRepository.getMiddlenameCheckBox().getElement().click();
 		formCreationPageRepository.getPopupSaveButton().getElement().click();
@@ -189,9 +202,12 @@ public class CreateFormActions {
 		action.doubleClick(formCreationPageRepository.getAddressPickerControlQuesInput().getElement()).build().perform();
 		Thread.sleep(1000);
 		formCreationPageRepository.getQuestionText().getElement().sendKeys("Parent Address");
+		//formCreationPageRepository.getMandatoryCheckBox().getElement().click();
 		formCreationPageRepository.getPopupSaveButton().getElement().click();
 		Thread.sleep(1000);
-		
+		formCreationPageRepository.getNextButton().getElement().click();
+		Thread.sleep(1000);
+		formCreationPageRepository.getSavePublishButton().getElement().click();
 		
 	}
 	

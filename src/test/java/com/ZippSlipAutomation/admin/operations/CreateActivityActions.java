@@ -1,5 +1,8 @@
 package com.ZippSlipAutomation.admin.operations;
 
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+
 import org.openqa.selenium.support.PageFactory;
 
 import com.ZippSlipAutomation.admin.objectRepository.EventPageRepository;
@@ -87,7 +90,10 @@ public class CreateActivityActions {
 		eventPageRepository.getSeeAllFormsButton().getElement().click();
 		Thread.sleep(2000);
 		excelReadEvent.readFromExcel(1, CommonVariables.rownumber);
-		eventPageRepository.getSearchformTextbox().getElement().sendKeys(excelReadEvent.getFormName());
+		DateTimeFormatter dtf = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+		LocalDate localDate = LocalDate.now();
+		
+		eventPageRepository.getSearchformTextbox().getElement().sendKeys(excelReadEvent.getFormName() + " " + dtf.format(localDate));
 		eventPageRepository.getSearchformButton().getElement().click();
 		eventPageRepository.getRequiredformButton().getElement().click();
 		eventPageRepository.getFormOkConfirmationButton().getElement().click();
