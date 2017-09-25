@@ -51,7 +51,7 @@ public class EnglishCreateFormMainClass {
 	public void selectFormList() throws Exception {
 		 
 		CreateFormActions createFormActions = new CreateFormActions();
-		createFormActions.selectFormCreateLink();
+		createFormActions.selectCreateFormLink();
 
 	}
 
@@ -60,15 +60,78 @@ public class EnglishCreateFormMainClass {
 		CreateFormActions createFormActions = new CreateFormActions();
 		createFormActions.verifyFormNameIsMandatory();
 	}
-
-	/*
+	
 	@Test(priority = 3)
-	public void verifyConfirmationPopupForNoLocation() throws InterruptedException {
-		CreateActivityActions createActivityActions = new CreateActivityActions();
-		createActivityActions.verifyConfirmationPopupForNoLocation();
+	public void addParagraphController() throws Exception {
+		CreateFormActions createFormActions = new CreateFormActions();
+		createFormActions.addParagraphController();
+	}
+	
+	@Test(priority = 4)
+	public void addTextBoxControl() throws Exception {
+		CreateFormActions createFormActions = new CreateFormActions();
+		createFormActions.addTextBoxControl();
+	}
+	
+	
+	@Test(priority = 5)
+	public void addSingleSelectControl() throws Exception {
+		CreateFormActions createFormActions = new CreateFormActions();
+		createFormActions.addSingleSelectControl();
+	}
+	
+	
+	@Test(priority = 6)
+	public void addMultipleSelectControl() throws Exception {
+		CreateFormActions createFormActions = new CreateFormActions();
+		createFormActions.addMultipleSelectControl();
+	}
+	
+	@Test(priority = 7)
+	public void addDropDownControl() throws Exception {
+		CreateFormActions createFormActions = new CreateFormActions();
+		createFormActions.addDropDownControl();
+	}
+	@Test(priority = 8)
+	public void addPhoneControl() throws Exception {
+		CreateFormActions createFormActions = new CreateFormActions();
+		createFormActions.addPhoneControl();
+	}
+	@Test(priority = 9)
+	public void addDatePickerControl() throws Exception {
+		CreateFormActions createFormActions = new CreateFormActions();
+		createFormActions.addDatePickerControl();
+	}
+	@Test(priority = 10)
+	public void addEmailControl() throws Exception {
+		CreateFormActions createFormActions = new CreateFormActions();
+		createFormActions.addEmailControl();
+	}
+	@Test(priority = 11)
+	public void addNameControl() throws Exception {
+		CreateFormActions createFormActions = new CreateFormActions();
+		createFormActions.addNameControl();
+	}
+	@Test(priority = 12)
+	public void addAddressPickerControl() throws Exception {
+		CreateFormActions createFormActions = new CreateFormActions();
+		createFormActions.addAddressPickerControl();
+	}
 
+/*
+	@Test(priority = 3)
+	public void addFormContollers() throws Exception {
+		CreateFormActions createFormActions = new CreateFormActions();
+		createFormActions.addControllers();
+	}
+	
+	@Test(priority = 3)
+	public void updateFormContollers() throws Exception {
+		CreateFormActions createFormActions = new CreateFormActions();
+		createFormActions.updateControllers();
 	}
 	*/
+
 
 
 }

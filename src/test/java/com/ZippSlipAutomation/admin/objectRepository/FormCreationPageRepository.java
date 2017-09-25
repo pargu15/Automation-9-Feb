@@ -148,4 +148,141 @@ public class FormCreationPageRepository {
 	}
 	
 
+	@FindBy(xpath = ".//*[contains(@id,'label')]") 
+
+	private WebElement oParagraphQuesInput;
+
+	public ReturnElement getParagraphQuesInput() {
+		return new ReturnElement(oParagraphQuesInput, Thread.currentThread().getStackTrace()[1].getMethodName());
+	}
+	
+	@FindBy(xpath = ".//*[contains(@id,'text')]") 
+	
+	private WebElement oTextBoxQuesInput;
+
+	public ReturnElement getTextBoxQuesInput() {
+		return new ReturnElement(oTextBoxQuesInput, Thread.currentThread().getStackTrace()[1].getMethodName());
+	}
+	
+	@FindBy(xpath = ".//*[contains(@id,'radio')]") 
+	
+	private WebElement oSingleSelectQuesInput;
+
+	public ReturnElement getSingleSelectControlQuesInput() {
+		return new ReturnElement(oSingleSelectQuesInput, Thread.currentThread().getStackTrace()[1].getMethodName());
+	}
+	
+	@FindBy(xpath = ".//*[contains(@id,'checkbox')]") 
+	
+	private WebElement oMultipleSelectQuesInput;
+
+	public ReturnElement getMultipleSelectControlQuesInput() {
+		return new ReturnElement(oMultipleSelectQuesInput, Thread.currentThread().getStackTrace()[1].getMethodName());
+	}
+	
+	@FindBy(xpath = ".//*[contains(@id,'select')]") 
+	
+	private WebElement oDropDownQuesInput;
+
+	public ReturnElement getDropDownControlQuesInput() {
+		return new ReturnElement(oDropDownQuesInput, Thread.currentThread().getStackTrace()[1].getMethodName());
+	}
+	
+	@FindBy(xpath = ".//*[contains(@id,'phone')]") 
+	
+	private WebElement oPhonePickerQuesInput;
+
+	public ReturnElement getPhoneControlQuesInput() {
+		return new ReturnElement(oPhonePickerQuesInput, Thread.currentThread().getStackTrace()[1].getMethodName());
+	}
+	
+	@FindBy(xpath = ".//*[contains(@id,'date')]") 
+	
+	private WebElement oDatePickerQuesInput;
+
+	public ReturnElement getDatePickerControlQuesInput() {
+		return new ReturnElement(oDatePickerQuesInput, Thread.currentThread().getStackTrace()[1].getMethodName());
+	}
+	
+	
+	@FindBy(xpath = ".//*[contains(@id,'email')]") 
+	
+	private WebElement oEmailPickerQuesInput;
+
+	public ReturnElement getEmailControlQuesInput() {
+		return new ReturnElement(oEmailPickerQuesInput, Thread.currentThread().getStackTrace()[1].getMethodName());
+	}
+	
+	@FindBy(xpath = ".//*[contains(@id,'name')]") 
+	
+	private WebElement oNamePickerQuesInput;
+
+	public ReturnElement getNameControlQuesInput() {
+		return new ReturnElement(oNamePickerQuesInput, Thread.currentThread().getStackTrace()[1].getMethodName());
+	}
+	
+	
+	@FindBy(xpath = ".//*[contains(@id,'address')]") 
+	
+	private WebElement oAddressPickerQuesInput;
+
+	public ReturnElement getAddressPickerControlQuesInput() {
+		return new ReturnElement(oAddressPickerQuesInput, Thread.currentThread().getStackTrace()[1].getMethodName());
+	}
+	
+	@FindBy(id = "txtQuestionText")
+	
+	private WebElement oQuestionText;
+
+	public ReturnElement getQuestionText() {
+		return new ReturnElement(oQuestionText,
+				Thread.currentThread().getStackTrace()[1].getMethodName());
+
+	}
+	@FindBy(id = "btnPopupSave")
+	
+	private WebElement oSaveButton;
+
+	public ReturnElement getPopupSaveButton() {
+		return new ReturnElement(oSaveButton,
+				Thread.currentThread().getStackTrace()[1].getMethodName());
+
+	}
+	@FindBy(id = "taOptionTextArea")
+	
+	private WebElement oOptionTextArea;
+
+	public ReturnElement getOptionTextArea() {
+		return new ReturnElement(oOptionTextArea,
+				Thread.currentThread().getStackTrace()[1].getMethodName());
+
+	}
+	
+	@FindBy(id = "bntAddOptions")
+	
+	private WebElement oAddOptionsButton;
+
+	public ReturnElement getAddOptionButton() {
+		return new ReturnElement(oAddOptionsButton,
+				Thread.currentThread().getStackTrace()[1].getMethodName());
+
+	}
+	
+	
+	@FindBy(xpath = ".//input[@name='Title']") 
+	
+	private WebElement oHideTitle;
+
+	public ReturnElement getTitleCheckBox() {
+		return new ReturnElement(oHideTitle, Thread.currentThread().getStackTrace()[1].getMethodName());
+	}
+	
+	@FindBy(xpath = ".//input[@name='Middle Name']") 
+	
+	private WebElement oHideMiddlename;
+
+	public ReturnElement getMiddlenameCheckBox() {
+		return new ReturnElement(oHideMiddlename, Thread.currentThread().getStackTrace()[1].getMethodName());
+	}
+	
 }
