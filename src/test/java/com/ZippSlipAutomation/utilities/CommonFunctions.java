@@ -147,7 +147,7 @@ public class CommonFunctions {
 					socialEventFormDataEntryRepository.getEmailQuestion().getElement()
 							.sendKeys(excelReadEvent.getEmailQuestion());
 					Thread.sleep(1000);
-
+				
 					eventConsentFlowRepository.getSaveNNextButton().getElement().click();
 					Thread.sleep(2000);
 					displayErrorMessage();
@@ -159,7 +159,40 @@ public class CommonFunctions {
 					socialEventFormDataEntryRepository.getLastNameQuestion().getElement()
 							.sendKeys(excelReadEvent.getLastNameQuestion());
 					Thread.sleep(1000);
-
+					
+					eventConsentFlowRepository.getSaveNNextButton().getElement().click();
+					Thread.sleep(2000);
+					displayErrorMessage();
+					
+					socialEventFormDataEntryRepository.getStreetNumberQuestion().getElement()
+					.sendKeys(excelReadEvent.getStreetNumberQuestion());
+					Thread.sleep(1000);
+					
+					socialEventFormDataEntryRepository.getMailingAddressQuestion().getElement()
+							.sendKeys(excelReadEvent.getMailingAddressQuestion());
+					Thread.sleep(1000);
+					
+					socialEventFormDataEntryRepository.getStreetTypeQuestion().getElement()
+							.sendKeys(excelReadEvent.getStreetTypeQuestion());
+					Thread.sleep(2000);
+					
+					selectFromDropDown(socialEventFormDataEntryRepository.getStreetDirectionQuestion().getElement(), 4);
+					Thread.sleep(1000);
+					
+					socialEventFormDataEntryRepository.getMailingAddressApartmentQuestion().getElement()
+							.sendKeys(excelReadEvent.getMailingAddressApartmentQuestion());
+					Thread.sleep(1000);
+					
+					socialEventFormDataEntryRepository.getCityTownQuestion().getElement()
+							.sendKeys(excelReadEvent.getCityTownQuestion());
+					Thread.sleep(1000);
+		
+					selectFromDropDown(socialEventFormDataEntryRepository.getAddressStatesQuestion().getElement(), 8);
+					Thread.sleep(1000);
+					
+					socialEventFormDataEntryRepository.getZippCodeQuestion().getElement()
+							.sendKeys(excelReadEvent.getZippCodeQuestion());
+					Thread.sleep(1000);
 				}
 
 			} else if (excelReadEvent.getEventName()
@@ -259,7 +292,43 @@ public class CommonFunctions {
 					prodEventFormDataEntryRepository.getLastNameQuestion().getElement()
 							.sendKeys(excelReadEvent.getLastNameQuestion());
 					Thread.sleep(1000);
-
+					
+					eventConsentFlowRepository.getSaveNNextButton().getElement().click();
+					Thread.sleep(2000);
+					displayErrorMessage();
+					
+					prodEventFormDataEntryRepository.getStreetNumberQuestion().getElement()
+					.sendKeys(excelReadEvent.getStreetNumberQuestion());
+					Thread.sleep(1000);
+					
+					prodEventFormDataEntryRepository.getMailingAddressQuestion().getElement()
+							.sendKeys(excelReadEvent.getMailingAddressQuestion());
+					Thread.sleep(1000);
+					
+					prodEventFormDataEntryRepository.getStreetTypeQuestion().getElement()
+							.sendKeys(excelReadEvent.getStreetTypeQuestion());
+					Thread.sleep(2000);
+					
+					selectFromDropDown(prodEventFormDataEntryRepository.getStreetDirectionQuestion().getElement(), 4);
+					Thread.sleep(1000);
+					
+					prodEventFormDataEntryRepository.getMailingAddressApartmentQuestion().getElement()
+							.sendKeys(excelReadEvent.getMailingAddressApartmentQuestion());
+					Thread.sleep(1000);
+					
+					prodEventFormDataEntryRepository.getCityTownQuestion().getElement()
+							.sendKeys(excelReadEvent.getCityTownQuestion());
+					Thread.sleep(1000);
+		
+					selectFromDropDown(prodEventFormDataEntryRepository.getAddressStatesQuestion().getElement(), 8);
+					Thread.sleep(1000);
+					
+					prodEventFormDataEntryRepository.getZippCodeQuestion().getElement()
+							.sendKeys(excelReadEvent.getZippCodeQuestion());
+					Thread.sleep(1000);
+					
+					
+					
 				}
 
 			} else if (excelReadEvent.getEventName()
