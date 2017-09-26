@@ -33,6 +33,12 @@ public class ExcelReadEvent {
 	private String DateQuestion;
 	private String FirstNameQuestion;
 	private String LastNameQuestion;
+	private String StreetNumberQuestion;
+	private String MailingAddressQuestion;
+	private String StreetTypeQuestion;
+	private String MailingAddressApartmentQuestion;
+	private String CityTownQuestion;
+	private String ZippCodeQuestion;
 	private String EmailQuestion;
 	private String ParentFirstName;
 	private String EnrolledStudentDOB;
@@ -219,6 +225,56 @@ public class ExcelReadEvent {
 	public void setLastNameQuestion(String lastNameQuestion) {
 		LastNameQuestion = lastNameQuestion;
 	}
+	
+	public String getStreetNumberQuestion() {
+		return StreetNumberQuestion;
+	}
+
+	public void setStreetNumberQuestion(String streetNumberQuestion) {
+		StreetNumberQuestion = streetNumberQuestion;
+	}
+	
+		public String getMailingAddressQuestion() {
+		return MailingAddressQuestion;
+	}
+
+	public void setMailingAddressQuestion(String mailingAddressQuestion) {
+		MailingAddressQuestion = mailingAddressQuestion;
+	}
+	
+		public String getStreetTypeQuestion() {
+		return StreetTypeQuestion;
+	}
+
+	public void setStreetTypeQuestion(String streetTypeQuestion) {
+		StreetTypeQuestion = streetTypeQuestion;
+	}
+	
+		public String getMailingAddressApartmentQuestion() {
+		return MailingAddressApartmentQuestion;
+	}
+
+	public void setMailingAddressApartmentQuestion(String mailingAddressApartmentQuestion) {
+		MailingAddressApartmentQuestion = mailingAddressApartmentQuestion;
+	}
+	
+		public String getCityTownQuestion() {
+		return CityTownQuestion;
+	}
+
+	public void setCityTownQuestion(String cityTownQuestion) {
+		CityTownQuestion = cityTownQuestion;
+	}
+	
+		public String getZippCodeQuestion() {
+		return ZippCodeQuestion;
+	}
+
+	public void setZippCodeQuestion(String zippCodeQuestion) {
+		ZippCodeQuestion = zippCodeQuestion;
+	}
+	
+	
 
 	public String getFormName() {
 		return FormName;
@@ -457,6 +513,12 @@ public class ExcelReadEvent {
 			setEmailQuestion(singlerow[4]);
 			setFirstNameQuestion(singlerow[5]);
 			setLastNameQuestion(singlerow[6]);
+			setStreetNumberQuestion(singlerow[7]);
+			setMailingAddressQuestion(singlerow[8]);
+			setStreetTypeQuestion(singlerow[9]);
+			setMailingAddressApartmentQuestion(singlerow[10]);
+			setCityTownQuestion(singlerow[11]);
+			setZippCodeQuestion(singlerow[12]);
 			break;
 			
 		case 3:
