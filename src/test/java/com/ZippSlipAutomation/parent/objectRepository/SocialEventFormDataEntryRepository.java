@@ -23,7 +23,8 @@ public class SocialEventFormDataEntryRepository {
 
 	}
 
-	@FindBy(id = "MainContent_Question49508_txtAnswer")
+	//@FindBy(id = "MainContent_Question49508_txtAnswer")
+	@FindBy(xpath = ".//*[contains(@id,'_txtAnswer') and contains(@type,'text')]") 
 	private WebElement oTextQuestion;
 
 	public ReturnElement getTextQuestion() {
@@ -31,7 +32,8 @@ public class SocialEventFormDataEntryRepository {
 
 	}
 
-	@FindBy(xpath = ".//label[@for='MainContent_Question49509_rblOption_0']")
+	//@FindBy(xpath = ".//label[@for='MainContent_Question49509_rblOption_0']")
+	@FindBy(xpath = ".//*[contains(@id,'_rblOption_0') and contains(@type,'radio')]") 
 	private WebElement oSingleSelectOptionOne;
 
 	public ReturnElement getSingleSelectOptionOne() {
@@ -39,7 +41,8 @@ public class SocialEventFormDataEntryRepository {
 
 	}
 
-	@FindBy(xpath = ".//label[@for='MainContent_Question49510_cbMultiSelect_0']")
+	//@FindBy(xpath = ".//label[@for='MainContent_Question49510_cbMultiSelect_0']")
+	@FindBy(xpath = ".//*[contains(@id,'cbMultiSelect_0') and contains(@type,'checkbox')]") 
 	private WebElement oMultiSelectOptionOne;
 
 	public ReturnElement getMultiSelectOptionOne() {
@@ -47,7 +50,8 @@ public class SocialEventFormDataEntryRepository {
 
 	}
 
-	@FindBy(xpath = ".//label[@for='MainContent_Question49510_cbMultiSelect_1']")
+	//@FindBy(xpath = ".//label[@for='MainContent_Question49510_cbMultiSelect_1']")
+	@FindBy(xpath = ".//*[contains(@id,'cbMultiSelect_1') and contains(@type,'checkbox')]")
 	private WebElement oMultiSelectOptionTwo;
 
 	public ReturnElement getMultiSelectOptionTwo() {
@@ -55,7 +59,8 @@ public class SocialEventFormDataEntryRepository {
 
 	}
 
-	@FindBy(id = "MainContent_Question49511_dlOptions")
+	//@FindBy(id = "MainContent_Question49511_dlOptions")
+	@FindBy(xpath = ".//*[contains(@id,'dlOptions')]")
 	private WebElement oDropDownQuestion;
 
 	public ReturnElement getDropDownQuestion() {
@@ -63,7 +68,8 @@ public class SocialEventFormDataEntryRepository {
 
 	}
 
-	@FindBy(id = "MainContent_Question49512_txtAnswer")
+	//@FindBy(id = "MainContent_Question49512_txtAnswer")
+	@FindBy(xpath = ".//*[contains(@id,'_txtAnswer') and contains(@class,'phonemask')]")
 	private WebElement oPhoneQuestion;
 
 	public ReturnElement getPhoneQuestion() {
@@ -71,7 +77,8 @@ public class SocialEventFormDataEntryRepository {
 
 	}
 
-	@FindBy(id = "MainContent_Question49513_txtDate")
+	//@FindBy(id = "MainContent_Question49513_txtDate")
+	@FindBy(xpath = ".//*[contains(@id,'_txtDate')]")
 	private WebElement oDateQuestion;
 
 	public ReturnElement getDateQuestion() {
@@ -79,7 +86,8 @@ public class SocialEventFormDataEntryRepository {
 
 	}
 
-	@FindBy(id = "MainContent_Question49514_txtAnswer")
+	//@FindBy(id = "MainContent_Question49514_txtAnswer")
+	@FindBy(xpath = ".//input[@class='frm_inputtext frm_medium']")
 	private WebElement oEmailQuestion;
 
 	public ReturnElement getEmailQuestion() {
@@ -87,7 +95,8 @@ public class SocialEventFormDataEntryRepository {
 
 	}
 
-	@FindBy(id = "MainContent_Question49515_txtFirstName")
+	//@FindBy(id = "MainContent_Question49515_txtFirstName")
+	@FindBy(xpath = ".//*[contains(@id,'_txtFirstName') and contains(@type,'text')]")
 	private WebElement oFirstNameQuestion;
 
 	public ReturnElement getFirstNameQuestion() {
@@ -95,12 +104,86 @@ public class SocialEventFormDataEntryRepository {
 
 	}
 
-	@FindBy(id = "MainContent_Question49515_txtLastName")
+	//@FindBy(id = "MainContent_Question49515_txtLastName")
+	@FindBy(xpath = ".//*[contains(@id,'_txtLastName') and contains(@type,'text')]")
 	private WebElement oLastNameQuestion;
 
 	public ReturnElement getLastNameQuestion() {
 		return new ReturnElement(oLastNameQuestion, Thread.currentThread().getStackTrace()[1].getMethodName());
 
 	}
+
+	@FindBy(xpath = ".//*[contains(@id,'_txtMailingAddressStreetNumber') and contains(@class,'street')]") 
+
+	private WebElement oStreetNumber;
+
+	public ReturnElement getStreetNumberQuestion() {
+		return new ReturnElement(oStreetNumber, Thread.currentThread().getStackTrace()[1].getMethodName());
+
+	}
+
+	@FindBy(xpath = ".//*[contains(@id,'_txtMailingAddress') and contains(@class,'streetadd')]") 
+
+	private WebElement oMailingAddress;
+
+	public ReturnElement getMailingAddressQuestion() {
+		return new ReturnElement(oMailingAddress, Thread.currentThread().getStackTrace()[1].getMethodName());
+
+	}
+	@FindBy(xpath = ".//*[contains(@id,'_txtMailingStreetType') and contains(@class,'streettype')]") 
+
+	private WebElement oStreetType;
+
+	public ReturnElement getStreetTypeQuestion() {
+		return new ReturnElement(oStreetType, Thread.currentThread().getStackTrace()[1].getMethodName());
+
+	}
+	
+	@FindBy(xpath = ".//*[contains(@id,'_ddlMailingStreetDirection') and contains(@class,'streetdirection')]") 
+
+	private WebElement oStreetDirection;
+
+	public ReturnElement getStreetDirectionQuestion() {
+		return new ReturnElement(oStreetDirection, Thread.currentThread().getStackTrace()[1].getMethodName());
+
+	}
+	
+	@FindBy(xpath = ".//*[contains(@id,'_txtMailingAddressApartment') and contains(@class,'apartment')]") 
+
+	private WebElement oMailingAddressApartment;
+
+	public ReturnElement getMailingAddressApartmentQuestion() {
+		return new ReturnElement(oMailingAddressApartment, Thread.currentThread().getStackTrace()[1].getMethodName());
+
+	}
+
+	@FindBy(xpath = ".//*[contains(@id,'_txtMailingAddressCityTown') and contains(@class,'city')]") 
+
+	private WebElement oCityTown;
+
+	public ReturnElement getCityTownQuestion() {
+		return new ReturnElement(oCityTown, Thread.currentThread().getStackTrace()[1].getMethodName());
+
+	}
+
+	@FindBy(id = "ddlMailingAddressStates") 
+
+	private WebElement oAddressStates;
+
+	public ReturnElement getAddressStatesQuestion() {
+		return new ReturnElement(oAddressStates, Thread.currentThread().getStackTrace()[1].getMethodName());
+
+	}
+
+	@FindBy(xpath = ".//*[contains(@id,'_txtMaillingAddressZippCode') and contains(@class,'zippcode')]") 
+
+	private WebElement oZippCode;
+
+	public ReturnElement getZippCodeQuestion() {
+		return new ReturnElement(oZippCode, Thread.currentThread().getStackTrace()[1].getMethodName());
+
+	}
+
+
 
 }
