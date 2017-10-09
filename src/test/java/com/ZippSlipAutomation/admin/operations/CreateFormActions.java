@@ -202,7 +202,7 @@ public class CreateFormActions {
 		action.doubleClick(formCreationPageRepository.getAddressPickerControlQuesInput().getElement()).build().perform();
 		Thread.sleep(1000);
 		formCreationPageRepository.getQuestionText().getElement().sendKeys("Parent Address");
-		//formCreationPageRepository.getMandatoryCheckBox().getElement().click();
+		formCreationPageRepository.getMandatoryCheckBox().getElement().click();
 		formCreationPageRepository.getPopupSaveButton().getElement().click();
 		Thread.sleep(1000);
 		formCreationPageRepository.getNextButton().getElement().click();
