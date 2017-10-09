@@ -25,9 +25,8 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import com.ZippSlipAutomation.admin.objectRepository.EventPageRepository;
 import com.ZippSlipAutomation.parent.objectRepository.EventConsentFlowRepository;
-import com.ZippSlipAutomation.parent.objectRepository.ProdEventFormDataEntryRepository;
+import com.ZippSlipAutomation.parent.objectRepository.EventFormDataEntryRepository;
 import com.ZippSlipAutomation.parent.objectRepository.ProdEventFormDataVerifyRepository;
-import com.ZippSlipAutomation.parent.objectRepository.SocialEventFormDataEntryRepository;
 import com.ZippSlipAutomation.parent.objectRepository.SocialEventFormDataVerifyRepository;
 
 public class CommonFunctions {
@@ -38,14 +37,11 @@ public class CommonFunctions {
 	EventConsentFlowRepository eventConsentFlowRepository = PageFactory.initElements(DriverInitiation.getDriver(),
 			EventConsentFlowRepository.class);
 
-	SocialEventFormDataEntryRepository socialEventFormDataEntryRepository = PageFactory
-			.initElements(DriverInitiation.getDriver(), SocialEventFormDataEntryRepository.class);
+	EventFormDataEntryRepository EventFormDataEntryRepository = PageFactory
+			.initElements(DriverInitiation.getDriver(), EventFormDataEntryRepository.class);
 
 	SocialEventFormDataVerifyRepository socialEventFormDataVerifyRepository = PageFactory
 			.initElements(DriverInitiation.getDriver(), SocialEventFormDataVerifyRepository.class);
-
-	ProdEventFormDataEntryRepository prodEventFormDataEntryRepository = PageFactory
-			.initElements(DriverInitiation.getDriver(), ProdEventFormDataEntryRepository.class);
 
 	ProdEventFormDataVerifyRepository prodEventFormDataVerifyRepository = PageFactory
 			.initElements(DriverInitiation.getDriver(), ProdEventFormDataVerifyRepository.class);
@@ -100,7 +96,7 @@ public class CommonFunctions {
 
 				if (checkForErrorMessage()) {
 
-					socialEventFormDataEntryRepository.getTextQuestion().getElement()
+					EventFormDataEntryRepository.getTextQuestion().getElement()
 							.sendKeys(excelReadEvent.getTextQuestion());
 					Thread.sleep(1000);
 
@@ -108,27 +104,27 @@ public class CommonFunctions {
 					Thread.sleep(2000);
 					displayErrorMessage();
 
-					socialEventFormDataEntryRepository.getSingleSelectOptionOne().getElement().click();
+					EventFormDataEntryRepository.getSingleSelectOptionOne().getElement().click();
 					Thread.sleep(1000);
 
 					eventConsentFlowRepository.getSaveNNextButton().getElement().click();
 					Thread.sleep(2000);
 					displayErrorMessage();
 
-					socialEventFormDataEntryRepository.getMultiSelectOptionOne().getElement().click();
+					EventFormDataEntryRepository.getMultiSelectOptionOne().getElement().click();
 					Thread.sleep(1000);
 
 					eventConsentFlowRepository.getSaveNNextButton().getElement().click();
 					Thread.sleep(2000);
 					displayErrorMessage();
 
-					selectFromDropDown(socialEventFormDataEntryRepository.getDropDownQuestion().getElement(), 1);
+					selectFromDropDown(EventFormDataEntryRepository.getDropDownQuestion().getElement(), 1);
 
 					eventConsentFlowRepository.getSaveNNextButton().getElement().click();
 					Thread.sleep(2000);
 					displayErrorMessage();
 					
-					socialEventFormDataEntryRepository.getPhoneQuestion().getElement()
+					EventFormDataEntryRepository.getPhoneQuestion().getElement()
 							.sendKeys(excelReadEvent.getPhoneNumber());
 					Thread.sleep(1000);
 
@@ -136,7 +132,7 @@ public class CommonFunctions {
 					Thread.sleep(2000);
 					displayErrorMessage();
 
-					socialEventFormDataEntryRepository.getDateQuestion().getElement()
+					EventFormDataEntryRepository.getDateQuestion().getElement()
 							.sendKeys(excelReadEvent.getDateQuestion());
 					Thread.sleep(1000);
 
@@ -144,7 +140,7 @@ public class CommonFunctions {
 					Thread.sleep(2000);
 					displayErrorMessage();
 
-					socialEventFormDataEntryRepository.getEmailQuestion().getElement()
+					EventFormDataEntryRepository.getEmailQuestion().getElement()
 							.sendKeys(excelReadEvent.getEmailQuestion());
 					Thread.sleep(1000);
 				
@@ -152,11 +148,11 @@ public class CommonFunctions {
 					Thread.sleep(2000);
 					displayErrorMessage();
 
-					socialEventFormDataEntryRepository.getFirstNameQuestion().getElement()
+					EventFormDataEntryRepository.getFirstNameQuestion().getElement()
 							.sendKeys(excelReadEvent.getFirstNameQuestion());
 					Thread.sleep(1000);
 
-					socialEventFormDataEntryRepository.getLastNameQuestion().getElement()
+					EventFormDataEntryRepository.getLastNameQuestion().getElement()
 							.sendKeys(excelReadEvent.getLastNameQuestion());
 					Thread.sleep(1000);
 					
@@ -164,33 +160,33 @@ public class CommonFunctions {
 					Thread.sleep(2000);
 					displayErrorMessage();
 					
-					socialEventFormDataEntryRepository.getStreetNumberQuestion().getElement()
+					EventFormDataEntryRepository.getStreetNumberQuestion().getElement()
 					.sendKeys(excelReadEvent.getStreetNumberQuestion());
 					Thread.sleep(1000);
 					
-					socialEventFormDataEntryRepository.getMailingAddressQuestion().getElement()
+					EventFormDataEntryRepository.getMailingAddressQuestion().getElement()
 							.sendKeys(excelReadEvent.getMailingAddressQuestion());
 					Thread.sleep(1000);
 					
-					socialEventFormDataEntryRepository.getStreetTypeQuestion().getElement()
+					EventFormDataEntryRepository.getStreetTypeQuestion().getElement()
 							.sendKeys(excelReadEvent.getStreetTypeQuestion());
 					Thread.sleep(2000);
 					
-					selectFromDropDown(socialEventFormDataEntryRepository.getStreetDirectionQuestion().getElement(), 4);
+					selectFromDropDown(EventFormDataEntryRepository.getStreetDirectionQuestion().getElement(), 4);
 					Thread.sleep(1000);
 					
-					socialEventFormDataEntryRepository.getMailingAddressApartmentQuestion().getElement()
+					EventFormDataEntryRepository.getMailingAddressApartmentQuestion().getElement()
 							.sendKeys(excelReadEvent.getMailingAddressApartmentQuestion());
 					Thread.sleep(1000);
 					
-					socialEventFormDataEntryRepository.getCityTownQuestion().getElement()
+					EventFormDataEntryRepository.getCityTownQuestion().getElement()
 							.sendKeys(excelReadEvent.getCityTownQuestion());
 					Thread.sleep(1000);
 		
-					selectFromDropDown(socialEventFormDataEntryRepository.getAddressStatesQuestion().getElement(), 8);
+					selectFromDropDown(EventFormDataEntryRepository.getAddressStatesQuestion().getElement(), 8);
 					Thread.sleep(1000);
 					
-					socialEventFormDataEntryRepository.getZippCodeQuestion().getElement()
+					EventFormDataEntryRepository.getZippCodeQuestion().getElement()
 							.sendKeys(excelReadEvent.getZippCodeQuestion());
 					Thread.sleep(1000);
 				}
@@ -233,7 +229,7 @@ public class CommonFunctions {
 
 				if (checkForErrorMessage()) {
 
-					prodEventFormDataEntryRepository.getTextQuestion().getElement()
+					EventFormDataEntryRepository.getTextQuestion().getElement()
 							.sendKeys(excelReadEvent.getTextQuestion());
 					Thread.sleep(1000);
 
@@ -241,27 +237,27 @@ public class CommonFunctions {
 					Thread.sleep(2000);
 					displayErrorMessage();
 
-					prodEventFormDataEntryRepository.getSingleSelectOptionOne().getElement().click();
+					EventFormDataEntryRepository.getSingleSelectOptionOne().getElement().click();
 					Thread.sleep(1000);
 
 					eventConsentFlowRepository.getSaveNNextButton().getElement().click();
 					Thread.sleep(2000);
 					displayErrorMessage();
 
-					prodEventFormDataEntryRepository.getMultiSelectOptionOne().getElement().click();
+					EventFormDataEntryRepository.getMultiSelectOptionOne().getElement().click();
 					Thread.sleep(1000);
 
 					eventConsentFlowRepository.getSaveNNextButton().getElement().click();
 					Thread.sleep(2000);
 					displayErrorMessage();
 
-					selectFromDropDown(prodEventFormDataEntryRepository.getDropDownQuestion().getElement(), 1);
+					selectFromDropDown(EventFormDataEntryRepository.getDropDownQuestion().getElement(), 1);
 
 					eventConsentFlowRepository.getSaveNNextButton().getElement().click();
 					Thread.sleep(2000);
 					displayErrorMessage();
 					
-					prodEventFormDataEntryRepository.getPhoneQuestion().getElement()
+					EventFormDataEntryRepository.getPhoneQuestion().getElement()
 							.sendKeys(excelReadEvent.getPhoneNumber());
 					Thread.sleep(1000);
 
@@ -269,7 +265,7 @@ public class CommonFunctions {
 					Thread.sleep(2000);
 					displayErrorMessage();
 
-					prodEventFormDataEntryRepository.getDateQuestion().getElement()
+					EventFormDataEntryRepository.getDateQuestion().getElement()
 							.sendKeys(excelReadEvent.getDateQuestion());
 					Thread.sleep(1000);
 
@@ -277,7 +273,7 @@ public class CommonFunctions {
 					Thread.sleep(2000);
 					displayErrorMessage();
 
-					prodEventFormDataEntryRepository.getEmailQuestion().getElement()
+					EventFormDataEntryRepository.getEmailQuestion().getElement()
 							.sendKeys(excelReadEvent.getEmailQuestion());
 					Thread.sleep(1000);
 
@@ -285,11 +281,11 @@ public class CommonFunctions {
 					Thread.sleep(2000);
 					displayErrorMessage();
 
-					prodEventFormDataEntryRepository.getFirstNameQuestion().getElement()
+					EventFormDataEntryRepository.getFirstNameQuestion().getElement()
 							.sendKeys(excelReadEvent.getFirstNameQuestion());
 					Thread.sleep(1000);
 
-					prodEventFormDataEntryRepository.getLastNameQuestion().getElement()
+					EventFormDataEntryRepository.getLastNameQuestion().getElement()
 							.sendKeys(excelReadEvent.getLastNameQuestion());
 					Thread.sleep(1000);
 					
@@ -297,33 +293,33 @@ public class CommonFunctions {
 					Thread.sleep(2000);
 					displayErrorMessage();
 					
-					prodEventFormDataEntryRepository.getStreetNumberQuestion().getElement()
+					EventFormDataEntryRepository.getStreetNumberQuestion().getElement()
 					.sendKeys(excelReadEvent.getStreetNumberQuestion());
 					Thread.sleep(1000);
 					
-					prodEventFormDataEntryRepository.getMailingAddressQuestion().getElement()
+					EventFormDataEntryRepository.getMailingAddressQuestion().getElement()
 							.sendKeys(excelReadEvent.getMailingAddressQuestion());
 					Thread.sleep(1000);
 					
-					prodEventFormDataEntryRepository.getStreetTypeQuestion().getElement()
+					EventFormDataEntryRepository.getStreetTypeQuestion().getElement()
 							.sendKeys(excelReadEvent.getStreetTypeQuestion());
 					Thread.sleep(2000);
 					
-					selectFromDropDown(prodEventFormDataEntryRepository.getStreetDirectionQuestion().getElement(), 4);
+					selectFromDropDown(EventFormDataEntryRepository.getStreetDirectionQuestion().getElement(), 4);
 					Thread.sleep(1000);
 					
-					prodEventFormDataEntryRepository.getMailingAddressApartmentQuestion().getElement()
+					EventFormDataEntryRepository.getMailingAddressApartmentQuestion().getElement()
 							.sendKeys(excelReadEvent.getMailingAddressApartmentQuestion());
 					Thread.sleep(1000);
 					
-					prodEventFormDataEntryRepository.getCityTownQuestion().getElement()
+					EventFormDataEntryRepository.getCityTownQuestion().getElement()
 							.sendKeys(excelReadEvent.getCityTownQuestion());
 					Thread.sleep(1000);
 		
-					selectFromDropDown(prodEventFormDataEntryRepository.getAddressStatesQuestion().getElement(), 8);
+					selectFromDropDown(EventFormDataEntryRepository.getAddressStatesQuestion().getElement(), 8);
 					Thread.sleep(1000);
 					
-					prodEventFormDataEntryRepository.getZippCodeQuestion().getElement()
+					EventFormDataEntryRepository.getZippCodeQuestion().getElement()
 							.sendKeys(excelReadEvent.getZippCodeQuestion());
 					Thread.sleep(1000);
 					
@@ -424,35 +420,35 @@ public class CommonFunctions {
 
 				if (checkForErrorMessage()) {
 
-					socialEventFormDataEntryRepository.getTextQuestion().getElement()
+					EventFormDataEntryRepository.getTextQuestion().getElement()
 							.sendKeys(childname);
 					Thread.sleep(1000);
 
-					socialEventFormDataEntryRepository.getSingleSelectOptionOne().getElement().click();
+					EventFormDataEntryRepository.getSingleSelectOptionOne().getElement().click();
 					Thread.sleep(1000);
 
-					socialEventFormDataEntryRepository.getMultiSelectOptionOne().getElement().click();
+					EventFormDataEntryRepository.getMultiSelectOptionOne().getElement().click();
 					Thread.sleep(1000);
 
-					selectFromDropDown(socialEventFormDataEntryRepository.getDropDownQuestion().getElement(), 1);
+					selectFromDropDown(EventFormDataEntryRepository.getDropDownQuestion().getElement(), 1);
 
-					socialEventFormDataEntryRepository.getPhoneQuestion().getElement()
+					EventFormDataEntryRepository.getPhoneQuestion().getElement()
 							.sendKeys(excelReadEvent.getPhoneNumber());
 					Thread.sleep(1000);
 
-					socialEventFormDataEntryRepository.getDateQuestion().getElement()
+					EventFormDataEntryRepository.getDateQuestion().getElement()
 							.sendKeys(excelReadEvent.getDateQuestion());
 					Thread.sleep(1000);
 
-					socialEventFormDataEntryRepository.getEmailQuestion().getElement()
+					EventFormDataEntryRepository.getEmailQuestion().getElement()
 							.sendKeys(excelReadEvent.getEmailQuestion());
 					Thread.sleep(1000);
 
-					socialEventFormDataEntryRepository.getFirstNameQuestion().getElement()
+					EventFormDataEntryRepository.getFirstNameQuestion().getElement()
 							.sendKeys(childname);
 					Thread.sleep(1000);
 
-					socialEventFormDataEntryRepository.getLastNameQuestion().getElement()
+					EventFormDataEntryRepository.getLastNameQuestion().getElement()
 							.sendKeys(excelReadEvent.getLastNameQuestion());
 					Thread.sleep(1000);
 
@@ -496,36 +492,36 @@ public class CommonFunctions {
 
 				if (checkForErrorMessage()) {
 
-					prodEventFormDataEntryRepository.getTextQuestion().getElement()
+					EventFormDataEntryRepository.getTextQuestion().getElement()
 							.sendKeys(childname);
 					Thread.sleep(1000);
 
-					prodEventFormDataEntryRepository.getSingleSelectOptionOne().getElement().click();
+					EventFormDataEntryRepository.getSingleSelectOptionOne().getElement().click();
 					Thread.sleep(1000);
 
-					prodEventFormDataEntryRepository.getMultiSelectOptionOne().getElement().click();
+					EventFormDataEntryRepository.getMultiSelectOptionOne().getElement().click();
 					Thread.sleep(1000);
 
-					selectFromDropDown(prodEventFormDataEntryRepository.getDropDownQuestion().getElement(), 1);
+					selectFromDropDown(EventFormDataEntryRepository.getDropDownQuestion().getElement(), 1);
 
-					prodEventFormDataEntryRepository.getPhoneQuestion().getElement()
+					EventFormDataEntryRepository.getPhoneQuestion().getElement()
 							.sendKeys(excelReadEvent.getPhoneNumber());
 					Thread.sleep(1000);
 
-					prodEventFormDataEntryRepository.getDateQuestion().getElement()
+					EventFormDataEntryRepository.getDateQuestion().getElement()
 							.sendKeys(excelReadEvent.getDateQuestion());
 					Thread.sleep(1000);
 
 
-					prodEventFormDataEntryRepository.getEmailQuestion().getElement()
+					EventFormDataEntryRepository.getEmailQuestion().getElement()
 							.sendKeys(excelReadEvent.getEmailQuestion());
 					Thread.sleep(1000);
 
-					prodEventFormDataEntryRepository.getFirstNameQuestion().getElement()
+					EventFormDataEntryRepository.getFirstNameQuestion().getElement()
 							.sendKeys(childname);
 					Thread.sleep(1000);
 
-					prodEventFormDataEntryRepository.getLastNameQuestion().getElement()
+					EventFormDataEntryRepository.getLastNameQuestion().getElement()
 							.sendKeys(excelReadEvent.getLastNameQuestion());
 					Thread.sleep(1000);
 
@@ -819,7 +815,7 @@ public class CommonFunctions {
 		boolean error;
 		try {
 			System.out.println("Error message displayed is: "
-					+ socialEventFormDataEntryRepository.getErrorMessage().getElement().getText());
+					+ EventFormDataEntryRepository.getErrorMessage().getElement().getText());
 			error = true;
 			return error;
 		} catch (Exception e) {
@@ -834,7 +830,7 @@ public class CommonFunctions {
 
 		try {
 			System.out.println("Error message displayed is: "
-					+ socialEventFormDataEntryRepository.getErrorMessage().getElement().getText());
+					+ EventFormDataEntryRepository.getErrorMessage().getElement().getText());
 		} catch (Exception e) {
 			System.err.println("Error message not displayed");
 

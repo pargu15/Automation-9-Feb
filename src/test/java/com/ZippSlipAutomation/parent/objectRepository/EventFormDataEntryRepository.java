@@ -5,7 +5,7 @@ import org.openqa.selenium.support.FindBy;
 
 import com.ZippSlipAutomation.utilities.ReturnElement;
 
-public class SocialEventFormDataEntryRepository {
+public class EventFormDataEntryRepository {
 
 	@FindBy(xpath = "//*[contains(@id,'_lblQuestionText')]")
 	private WebElement oQuestionsPresent;
