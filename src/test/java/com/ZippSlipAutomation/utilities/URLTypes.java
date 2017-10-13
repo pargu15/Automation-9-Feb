@@ -4,6 +4,8 @@ public enum URLTypes {
 
 	socialenglishadmin,
 	socialfrenchadmin,
+	socialenglishdistrictadmin,
+	prodenglishdistrictadmin,
 	prodenglishadmin,
 	prodfrenchadmin,
 	
