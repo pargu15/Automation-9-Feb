@@ -79,7 +79,7 @@ public class CommunicationPageRepository {
 
 	}
 	
-	@FindBy(id = "a_120")
+	@FindBy(id = "a_11764")
 	private WebElement oSocialAllStudentsGroupButton;
 
 	public ReturnElement getSocialAllStudentsGroupButton() {
