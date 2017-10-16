@@ -35,6 +35,9 @@ public class LoginPage {
 			case prodenglishparent:
 				loginForProdEnglishParent();
 				break;
+			case socialenglishdistrictadmin:
+				loginForSocialEnglishDistrictAdmin();
+				break;
 			default:
 				System.err.println("Login URL is invalid");
 				break;
@@ -142,6 +145,19 @@ public class LoginPage {
 		loginRepository.getUserName().getElement().sendKeys(commonFunctions.readExcel("NewLoginTest", "ProdParentUserName"));
 		Thread.sleep(1000);
 		loginRepository.getPassword().getElement().sendKeys(commonFunctions.readExcel("NewLoginTest", "ProdParentPassword"));
+		Thread.sleep(1000);
+		loginRepository.getSubmitButton().getElement().click();
+
+	}
+	
+	private void loginForSocialEnglishDistrictAdmin() throws Exception {
+
+		CommonFunctions commonFunctions = new CommonFunctions();
+		LoginRepository loginRepository = PageFactory.initElements(DriverInitiation.getDriver(), LoginRepository.class);
+		commonFunctions.waitUntilElementDisplayed(loginRepository.getUserName().getElement());
+		loginRepository.getUserName().getElement().sendKeys(commonFunctions.readExcel("NewLoginTest", "SocialDistrictAdminUserName"));
+		Thread.sleep(1000);
+		loginRepository.getPassword().getElement().sendKeys(commonFunctions.readExcel("NewLoginTest", "SocialDistrictAdminPassword"));
 		Thread.sleep(1000);
 		loginRepository.getSubmitButton().getElement().click();
 
