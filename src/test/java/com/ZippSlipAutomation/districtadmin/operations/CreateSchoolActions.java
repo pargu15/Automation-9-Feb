@@ -37,39 +37,6 @@ public class CreateSchoolActions {
 		Thread.sleep(2000);
 	}
 
-
-	public void addSchoolDetails() throws InterruptedException {
-		
-		//excelReadEvent.readFromExcel(10, CommonVariables.rownumber);
-		createSchoolPageRepository.getSavebtn().getElement().click();
-		Thread.sleep(2000);
-		commonFunctions.verifyElementIsPresent(createSchoolPageRepository.getErrorMessageForSchoolName());
-		
-		createSchoolPageRepository.getSavebtn().getElement().click();
-		commonFunctions.verifyElementIsPresent(createSchoolPageRepository.getErrorMessageForInstitutionkey());
-		
-		createSchoolPageRepository.getSavebtn().getElement().click();
-		commonFunctions.verifyElementIsPresent(createSchoolPageRepository.getErrorMessageForSchoolID());
-		
-		createSchoolPageRepository.getSavebtn().getElement().click();
-		commonFunctions.verifyElementIsPresent(createSchoolPageRepository.getErrorMessageForGrade());
-		
-		createSchoolPageRepository.getSavebtn().getElement().click();
-		commonFunctions.verifyElementIsPresent(createSchoolPageRepository.getErrorMessageForSchoolURL());
-		
-		createSchoolPageRepository.getSavebtn().getElement().click();
-		commonFunctions.verifyElementIsPresent(createSchoolPageRepository.getErrorMessageForSchoolAdminName());
-		
-		createSchoolPageRepository.getSavebtn().getElement().click();
-		commonFunctions.verifyElementIsPresent(createSchoolPageRepository.getErrorMessageForAdminEmail());
-		
-		createSchoolPageRepository.getSavebtn().getElement().click();
-		commonFunctions.verifyElementIsPresent(createSchoolPageRepository.getErrorMessageForAdminPassword());
-		
-		
-		createSchoolPageRepository.getSavebtn().getElement().click();
-	
-	}
 	
 
 

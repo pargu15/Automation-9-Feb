@@ -10,6 +10,7 @@ import org.testng.annotations.Test;
 import com.ZippSlipAutomation.admin.objectRepository.LoginRepository;
 import com.ZippSlipAutomation.admin.operations.CreateFormActions;
 import com.ZippSlipAutomation.admin.operations.LoginPage;
+import com.ZippSlipAutomation.districtadmin.operations.AddNewSchoolInfoFlow;
 import com.ZippSlipAutomation.districtadmin.operations.CreateSchoolActions;
 import com.ZippSlipAutomation.parentsignup.operations.EnrolledStudentInfoFlow;
 import com.ZippSlipAutomation.utilities.CommonFunctions;
@@ -46,7 +47,25 @@ public class CreateSchoolMainClass {
 			System.out.println("Social English URL is running");
 		}
 		
+		/*
 		
+			// Setting the row number for which the parent will be signed up
+			String FilePath = System.getProperty("user.dir") + "//src//resource//TestDataSheet.xls";
+			FileInputStream fs = new FileInputStream(FilePath);
+			Workbook wb = Workbook.getWorkbook(fs);
+			Sheet sh = wb.getSheet(10);
+			int totalNoOfRows = sh.getRows();
+
+			ExcelReadEvent excelReadEvent = new ExcelReadEvent();
+			for (int x = 0; x < totalNoOfRows; x++) {
+				excelReadEvent.readFromExcel(10, x);
+				if (excelReadEvent.getDataStatus().contains("DataNotUsed")) {
+					CommonVariables.rownumber = x;
+					System.out.println("");
+					break;
+				}
+			}
+		*/
 		loginPage.logIntoApp();
 		
 
@@ -62,17 +81,13 @@ public class CreateSchoolMainClass {
 
 	}
 	
-	/*
-	@Test(priority = 2)
-	public void addSchoolDetails() throws Exception {
-		 
-		CreateSchoolActions createSchoolActions = new CreateSchoolActions();
-		CreateSchoolActions.addSchoolDetails();
-
-	}
-	*/
 	
-
+	@Test(priority = 2)
+	public void addSchoolDetailsFunctionality() throws Exception {
+		AddNewSchoolInfoFlow addNewSchoolInfoFlow = new AddNewSchoolInfoFlow();
+		addNewSchoolInfoFlow.addNewSchoolData(10);
+		
+	}
 	
 	@AfterClass
 	public static void driverExit() throws IOException, InterruptedException {

@@ -55,6 +55,14 @@ public class ExcelReadEvent {
 	private String ElectronicPin;
 	private String ConfirmElectronicPin;
 	private String DataStatus;
+	private String SchoolName;
+	private String SchoolKey;
+	private String SchoolID;
+	private String SchoolURL;
+	private String FirstName;
+	private String LastName;
+	private String AdminEmail;
+	private String AdminPassword;
 	
 	public String getDataStatus() {
 		return DataStatus;
@@ -443,6 +451,80 @@ public class ExcelReadEvent {
 	public void setEventConsentResponse(String eventConsentResponse) {
 		EventConsentResponse = eventConsentResponse;
 	}
+	
+	
+	public String getSchoolName() {
+		return  SchoolName;
+	}
+
+	public void setSchoolName(String schoolName) {
+		SchoolName = schoolName;
+	}
+	
+	
+	public String getSchoolKey() {
+		return  SchoolKey;
+	}
+
+	public void setSchoolKey(String schoolKey) {
+		SchoolKey = schoolKey;
+	}
+	
+	public String getSchoolID() {
+		return  SchoolID;
+	}
+
+	public void setSchoolID(String schoolID) {
+		SchoolID = schoolID;
+	}
+	
+	public String getSchoolURL() {
+		return  SchoolURL;
+	}
+
+	public void setSchoolURL(String schoolURL) {
+		SchoolURL = schoolURL;
+	}
+	
+	
+	public String getAdminFirstName() {
+		return  FirstName;
+	}
+
+	public void setAdminFirstName(String firstName) {
+		FirstName = firstName;
+	}
+	
+	public String getAdminlastName() {
+		return  LastName;
+	}
+
+	public void setAdminlastName(String lastName) {
+		LastName = lastName;
+	}
+	
+	
+
+	public String getAdminEmail() {
+		return  AdminEmail;
+	}
+
+	public void setAdminEmail(String adminEmail) {
+		AdminEmail = adminEmail;
+	}
+	
+	public String getAdminPassword() {
+		return  AdminPassword;
+	}
+
+	public void setAdminPassword(String adminPassword) {
+		AdminPassword = adminPassword;
+	}
+	
+	
+
+	
+	
 
 	public boolean readFromExcel(int sheet, int row) throws Exception {
 
@@ -564,8 +646,15 @@ public class ExcelReadEvent {
 			break;	
 			
 		case 10:
-			setNewFormName(singlerow[0]);
-			setFormDescription(singlerow[1]);
+			setSchoolName(singlerow[0]);
+			setSchoolKey(singlerow[1]);
+			setSchoolID(singlerow[2]);
+			setSchoolURL(singlerow[3]);
+			setAdminFirstName(singlerow[4]);
+			setAdminlastName(singlerow[5]);
+			setAdminEmail(singlerow[6]);
+			setAdminPassword(singlerow[7]);
+			setDataStatus(singlerow[8]);
 			break;	
 		default:
 			break;

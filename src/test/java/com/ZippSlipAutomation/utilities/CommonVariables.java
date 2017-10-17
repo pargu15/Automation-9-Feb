@@ -5,5 +5,6 @@ public class CommonVariables {
 	public static URLTypes recipient;
 	public static int rownumber;
 	public static int enrolledrownumber;
+	public static int schoolrownumber;
 
 }
