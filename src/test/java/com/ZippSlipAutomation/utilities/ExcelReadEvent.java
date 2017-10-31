@@ -521,11 +521,6 @@ public class ExcelReadEvent {
 		AdminPassword = adminPassword;
 	}
 	
-	
-
-	
-	
-
 	public boolean readFromExcel(int sheet, int row) throws Exception {
 
 		boolean noFound = false;
@@ -663,5 +658,70 @@ public class ExcelReadEvent {
 		return noFound;
 
 	}
+
+	
+	
+	//Overloaded Function
+	public boolean readFromExcel(int sheet, int row, String excel) throws Exception {
+
+		boolean noFound = false;
+		String FilePath = System.getProperty("user.dir") + "//src//resource//TestDataForPastFutureAbsences.xls";
+		
+		FileInputStream fs = new FileInputStream(FilePath);
+		Workbook wb = Workbook.getWorkbook(fs);
+
+		// TO get the access to the sheet
+		Sheet sh = wb.getSheet(sheet);
+
+		// To get the number of rows present in sheet
+		// int totalNoOfRows = sh.getRows();
+
+		// To get the number of columns present in sheet
+		int totalNoOfCols = sh.getColumns();
+
+		String[] singlerow = new String[totalNoOfCols];
+
+		// for (int row = a; row < totalNoOfRows; row++) {
+
+		String strcellvalue = null;
+		for (int col = 0; col < totalNoOfCols; col++) {
+			strcellvalue = sh.getCell(col, row).getContents().toString();
+			singlerow[col] = strcellvalue;
+
+		}
+		
+		if(singlerow[2].contains("abc")){
+			noFound=true;
+		}
+		
+		if(singlerow[2].contains("no")){
+			noFound=true;
+		}
+
+		switch (sheet) {
+		case 0:
+			
+			setPhoneNumber(singlerow[0]);
+			setDateQuestion(singlerow[1]);
+			setEmailQuestion(singlerow[2]);
+			setFirstNameQuestion(singlerow[3]);
+			setLastNameQuestion(singlerow[4]);	
+			setMailingAddressQuestion(singlerow[5]);
+			setCityTownQuestion(singlerow[6]);
+			setZippCodeQuestion(singlerow[7]);
+			setElectronicPin(singlerow[8]);
+			break;
+			
+
+		
+		default:
+			break;
+
+		}
+		return noFound;
+
+	}
+	
+
 
 }

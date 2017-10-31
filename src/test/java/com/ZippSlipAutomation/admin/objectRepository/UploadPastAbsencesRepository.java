@@ -51,6 +51,20 @@ public class UploadPastAbsencesRepository {
 
 	}
 
+	@FindBy(xpath = ".//input[contains(@id,'_MainContent_fileUploadControl')]")
+	private WebElement ouploadfileBtn;
+
+	public ReturnElement getuploadfileBtn() {
+		return new ReturnElement(ouploadfileBtn, Thread.currentThread().getStackTrace()[1].getMethodName());
+
+	}
 	
+	@FindBy(id = "popupImportButton")
+	private WebElement oPopupImportBtn;
+
+	public ReturnElement getPopupImportBtn() {
+		return new ReturnElement(oPopupImportBtn, Thread.currentThread().getStackTrace()[1].getMethodName());
+
+	}
 	
-}
+	}

@@ -21,9 +21,11 @@ public class UploadPastAbsencesActions {
 		uploadPastAbsencesRepository.getTemplateSearch().getElement().sendKeys("Past absences Student");
 		uploadPastAbsencesRepository.getTemplateSearch().getElement().sendKeys(Keys.ENTER);
 		Thread.sleep(2000);
-		//uploadPastAbsencesRepository.getSearchBtn().getElement().click();
 		uploadPastAbsencesRepository.getImportBtn().getElement().click();
+		uploadPastAbsencesRepository.getuploadfileBtn().getElement().click();
 		
+		Thread.sleep(3000);
+		uploadPastAbsencesRepository.getPopupImportBtn().getElement().click();
 		Thread.sleep(3000);
 		
 	}
