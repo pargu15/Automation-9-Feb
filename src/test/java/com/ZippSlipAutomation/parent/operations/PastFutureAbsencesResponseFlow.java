@@ -59,8 +59,6 @@ public class PastFutureAbsencesResponseFlow {
 				.sendKeys(excelReadEvent.getDateQuestion());
 		Thread.sleep(1000);
 		
-		
-		
 		pastFutureAbsencesResponseRepository.getEmailQuestion().getElement()
 				.sendKeys(excelReadEvent.getEmailQuestion());
 		Thread.sleep(1000);

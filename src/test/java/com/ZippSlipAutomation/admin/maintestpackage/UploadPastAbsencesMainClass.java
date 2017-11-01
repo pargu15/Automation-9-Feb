@@ -46,7 +46,7 @@ public class UploadPastAbsencesMainClass {
 	@Test(priority = 1)
 	public void selectActivityType() throws Exception {
 		UploadPastAbsencesActions uploadPastAbsencesActions = new UploadPastAbsencesActions();
-		uploadPastAbsencesActions.selectPastAbsencesTemplate();
+		uploadPastAbsencesActions.uploadPastAbsences();
 
 	}
 

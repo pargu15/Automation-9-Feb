@@ -51,6 +51,13 @@ public class PastFutureAbsencesResponseRepository {
 
 	}
 	
+	@FindBy(id = "ui-datepicker-div")
+	private WebElement oCalendarSelect;
+
+	public ReturnElement getCalendarSelect() {
+		return new ReturnElement(oCalendarSelect, Thread.currentThread().getStackTrace()[1].getMethodName());
+
+	}
 	
 	
 	@FindBy(xpath = ".//input[contains(@class,'addChild')]")

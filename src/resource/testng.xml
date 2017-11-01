@@ -3,8 +3,9 @@
 <suite name="Default suite">
   <test verbose="2" name="Default test">
     <classes>
- 	  <class name="com.ZippSlipAutomation.parent.maintestpackage.PastAbsencesResponseMainClass"/>
+ 	  
       <!-- class name="com.ZippSlipAutomation.admin.maintestpackage.UploadPastAbsencesMainClass"/ -->
+      <class name="com.ZippSlipAutomation.parent.maintestpackage.PastAbsencesResponseMainClass"/>
   	  <!-- class name="com.ZippSlipAutomation.districtadmin.maintestpackage.CreateSchoolMainClass"/ --> 
       <!-- class name="com.ZippSlipAutomation.admin.maintestpackage.EnglishCreateFormMainClass"/ -->
       <!-- class name="com.ZippSlipAutomation.admin.maintestpackage.EnglishCreateActivityMainClass"/ -->
