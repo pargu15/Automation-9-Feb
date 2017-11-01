@@ -13,7 +13,7 @@ public class UploadPastAbsencesActions {
 	UploadPastAbsencesRepository uploadPastAbsencesRepository = PageFactory.initElements(DriverInitiation.getDriver(),UploadPastAbsencesRepository.class);
 	ExcelReadEvent excelReadEvent = new ExcelReadEvent();
 	
-	public void selectPastAbsencesTemplate() throws Exception {
+	public void uploadPastAbsences() throws Exception {
 		
 		Thread.sleep(2000);
 		commonFunctions.hoverOverElement(uploadPastAbsencesRepository.getAdministrationLink().getElement());
@@ -23,11 +23,14 @@ public class UploadPastAbsencesActions {
 		Thread.sleep(2000);
 		uploadPastAbsencesRepository.getImportBtn().getElement().click();
 		uploadPastAbsencesRepository.getuploadfileBtn().getElement().click();
-		
-		Thread.sleep(3000);
+		String Filepath = System.getProperty("user.dir") + "\\src\\resource\\Student Absences.xlsx";
+		System.out.println(Filepath);
+		CommonFunctions.uploadFile(Filepath);
+		Thread.sleep(2000);
 		uploadPastAbsencesRepository.getPopupImportBtn().getElement().click();
-		Thread.sleep(3000);
+		Thread.sleep(5000);
 		
 	}
+	
 
 }
