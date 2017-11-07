@@ -63,4 +63,30 @@ public class ParentImportRepository {
 		return new ReturnElement(oPopupImportBtn, Thread.currentThread().getStackTrace()[1].getMethodName());
 
 	}
+	
+	@FindBy(xpath = ".//span[contains(.,' Refresh Logs')]")
+	private WebElement oRefreshLogsBtn;
+
+	public ReturnElement getRefreshLogsBtn() {
+		return new ReturnElement(oRefreshLogsBtn, Thread.currentThread().getStackTrace()[1].getMethodName());
+
+	}
+	
+	@FindBy(id = "rptTemplateList_lbDelete_0")
+	private WebElement oDeleteTemplate;
+
+	public ReturnElement getDeleteTemplate() {
+		return new ReturnElement(oDeleteTemplate, Thread.currentThread().getStackTrace()[1].getMethodName());
+
+	}
+
+	@FindBy(id = "MainContent_btnOk")
+	private WebElement oDeleteTemplateConfirmation;
+
+	public ReturnElement getDeleteTemplateConfirmation() {
+		return new ReturnElement(oDeleteTemplateConfirmation, Thread.currentThread().getStackTrace()[1].getMethodName());
+
+	}
+
+	
 }
