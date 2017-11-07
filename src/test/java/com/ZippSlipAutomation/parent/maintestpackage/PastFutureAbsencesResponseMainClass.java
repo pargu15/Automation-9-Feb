@@ -14,7 +14,7 @@ import com.ZippSlipAutomation.utilities.CommonVariables;
 import com.ZippSlipAutomation.utilities.DriverInitiation;
 import com.ZippSlipAutomation.utilities.URLTypes;
 
-public class PastAbsencesResponseMainClass {
+public class PastFutureAbsencesResponseMainClass {
 	@BeforeClass
 	public static void driverInitiate() throws Exception {
 
