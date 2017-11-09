@@ -12,6 +12,7 @@ import com.ZippSlipAutomation.utilities.CommonFunctions;
 import com.ZippSlipAutomation.utilities.CommonVariables;
 import com.ZippSlipAutomation.utilities.DriverInitiation;
 import com.ZippSlipAutomation.utilities.ExcelReadEvent;
+import com.ZippSlipAutomation.utilities.ExcelTypes;
 import com.ZippSlipAutomation.utilities.URLTypes;
 
 public class RegistrationDataVerification {
@@ -27,11 +28,10 @@ public class RegistrationDataVerification {
 
 	public void directToParentProfilePage() throws Exception {
 
-		commonFunctions.waitUntilElementDisplayed(parentProfileRepository.getUserNameButton().getElement());
-		parentProfileRepository.getUserNameButton().getElement().click();
+		commonFunctions.waitUntilElementDisplayed(parentProfileRepository.getProfileButton().getElement());
 		Thread.sleep(2000);
 		parentProfileRepository.getProfileButton().getElement().click();
-
+		Thread.sleep(2000);
 		commonFunctions.switchDriverToNewWindow();
 		commonFunctions.waitUntilElementDisplayed(parentProfileRepository.getMyProfilePageHeader().getElement());
 
@@ -41,11 +41,11 @@ public class RegistrationDataVerification {
 	public void parentDataVerificationFunctionality() throws Exception {
 
 		if (CommonVariables.recipient == URLTypes.socialenglishparentsignup) {
-			excelReadEvent.readFromExcel(3, CommonVariables.rownumber);
+			excelReadEvent.readFromExcel(3, CommonVariables.rownumber, ExcelTypes.Excel1);
 		}
 
 		else if (CommonVariables.recipient == URLTypes.prodenglishparentsignup) {
-			excelReadEvent.readFromExcel(6, CommonVariables.rownumber);
+			excelReadEvent.readFromExcel(6, CommonVariables.rownumber, ExcelTypes.Excel1);
 		}
 
 		Thread.sleep(2000);
@@ -89,11 +89,11 @@ public class RegistrationDataVerification {
 	public void enrolledStudentDataVerificationFunctionality() throws Exception {
 
 		if (CommonVariables.recipient == URLTypes.socialenglishparentsignup) {
-			excelReadEvent.readFromExcel(4, CommonVariables.enrolledrownumber);
+			excelReadEvent.readFromExcel(4, CommonVariables.enrolledrownumber, ExcelTypes.Excel1);
 		}
 
 		else if (CommonVariables.recipient == URLTypes.prodenglishparentsignup) {
-			excelReadEvent.readFromExcel(7, CommonVariables.enrolledrownumber);
+			excelReadEvent.readFromExcel(7, CommonVariables.enrolledrownumber, ExcelTypes.Excel1);
 		}
 
 		if (checkForEnrolledStudentID()) {
@@ -112,7 +112,7 @@ public class RegistrationDataVerification {
 
 	public void newAddedStudentDataVerificationFunctionality() throws Exception {
 
-		excelReadEvent.readFromExcel(5, CommonVariables.rownumber);
+		excelReadEvent.readFromExcel(5, CommonVariables.rownumber, ExcelTypes.Excel1);
 
 		if (checkForNewStudentDOB()) {
 			System.out.println("New Student DOB is correct");

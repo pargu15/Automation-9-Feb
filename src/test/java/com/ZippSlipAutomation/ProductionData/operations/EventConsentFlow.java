@@ -7,6 +7,7 @@ import com.ZippSlipAutomation.utilities.CommonFunctions;
 import com.ZippSlipAutomation.utilities.CommonVariables;
 import com.ZippSlipAutomation.utilities.DriverInitiation;
 import com.ZippSlipAutomation.utilities.ExcelReadEvent;
+import com.ZippSlipAutomation.utilities.ExcelTypes;
 
 public class EventConsentFlow {
 
@@ -18,7 +19,7 @@ public class EventConsentFlow {
 		EventConsentFlowRepository eventConsentFlowRepository = PageFactory.initElements(DriverInitiation.getDriver(),
 				EventConsentFlowRepository.class);
 
-		excelReadEvent.readFromExcel(1, CommonVariables.rownumber);
+		excelReadEvent.readFromExcel(1, CommonVariables.rownumber, ExcelTypes.Excel1);
 
 		commonFunctions.waitUntilElementDisplayed(eventConsentFlowRepository.getViewAllButton().getElement());
 
@@ -30,7 +31,7 @@ public class EventConsentFlow {
 			// Click on the event name from the list
 			commonFunctions.clickOnEvent();
 
-			excelReadEvent.readFromExcel(2, CommonVariables.rownumber);
+			excelReadEvent.readFromExcel(2, CommonVariables.rownumber, ExcelTypes.Excel1);
 
 			if (excelReadEvent.getEventConsentResponse().contains("Yes")) {
 				System.out.println("Response entered from user is Yes");

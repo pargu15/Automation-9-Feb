@@ -9,6 +9,7 @@ import com.ZippSlipAutomation.utilities.CommonFunctions;
 import com.ZippSlipAutomation.utilities.CommonVariables;
 import com.ZippSlipAutomation.utilities.DriverInitiation;
 import com.ZippSlipAutomation.utilities.ExcelReadEvent;
+import com.ZippSlipAutomation.utilities.ExcelTypes;
 import com.ZippSlipAutomation.utilities.URLTypes;
 
 public class ConsentEventVerificationFlow {
@@ -27,7 +28,7 @@ public class ConsentEventVerificationFlow {
 		ProdEventFormDataVerifyRepository prodEventFormDataVerifyRepository = PageFactory
 				.initElements(DriverInitiation.getDriver(), ProdEventFormDataVerifyRepository.class);
 
-		excelReadEvent.readFromExcel(1, CommonVariables.rownumber);
+		excelReadEvent.readFromExcel(1, CommonVariables.rownumber, ExcelTypes.Excel1);
 
 		eventConsentFlowRepository.getViewAllButton().getElement().click();
 		Thread.sleep(10000);
@@ -45,7 +46,7 @@ public class ConsentEventVerificationFlow {
 
 				if (CommonVariables.recipient == URLTypes.socialenglishparent) {
 
-					excelReadEvent.readFromExcel(2, CommonVariables.rownumber);
+					excelReadEvent.readFromExcel(2, CommonVariables.rownumber, ExcelTypes.Excel1);
 
 					if (excelReadEvent.getEventName().contains("Event For Automation With A Form In Which Data Is Blank")) {
 
@@ -76,7 +77,7 @@ public class ConsentEventVerificationFlow {
 
 				} else if (CommonVariables.recipient == URLTypes.prodenglishparent) {
 
-					excelReadEvent.readFromExcel(2, CommonVariables.rownumber);
+					excelReadEvent.readFromExcel(2, CommonVariables.rownumber, ExcelTypes.Excel1);
 
 					if (excelReadEvent.getEventName().contains("Event For Automation With A Form In Which Data Is Blank")) {
 

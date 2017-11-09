@@ -10,6 +10,7 @@ import com.ZippSlipAutomation.utilities.CommonFunctions;
 import com.ZippSlipAutomation.utilities.CommonVariables;
 import com.ZippSlipAutomation.utilities.DriverInitiation;
 import com.ZippSlipAutomation.utilities.ExcelReadEvent;
+import com.ZippSlipAutomation.utilities.ExcelTypes;
 
 import junit.framework.Assert;
 
@@ -32,7 +33,7 @@ public class CreateActivityActions {
 
 	public void verifyEventNameIsMandatory() throws Exception {
 
-		excelReadEvent.readFromExcel(1, CommonVariables.rownumber);
+		excelReadEvent.readFromExcel(1, CommonVariables.rownumber, ExcelTypes.Excel1);
 		eventPageRepository.getNextButton().getElement().click();
 		Thread.sleep(2000);
 		commonFunctions.verifyElementIsPresent(eventPageRepository.getErrorMessageForEventname());
@@ -89,7 +90,7 @@ public class CreateActivityActions {
 	public void verifyCurrentlySelectedForms() throws Exception {
 		eventPageRepository.getSeeAllFormsButton().getElement().click();
 		Thread.sleep(2000);
-		excelReadEvent.readFromExcel(1, CommonVariables.rownumber);
+		excelReadEvent.readFromExcel(1, CommonVariables.rownumber, ExcelTypes.Excel1 );
 		DateTimeFormatter dtf = DateTimeFormatter.ofPattern("dd/MM/yyyy");
 		LocalDate localDate = LocalDate.now();
 		

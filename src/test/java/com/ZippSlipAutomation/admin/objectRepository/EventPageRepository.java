@@ -227,7 +227,7 @@ public class EventPageRepository {
 				Thread.currentThread().getStackTrace()[1].getMethodName());
 	}
 
-	@FindBy(id = "divExternal")
+	@FindBy(id = "rbStudentParentBoth")
 	private WebElement parentStudentButton;
 
 	public ReturnElement getParentStudentButton() {

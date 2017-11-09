@@ -10,6 +10,7 @@ import com.ZippSlipAutomation.utilities.CommonFunctions;
 import com.ZippSlipAutomation.utilities.CommonVariables;
 import com.ZippSlipAutomation.utilities.DriverInitiation;
 import com.ZippSlipAutomation.utilities.ExcelReadEvent;
+import com.ZippSlipAutomation.utilities.ExcelTypes;
 import com.ZippSlipAutomation.utilities.ExcelWrite;
 import jxl.Sheet;
 import jxl.Workbook;
@@ -35,7 +36,7 @@ public class EnrolledStudentInfoFlow {
 		commonFunctions.waitUntilElementDisplayed(parentSignUpFlowRepository.getEnterEnrolledStudentHeader().getElement());
 
 		for (int x = 0; x < totalNoOfRows; x++) {
-			excelReadEvent.readFromExcel(sheet, x);
+			excelReadEvent.readFromExcel(sheet, x, ExcelTypes.Excel1);
 			if (excelReadEvent.getEnrolledStatus().contains("yes")) {
 
 				parentSignUpFlowRepository.getStudentId().getElement().sendKeys(excelReadEvent.getEnrolledStudentID());
@@ -63,7 +64,7 @@ public class EnrolledStudentInfoFlow {
 		}
 
 		for (int x1 = 0; x1 < totalNoOfRows; x1++) {
-			if (excelReadEvent.readFromExcel(sheet, x1)) {
+			if (excelReadEvent.readFromExcel(sheet, x1, ExcelTypes.Excel1)) {
 
 				CommonVariables.enrolledrownumber = x1;
 				parentSignUpFlowRepository.getStudentId().getElement().clear();

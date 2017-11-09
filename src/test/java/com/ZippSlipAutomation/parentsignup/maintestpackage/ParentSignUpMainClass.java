@@ -17,6 +17,7 @@ import com.ZippSlipAutomation.utilities.CommonFunctions;
 import com.ZippSlipAutomation.utilities.CommonVariables;
 import com.ZippSlipAutomation.utilities.DriverInitiation;
 import com.ZippSlipAutomation.utilities.ExcelReadEvent;
+import com.ZippSlipAutomation.utilities.ExcelTypes;
 import com.ZippSlipAutomation.utilities.URLTypes;
 
 import jxl.Sheet;
@@ -57,7 +58,7 @@ public class ParentSignUpMainClass {
 
 			ExcelReadEvent excelReadEvent = new ExcelReadEvent();
 			for (int x = 0; x < totalNoOfRows; x++) {
-				excelReadEvent.readFromExcel(6, x);
+				excelReadEvent.readFromExcel(6, x, ExcelTypes.Excel1);
 				if (excelReadEvent.getDataStatus().contains("DataNotUsed")) {
 					CommonVariables.rownumber = x;
 					break;
@@ -76,7 +77,7 @@ public class ParentSignUpMainClass {
 
 			ExcelReadEvent excelReadEvent = new ExcelReadEvent();
 			for (int x = 0; x < totalNoOfRows; x++) {
-				excelReadEvent.readFromExcel(3, x);
+				excelReadEvent.readFromExcel(3, x, ExcelTypes.Excel1);
 				if (excelReadEvent.getDataStatus().contains("DataNotUsed")) {
 					CommonVariables.rownumber = x;
 					break;

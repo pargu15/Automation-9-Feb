@@ -4,13 +4,14 @@
   <test verbose="2" name="Default test">
     <classes>
  	   
+ 	  <!-- class name="com.ZippSlipAutomation.admin.maintestpackage.UploadPastAbsencesMainClass"/ -->
+      <!-- class name="com.ZippSlipAutomation.parent.maintestpackage.PastFutureAbsencesResponseMainClass"/ -->
  	  <!-- class name="com.ZippSlipAutomation.admin.maintestpackage.CreateZippGramMainClass"/ -->
  	  <!-- class name="com.ZippSlipAutomation.parent.maintestpackage.ZippGramConsentMainClass"/ -->
- 	  
-      <!-- class name="com.ZippSlipAutomation.admin.maintestpackage.UploadPastAbsencesMainClass"/ -->
-      <!-- class name="com.ZippSlipAutomation.parent.maintestpackage.PastFutureAbsencesResponseMainClass"/ -->
+ 	
   	  <!-- class name="com.ZippSlipAutomation.districtadmin.maintestpackage.CreateSchoolMainClass"/ --> 
-      <!-- class name="com.ZippSlipAutomation.admin.maintestpackage.EnglishCreateFormMainClass"/ -->
+      <!-- class name="com.ZippSlipAutomation.admin.maintestpackage.EnglishCreateFormMainClass"/  -->
+      
       <!-- class name="com.ZippSlipAutomation.admin.maintestpackage.EnglishCreateActivityMainClass"/ -->
       <!-- class name="com.ZippSlipAutomation.parentsignup.maintestpackage.ParentSignUpMainClass"/ -->
       <!-- class name="com.ZippSlipAutomation.parent.maintestpackage.EnglishEventConsentMainClass"/ --> 

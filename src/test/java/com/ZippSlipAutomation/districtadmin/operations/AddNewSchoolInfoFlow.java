@@ -12,6 +12,7 @@ import com.ZippSlipAutomation.utilities.CommonFunctions;
 import com.ZippSlipAutomation.utilities.CommonVariables;
 import com.ZippSlipAutomation.utilities.DriverInitiation;
 import com.ZippSlipAutomation.utilities.ExcelReadEvent;
+import com.ZippSlipAutomation.utilities.ExcelTypes;
 import com.ZippSlipAutomation.utilities.ExcelWrite;
 
 import jxl.Sheet;
@@ -38,7 +39,7 @@ public class AddNewSchoolInfoFlow {
 	//	commonFunctions.waitUntilElementDisplayed(parentSignUpFlowRepository.getEnterEnrolledStudentHeader().getElement());
 
 		for (int x = 0; x < totalNoOfRows; x++) {
-			excelReadEvent.readFromExcel(sheet, x);
+			excelReadEvent.readFromExcel(sheet, x, ExcelTypes.Excel1);
 			if (excelReadEvent.getDataStatus().contains("yes")) {
 				
 				commonFunctions.selectFromDropDown(createSchoolPageRepository.getSchoolState().getElement(), 3);
@@ -78,7 +79,7 @@ public class AddNewSchoolInfoFlow {
 		
 
 		for (int x1 = 0; x1 < totalNoOfRows; x1++) {
-			excelReadEvent.readFromExcel(sheet, x1);
+			excelReadEvent.readFromExcel(sheet, x1, ExcelTypes.Excel1);
 			if (excelReadEvent.getDataStatus().contains("no"))  {
 				
 				CommonVariables.schoolrownumber = x1;

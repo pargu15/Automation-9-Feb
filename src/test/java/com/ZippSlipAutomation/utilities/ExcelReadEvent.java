@@ -521,6 +521,7 @@ public class ExcelReadEvent {
 		AdminPassword = adminPassword;
 	}
 	
+	/*
 	public boolean readFromExcel(int sheet, int row) throws Exception {
 
 		boolean noFound = false;
@@ -556,7 +557,9 @@ public class ExcelReadEvent {
 		if(singlerow[2].contains("no")){
 			noFound=true;
 		}
-
+		
+		
+		
 		switch (sheet) {
 		case 0:
 			setLoginid(singlerow[0]);
@@ -658,15 +661,25 @@ public class ExcelReadEvent {
 		return noFound;
 
 	}
-
 	
+	*/
 	
-	//Overloaded Function
-	public boolean readFromExcel(int sheet, int row, String excel) throws Exception {
+	public boolean readFromExcel(int sheet, int row,ExcelTypes excelType) throws Exception {
 
 		boolean noFound = false;
-		String FilePath = System.getProperty("user.dir") + "//src//resource//TestDataForPastFutureAbsences.xls";
-		
+		String FilePath="";
+		if(excelType==ExcelTypes.Excel1) {
+		FilePath = System.getProperty("user.dir") + "//src//resource//TestDataSheet.xls";
+		}
+		else if(excelType==ExcelTypes.Excel2) {
+			FilePath = System.getProperty("user.dir") + "//src//resource//TestDataForPastFutureAbsences.xls";	
+		}
+		else if(excelType==ExcelTypes.Excel3) {
+			FilePath = System.getProperty("user.dir") + "//src//resource//ParentImport.xls";	
+		}
+		else {
+			return false;
+		}
 		FileInputStream fs = new FileInputStream(FilePath);
 		Workbook wb = Workbook.getWorkbook(fs);
 
@@ -698,6 +711,126 @@ public class ExcelReadEvent {
 			noFound=true;
 		}
 
+		if(excelType==ExcelTypes.Excel1) {
+		return excel1Work(sheet, noFound, singlerow);
+		}
+		else if(excelType==ExcelTypes.Excel2) {
+			return excel2Work(sheet, noFound, singlerow);
+			}
+		else if(excelType==ExcelTypes.Excel3) {
+			return excel3Work(sheet, noFound, singlerow);
+			}
+			
+		else {
+			return false;
+		}
+		
+
+	}
+	
+	private boolean excel1Work(int sheet, boolean noFound, String[] singlerow) {
+		switch (sheet) {
+		case 0:
+			setLoginid(singlerow[0]);
+			setPassword(singlerow[1]);
+			break;
+
+		case 1:
+			setEventName(singlerow[0]);
+			setLocation(singlerow[1]);
+			setDescription(singlerow[2]);
+			setDoNotAllowRespondNo(singlerow[3]);
+			setAdvancedSettings(singlerow[4]);
+			setShowFormDifference(singlerow[5]);
+			setSummaryPage(singlerow[6]);
+			setAllForms(singlerow[7]);
+			setPrintInstruction(singlerow[8]);
+			setAllowResponseEdit(singlerow[9]);
+			setDoNotAllowZippNote(singlerow[10]);
+			setRecipientToUploadFiles(singlerow[11]);
+			setSpecifyDocs(singlerow[12]);
+			setGroupName(singlerow[13]);
+			setActivityType(singlerow[14]);
+			setFormName(singlerow[15]);
+			break;
+
+		case 2:
+			setEventConsentResponse(singlerow[0]);
+			setTextQuestion(singlerow[1]);
+			setPhoneNumber(singlerow[2]);
+			setDateQuestion(singlerow[3]);
+			setEmailQuestion(singlerow[4]);
+			setFirstNameQuestion(singlerow[5]);
+			setLastNameQuestion(singlerow[6]);
+			setStreetNumberQuestion(singlerow[7]);
+			setMailingAddressQuestion(singlerow[8]);
+			setStreetTypeQuestion(singlerow[9]);
+			setMailingAddressApartmentQuestion(singlerow[10]);
+			setCityTownQuestion(singlerow[11]);
+			setZippCodeQuestion(singlerow[12]);
+			break;
+			
+		case 3:
+			setParentFirstName(singlerow[0]);
+			setParentLastName(singlerow[1]);
+			setParentEmail(singlerow[2]);
+			setParentPassword(singlerow[3]);
+			setParentConfirmPassword(singlerow[4]);
+			setParentMobileNumber(singlerow[5]);
+			setElectronicPin(singlerow[6]);
+			setConfirmElectronicPin(singlerow[7]);
+			setDataStatus(singlerow[8]);
+			break;
+			
+		case 4:
+			setEnrolledStudentID(singlerow[0]);
+			setEnrolledStudentDOB(singlerow[1]);
+			setEnrolledStatus(singlerow[2]);
+			break;
+			
+		case 5:
+			setNewStudentFirstName(singlerow[0]);
+			setNewStudentLastName(singlerow[1]);
+			setNewStudentDOB(singlerow[2]);
+			break;
+			
+		case 6:
+			setParentFirstName(singlerow[0]);
+			setParentLastName(singlerow[1]);
+			setParentEmail(singlerow[2]);
+			setParentPassword(singlerow[3]);
+			setParentConfirmPassword(singlerow[4]);
+			setParentMobileNumber(singlerow[5]);
+			setElectronicPin(singlerow[6]);
+			setConfirmElectronicPin(singlerow[7]);
+			setDataStatus(singlerow[8]);
+			break;
+			
+		case 7:
+			setEnrolledStudentID(singlerow[0]);
+			setEnrolledStudentDOB(singlerow[1]);
+			setEnrolledStatus(singlerow[2]);
+			break;	
+			
+		case 10:
+			setSchoolName(singlerow[0]);
+			setSchoolKey(singlerow[1]);
+			setSchoolID(singlerow[2]);
+			setSchoolURL(singlerow[3]);
+			setAdminFirstName(singlerow[4]);
+			setAdminlastName(singlerow[5]);
+			setAdminEmail(singlerow[6]);
+			setAdminPassword(singlerow[7]);
+			setDataStatus(singlerow[8]);
+			break;	
+		default:
+			break;
+
+		}
+		return noFound;
+	}
+	
+	private boolean excel2Work(int sheet, boolean noFound, String[] singlerow) {
 		switch (sheet) {
 		case 0:
 			
@@ -711,7 +844,6 @@ public class ExcelReadEvent {
 			setZippCodeQuestion(singlerow[7]);
 			setElectronicPin(singlerow[8]);
 			break;
-			
 
 		
 		default:
@@ -719,7 +851,20 @@ public class ExcelReadEvent {
 
 		}
 		return noFound;
+	}
+	private boolean excel3Work(int sheet, boolean noFound, String[] singlerow) {
+		switch (sheet) {
+		case 0:
+			setLoginid(singlerow[4]);
+			setPassword(singlerow[5]);
+			break;
 
+		
+		default:
+			break;
+
+		}
+		return noFound;
 	}
 	
 

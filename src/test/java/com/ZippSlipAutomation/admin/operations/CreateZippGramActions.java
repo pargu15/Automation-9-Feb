@@ -8,6 +8,7 @@ import com.ZippSlipAutomation.utilities.CommonFunctions;
 import com.ZippSlipAutomation.utilities.CommonVariables;
 import com.ZippSlipAutomation.utilities.DriverInitiation;
 import com.ZippSlipAutomation.utilities.ExcelReadEvent;
+import com.ZippSlipAutomation.utilities.ExcelTypes;
 
 public class CreateZippGramActions {
 	CommonFunctions commonFunctions = new CommonFunctions();
@@ -28,7 +29,7 @@ public class CreateZippGramActions {
 
 	public void verifyZippGramNameIsMandatory() throws Exception {
 
-		excelReadEvent.readFromExcel(1, CommonVariables.rownumber);
+		excelReadEvent.readFromExcel(1, CommonVariables.rownumber, ExcelTypes.Excel1);
 		createZippGramPageRepository.getNextButton().getElement().click();
 		Thread.sleep(2000);
 		commonFunctions.verifyElementIsPresent(createZippGramPageRepository.getErrorMessageForZippGramname());

@@ -23,6 +23,7 @@ import com.ZippSlipAutomation.utilities.CommonFunctions;
 import com.ZippSlipAutomation.utilities.CommonVariables;
 import com.ZippSlipAutomation.utilities.DriverInitiation;
 import com.ZippSlipAutomation.utilities.ExcelReadEvent;
+import com.ZippSlipAutomation.utilities.ExcelTypes;
 import com.ZippSlipAutomation.utilities.URLTypes;
 
 public class EnglishEventConsentMainClass {
@@ -140,7 +141,7 @@ public class EnglishEventConsentMainClass {
 		EventConsentFlowRepository eventConsentFlowRepository = PageFactory.initElements(DriverInitiation.getDriver(),
 				EventConsentFlowRepository.class);
 
-		excelReadEvent.readFromExcel(1, CommonVariables.rownumber);
+		excelReadEvent.readFromExcel(1, CommonVariables.rownumber, ExcelTypes.Excel1);
 		
 		commonFunctions.waitUntilElementDisplayed(eventConsentFlowRepository.getViewAllButton().getElement());
 

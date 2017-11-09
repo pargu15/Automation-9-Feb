@@ -6,6 +6,7 @@ import com.ZippSlipAutomation.utilities.CommonFunctions;
 import com.ZippSlipAutomation.utilities.CommonVariables;
 import com.ZippSlipAutomation.utilities.DriverInitiation;
 import com.ZippSlipAutomation.utilities.ExcelReadEvent;
+import com.ZippSlipAutomation.utilities.ExcelTypes;
 
 public class PastFutureAbsencesResponseFlow {
 
@@ -49,7 +50,7 @@ public class PastFutureAbsencesResponseFlow {
 	
 	public void pastfutureAbsencesResponseFunctionality() throws Exception {
 		ExcelReadEvent excelReadEvent = new ExcelReadEvent();
-		excelReadEvent.readFromExcel(0, 1, "Absences");
+		excelReadEvent.readFromExcel(0, 1, ExcelTypes.Excel2);
 
 		pastFutureAbsencesResponseRepository.getPhoneQuestion().getElement()
 				.sendKeys(excelReadEvent.getPhoneNumber());

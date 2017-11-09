@@ -64,7 +64,7 @@ public class CommonFunctions {
 	public void respondYesForFormEvent() throws Exception {
 
 		ExcelReadEvent excelReadEvent = new ExcelReadEvent();
-		excelReadEvent.readFromExcel(1, CommonVariables.rownumber);
+		excelReadEvent.readFromExcel(1, CommonVariables.rownumber, ExcelTypes.Excel1);
 
 		waitUntilElementDisplayed(eventConsentFlowRepository.getBackButton().getElement());
 		try {
@@ -91,7 +91,7 @@ public class CommonFunctions {
 
 		if (CommonVariables.recipient == URLTypes.socialenglishparent) {
 
-			excelReadEvent.readFromExcel(2, CommonVariables.rownumber);
+			excelReadEvent.readFromExcel(2, CommonVariables.rownumber, ExcelTypes.Excel1);
 
 			if (excelReadEvent.getEventName().contains("Event For Automation With A Form In Which Data Is Blank")) {
 
@@ -224,7 +224,7 @@ public class CommonFunctions {
 
 		else if (CommonVariables.recipient == URLTypes.prodenglishparent) {
 
-			excelReadEvent.readFromExcel(2, CommonVariables.rownumber);
+			excelReadEvent.readFromExcel(2, CommonVariables.rownumber, ExcelTypes.Excel1);
 
 			if (excelReadEvent.getEventName().contains("Event For Automation With A Form In Which Data Is Blank")) {
 
@@ -388,7 +388,7 @@ public class CommonFunctions {
 	public void respondYesForFormEventforProductionData(String childname) throws Exception {
 
 		ExcelReadEvent excelReadEvent = new ExcelReadEvent();
-		excelReadEvent.readFromExcel(1, CommonVariables.rownumber);
+		excelReadEvent.readFromExcel(1, CommonVariables.rownumber, ExcelTypes.Excel1);
 
 		waitUntilElementDisplayed(eventConsentFlowRepository.getBackButton().getElement());
 		try {
@@ -415,7 +415,7 @@ public class CommonFunctions {
 
 		if (CommonVariables.recipient == URLTypes.socialenglishparent) {
 
-			excelReadEvent.readFromExcel(2, CommonVariables.rownumber);
+			excelReadEvent.readFromExcel(2, CommonVariables.rownumber, ExcelTypes.Excel1);
 
 			if (excelReadEvent.getEventName().contains("Event For Automation With A Form In Which Data Is Blank")) {
 
@@ -487,7 +487,7 @@ public class CommonFunctions {
 
 		else if (CommonVariables.recipient == URLTypes.prodenglishparent) {
 
-			excelReadEvent.readFromExcel(2, CommonVariables.rownumber);
+			excelReadEvent.readFromExcel(2, CommonVariables.rownumber, ExcelTypes.Excel1);
 
 			if (excelReadEvent.getEventName().contains("Event For Automation With A Form In Which Data Is Blank")) {
 
@@ -631,7 +631,7 @@ public class CommonFunctions {
 	public boolean checkEventOnPage() throws Exception {
 		Thread.sleep(2000);
 		ExcelReadEvent excelReadEvent = new ExcelReadEvent();
-		excelReadEvent.readFromExcel(1, CommonVariables.rownumber);
+		excelReadEvent.readFromExcel(1, CommonVariables.rownumber, ExcelTypes.Excel1);
 		String eventname = excelReadEvent.getEventName();
 
 		boolean eventdisplay = false;
@@ -654,7 +654,7 @@ public class CommonFunctions {
 		public boolean checkEventOnPage(String childname) throws Exception {
 			Thread.sleep(2000);
 			ExcelReadEvent excelReadEvent = new ExcelReadEvent();
-			excelReadEvent.readFromExcel(1, CommonVariables.rownumber);
+			excelReadEvent.readFromExcel(1, CommonVariables.rownumber, ExcelTypes.Excel1);
 			String eventname = excelReadEvent.getEventName();
 			
 			boolean eventdisplay = false;

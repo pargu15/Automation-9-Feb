@@ -6,6 +6,7 @@ import com.ZippSlipAutomation.admin.objectRepository.CommunicationPageRepository
 import com.ZippSlipAutomation.utilities.CommonVariables;
 import com.ZippSlipAutomation.utilities.DriverInitiation;
 import com.ZippSlipAutomation.utilities.ExcelReadEvent;
+import com.ZippSlipAutomation.utilities.ExcelTypes;
 
 public class CommunicationPage {
 
@@ -18,7 +19,7 @@ public class CommunicationPage {
 			System.out.println("On the Communication Page");
 			ExcelReadEvent excelReadEvent = new ExcelReadEvent();
 
-			excelReadEvent.readFromExcel(1, 1);
+			excelReadEvent.readFromExcel(1, 1,  ExcelTypes.Excel1);
 
 			communicationPageRepository.getAllRecipientsButton().getElement().click();
 			Thread.sleep(3000);

@@ -7,6 +7,7 @@ import com.ZippSlipAutomation.utilities.CommonFunctions;
 import com.ZippSlipAutomation.utilities.CommonVariables;
 import com.ZippSlipAutomation.utilities.DriverInitiation;
 import com.ZippSlipAutomation.utilities.ExcelReadEvent;
+import com.ZippSlipAutomation.utilities.ExcelTypes;
 
 public class LoginPage {
 
@@ -71,7 +72,7 @@ public class LoginPage {
 		CommonFunctions commonFunctions = new CommonFunctions();
 		LoginRepository loginRepository = PageFactory.initElements(DriverInitiation.getDriver(), LoginRepository.class);
 
-		excelReadEvent.readFromExcel(0, 2);
+		excelReadEvent.readFromExcel(0, 2, ExcelTypes.Excel1);
 
 		commonFunctions.waitUntilElementDisplayed(loginRepository.getUserName().getElement());
 		loginRepository.getUserName().getElement().sendKeys(excelReadEvent.getLoginid());
@@ -108,7 +109,7 @@ public class LoginPage {
 		CommonFunctions commonFunctions = new CommonFunctions();
 		LoginRepository loginRepository = PageFactory.initElements(DriverInitiation.getDriver(), LoginRepository.class);
 
-		excelReadEvent.readFromExcel(0, 6);
+		excelReadEvent.readFromExcel(0, 6, ExcelTypes.Excel1);
 
 		commonFunctions.waitUntilElementDisplayed(loginRepository.getUserName().getElement());
 		loginRepository.getUserName().getElement().sendKeys(excelReadEvent.getLoginid());

@@ -8,6 +8,7 @@ import com.ZippSlipAutomation.utilities.CommonFunctions;
 import com.ZippSlipAutomation.utilities.CommonVariables;
 import com.ZippSlipAutomation.utilities.DriverInitiation;
 import com.ZippSlipAutomation.utilities.ExcelReadEvent;
+import com.ZippSlipAutomation.utilities.ExcelTypes;
 import com.ZippSlipAutomation.utilities.URLTypes;
 
 public class AfterRegistrationFlow {
@@ -21,11 +22,11 @@ public class AfterRegistrationFlow {
 		
 		// commonFunctions.waitUntilElementDisplayed(socialParentSignUpRepository.getLoginAfterRegistration().getElement());
 		if (CommonVariables.recipient == URLTypes.socialenglishparentsignup) {
-			excelReadEvent.readFromExcel(3, CommonVariables.rownumber);
+			excelReadEvent.readFromExcel(3, CommonVariables.rownumber, ExcelTypes.Excel1);
 		}
 
 		else if (CommonVariables.recipient == URLTypes.prodenglishparentsignup) {
-			excelReadEvent.readFromExcel(6, CommonVariables.rownumber);
+			excelReadEvent.readFromExcel(6, CommonVariables.rownumber, ExcelTypes.Excel1);
 		}
 		
 		Thread.sleep(5000);

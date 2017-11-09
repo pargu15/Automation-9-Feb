@@ -10,15 +10,8 @@ public class ParentProfileRepository {
 
 	ExcelReadEvent excelReadEvent = new ExcelReadEvent();
 
+
 	@FindBy(id = "aUserName")
-	private WebElement oUserNameButton;
-
-	public ReturnElement getUserNameButton() {
-		return new ReturnElement(oUserNameButton, Thread.currentThread().getStackTrace()[1].getMethodName());
-
-	}
-
-	@FindBy(id = "aProfile")
 	private WebElement oProfileButton;
 
 	public ReturnElement getProfileButton() {

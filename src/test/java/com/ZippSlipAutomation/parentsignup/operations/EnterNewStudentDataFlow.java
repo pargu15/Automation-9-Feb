@@ -7,6 +7,7 @@ import com.ZippSlipAutomation.utilities.CommonFunctions;
 import com.ZippSlipAutomation.utilities.CommonVariables;
 import com.ZippSlipAutomation.utilities.DriverInitiation;
 import com.ZippSlipAutomation.utilities.ExcelReadEvent;
+import com.ZippSlipAutomation.utilities.ExcelTypes;
 import com.ZippSlipAutomation.utilities.ExcelWrite;
 import com.ZippSlipAutomation.utilities.URLTypes;
 
@@ -23,7 +24,7 @@ public class EnterNewStudentDataFlow {
 		ExcelWrite excelWrite = new ExcelWrite();
 
 		commonFunctions.waitUntilElementDisplayed(parentSignUpFlowRepository.getEnterNewStudentDataHeader().getElement());
-		excelReadEvent.readFromExcel(5, CommonVariables.rownumber);
+		excelReadEvent.readFromExcel(5, CommonVariables.rownumber, ExcelTypes.Excel1);
 		parentSignUpFlowRepository.getStudentFirstName().getElement().sendKeys(excelReadEvent.getNewStudentFirstName());
 		Thread.sleep(1000);
 
@@ -48,13 +49,13 @@ public class EnterNewStudentDataFlow {
 		System.out.println("New Parent has been made");
 
 		if (CommonVariables.recipient == URLTypes.socialenglishparentsignup) {
-			excelReadEvent.readFromExcel(3, CommonVariables.rownumber);
+			excelReadEvent.readFromExcel(3, CommonVariables.rownumber, ExcelTypes.Excel1);
 	//		excelWrite.writeresultinexcel(0, 0, 3, excelReadEvent.getParentEmail());
 			commonFunctions.writeExcel("NewLoginTest", "SocialParentUserName", excelReadEvent.getParentEmail());
 		}
 
 		else if (CommonVariables.recipient == URLTypes.prodenglishparentsignup) {
-			excelReadEvent.readFromExcel(6, CommonVariables.rownumber);
+			excelReadEvent.readFromExcel(6, CommonVariables.rownumber, ExcelTypes.Excel1);
 			commonFunctions.writeExcel("NewLoginTest", "ProdParentUserName", excelReadEvent.getParentEmail());
 		//	excelWrite.writeresultinexcel(0, 0, 7, excelReadEvent.getParentEmail());
 		}

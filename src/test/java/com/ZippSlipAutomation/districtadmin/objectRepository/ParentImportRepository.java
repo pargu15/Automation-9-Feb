@@ -88,5 +88,35 @@ public class ParentImportRepository {
 
 	}
 
+	@FindBy(id = "MainContent_txtUserName")
+	private WebElement oUserName;
+	public ReturnElement getUserName() {
+		return new ReturnElement(oUserName, Thread.currentThread().getStackTrace()[1].getMethodName());
+
+	}
+
+	@FindBy(id = "txtPassword")
+	private WebElement oPassword;
+
+	public ReturnElement getPassword() {
+		return new ReturnElement(oPassword, Thread.currentThread().getStackTrace()[1].getMethodName());
+
+	}
 	
+	@FindBy(id = "MainContent_btnSignIn")
+	private WebElement oSubmitButton;
+
+	public ReturnElement getSubmitButton() {
+		return new ReturnElement(oSubmitButton, Thread.currentThread().getStackTrace()[1].getMethodName());
+
+	}
+	
+	@FindBy(xpath = ".//*[@id='ulInstitution']/li[2]")
+	private WebElement oSocialEnglishInstitutionName;
+
+	public ReturnElement getSocialEnglishInstitutionName() {
+		return new ReturnElement(oSocialEnglishInstitutionName,
+				Thread.currentThread().getStackTrace()[1].getMethodName());
+
+	}
 }
