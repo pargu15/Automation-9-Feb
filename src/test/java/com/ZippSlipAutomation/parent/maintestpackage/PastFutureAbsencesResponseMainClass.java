@@ -46,6 +46,7 @@ public class PastFutureAbsencesResponseMainClass {
 	public void pastAbsencesConsent() throws Exception {
 		PastFutureAbsencesResponseFlow pastFutureAbsencesResponseFlow = new PastFutureAbsencesResponseFlow();
 		pastFutureAbsencesResponseFlow.pastAbsencesFunctionality();
+		Thread.sleep(5000);
 		pastFutureAbsencesResponseFlow.pastfutureAbsencesResponseFunctionality();
 		
 	}
@@ -54,6 +55,7 @@ public class PastFutureAbsencesResponseMainClass {
 	public void futureAbsencesConsent() throws Exception {
 		PastFutureAbsencesResponseFlow pastFutureAbsencesResponseFlow = new PastFutureAbsencesResponseFlow();
 		pastFutureAbsencesResponseFlow.futureAbsencesFunctionality();
+		Thread.sleep(5000);
 		pastFutureAbsencesResponseFlow.pastfutureAbsencesResponseFunctionality();
 	}
 

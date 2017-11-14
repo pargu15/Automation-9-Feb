@@ -37,7 +37,7 @@ public class ParentImportTemplateActions {
 		Thread.sleep(1000);
 		parentImportTemplateRepository.getUploadFileBtn().getElement().click();
 		
-		String Filepath = System.getProperty("user.dir") + "\\src\\resource\\Parent Import.xlsx";
+		String Filepath = System.getProperty("user.dir") + "\\src\\resource\\ParentImport.xlsx";
 		CommonFunctions.uploadFile(Filepath);
 		WebDriverWait wait = new WebDriverWait(DriverInitiation.getDriver(), 20);
 		wait.until(ExpectedConditions.invisibilityOfElementLocated(By.xpath("//*[@id='divUploadForImport']/div")));

@@ -43,39 +43,40 @@ public class ParentImportMainClass {
 		}
 		loginPage.logIntoApp();
 	}
-	
-	
-		@Test(priority = 1)
-		public void createParentImportTemplate() throws Exception {
-			 
-			ParentImportTemplateActions parentImportTemplateActions = new ParentImportTemplateActions();
-			parentImportTemplateActions.createParentImportTemplate();
 
-		}
-		
-	
-		@Test(priority = 2)
-		public void importParent() throws Exception {
-			Thread.sleep(2000);
-			ParentImportActions parentImportActions = new ParentImportActions();
-			parentImportActions.importParent();
-			parentImportActions.checkLogs();
-		}
-		
-		@Test(priority = 3)
-		public void deleteTemplate() throws Exception {
-			Thread.sleep(2000);
-			ParentImportActions parentImportActions = new ParentImportActions();
-			parentImportActions.deleteTempplate();
-			LoginRepository.clickOnLogoutButton();
-		}
-		
-	
-		@Test(priority = 4)
-		public static void loginWithImportedParent() throws IOException, InterruptedException {
-			Thread.sleep(5000);
-		    
-			
 
-		}
+	@Test(priority = 1)
+	public void createParentImportTemplate() throws Exception {
+
+		ParentImportTemplateActions parentImportTemplateActions = new ParentImportTemplateActions();
+		parentImportTemplateActions.createParentImportTemplate();
+
+	}
+
+
+	@Test(priority = 2)
+	public void importParent() throws Exception {
+		Thread.sleep(2000);
+		ParentImportActions parentImportActions = new ParentImportActions();
+		parentImportActions.importParent();
+		parentImportActions.checkLogs();
+	}
+
+	@Test(priority = 3)
+	public void deleteTemplate() throws Exception {
+		Thread.sleep(2000);
+		ParentImportActions parentImportActions = new ParentImportActions();
+		parentImportActions.deleteTemplate();
+		Thread.sleep(5000);
+		LoginRepository.clickOnLogoutButton();
+	}
+
+
+	@Test(priority = 4)
+	public static void loginWithImportedParent() throws Exception {
+		ParentImportActions parentImportActions = new ParentImportActions();
+		parentImportActions.loginWithImportedParent();
+		Thread.sleep(5000);
+
+	}
 }

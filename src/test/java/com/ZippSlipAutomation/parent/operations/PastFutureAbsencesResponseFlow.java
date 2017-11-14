@@ -50,7 +50,7 @@ public class PastFutureAbsencesResponseFlow {
 	
 	public void pastfutureAbsencesResponseFunctionality() throws Exception {
 		ExcelReadEvent excelReadEvent = new ExcelReadEvent();
-		excelReadEvent.readFromExcel(0, 1, ExcelTypes.Excel2);
+		excelReadEvent.readFromExcelxlsx(0, 1, ExcelTypes.Excel2);
 
 		pastFutureAbsencesResponseRepository.getPhoneQuestion().getElement()
 				.sendKeys(excelReadEvent.getPhoneNumber());

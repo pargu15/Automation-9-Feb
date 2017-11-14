@@ -13,39 +13,40 @@ import com.ZippSlipAutomation.districtadmin.objectRepository.ParentImportReposit
 import com.ZippSlipAutomation.utilities.CommonFunctions;
 import com.ZippSlipAutomation.utilities.DriverInitiation;
 import com.ZippSlipAutomation.utilities.ExcelReadEvent;
+import com.ZippSlipAutomation.utilities.ExcelTypes;
 import com.ZippSlipAutomation.utilities.ReturnElement;
 
 public class ParentImportActions {
 	CommonFunctions commonFunctions = new CommonFunctions();
 	ParentImportRepository parentImportRepository = PageFactory.initElements(DriverInitiation.getDriver(),ParentImportRepository.class);
 	ExcelReadEvent excelReadEvent = new ExcelReadEvent();
-	
+
 	public void importParent() throws Exception {
-		
+
 		Thread.sleep(2000);
 		//commonFunctions.hoverOverElement(parentImportRepository.getAdministrationLink().getElement());
-	//	parentImportRepository.getImportTemplate().getElement().click();
+		//	parentImportRepository.getImportTemplate().getElement().click();
 		parentImportRepository.getTemplateSearch().getElement().sendKeys("Parent Profile Import Template1");
 		parentImportRepository.getTemplateSearch().getElement().sendKeys(Keys.ENTER);
 		Thread.sleep(2000);
 		parentImportRepository.getImportBtn().getElement().click();
 		parentImportRepository.getuploadfileBtn().getElement().click();
-		String Filepath = System.getProperty("user.dir") + "\\src\\resource\\Parent Import.xlsx";
+		String Filepath = System.getProperty("user.dir") + "\\src\\resource\\ParentImport.xlsx";
 		CommonFunctions.uploadFile(Filepath);
 		Thread.sleep(2000);
 		parentImportRepository.getPopupImportBtn().getElement().click();
 		Thread.sleep(5000);
-		
+
 	}
-	
+
 	public void checkLogs() throws Exception
 	{
 		parentImportRepository.getRefreshLogsBtn().getElement().click();
 	}
-	
-	public void deleteTempplate() throws Exception
+
+	public void deleteTemplate() throws Exception
 	{
-	
+
 		parentImportRepository.getTemplateSearch().getElement().sendKeys("Parent Profile Import Template1");
 		parentImportRepository.getTemplateSearch().getElement().sendKeys(Keys.ENTER);
 		Thread.sleep(2000);
@@ -55,7 +56,32 @@ public class ParentImportActions {
 		wait.until(ExpectedConditions.invisibilityOfElementLocated(By.xpath(".//*[@id='divPreviewError']/div")));
 		Thread.sleep(2000);
 	}
-	
+
+	public void loginWithImportedParent() throws Exception	
+	{
+		ExcelReadEvent excelReadEvent = new ExcelReadEvent();
+		excelReadEvent.readFromExcelxlsx(0, 1, ExcelTypes.Excel3);
+
+		
+		parentImportRepository.getUserName().getElement()
+		.sendKeys(excelReadEvent.getLoginid());
+		System.out.println(excelReadEvent.getLoginid());
+		Thread.sleep(1000);
+
+		parentImportRepository.getPassword().getElement()
+		.sendKeys(excelReadEvent.getPassword());
+		System.out.println(excelReadEvent.getPassword());
+		Thread.sleep(1000);
+		parentImportRepository.getSubmitButton().getElement().click();
+
+		commonFunctions.waitUntilElementDisplayed(parentImportRepository.getSocialEnglishInstitutionName().getElement());
+
+		parentImportRepository.getSocialEnglishInstitutionName().getElement().click();
+		
+
 	}
-	
+
+
+}
+
 
