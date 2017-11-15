@@ -17,6 +17,8 @@ import org.apache.poi.hssf.usermodel.HSSFSheet;
 import org.apache.poi.hssf.usermodel.HSSFWorkbook;
 import org.apache.poi.ss.usermodel.CellType;
 import org.apache.poi.ss.usermodel.Row;
+import org.apache.poi.xssf.usermodel.XSSFSheet;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.openqa.selenium.By;
 import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.WebDriver;
@@ -903,6 +905,339 @@ public class CommonFunctions {
         	exp.printStackTrace();
         }
     }
+	
+	// Reading from excel and return the value on the basis of a key
+		public String readExcelxls(String sheetName, String searchedString,ExcelTypes excelType) {
+
+			String valueReceived = null;
+	
+			
+			String file="";//name of excel file
+			if(excelType==ExcelTypes.Excel1) {
+				file = System.getProperty("user.dir") + "//src//resource//TestDataSheet.xls";
+			}
+			else if(excelType==ExcelTypes.Excel2) {
+				file = System.getProperty("user.dir") + "//src//resource//TestDataForPastFutureAbsences.xlsx";	
+			}
+			else if(excelType==ExcelTypes.Excel3) {
+				file = System.getProperty("user.dir") + "//src//resource//ParentImport.xlsx";	
+			}
+			
+			//	File file = new File(System.getProperty("user.dir") + "//src//resource//TestDataSheet.xls");
+			FileInputStream fs = null;
+			try {
+				fs = new FileInputStream(file);
+			} catch (FileNotFoundException e) {
+				e.printStackTrace();
+			}
+			HSSFWorkbook wb = null;
+			try {
+				wb = new HSSFWorkbook(fs);
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+			HSSFSheet sh = wb.getSheet(sheetName);
+
+			int rowCount = sh.getLastRowNum() - sh.getFirstRowNum();
+
+			// Create a loop over all the rows of excel file to read it
+			for (int i = 0; i < rowCount + 1; i++) {
+				Row row = sh.getRow(i);
+				for (int j = 0; j < row.getLastCellNum(); j++) {
+					row.getCell(j).setCellType(CellType.STRING);
+					if ((row.getCell(j).getStringCellValue().equals(searchedString)))
+						valueReceived = row.getCell(++j).getStringCellValue();
+					break;
+				}
+
+			}
+			return valueReceived;
+		}
+
+		
+		// Reading from excel and returning a string of values by checking the String Name
+		public String[] readExcelMultiValuexls(String sheetName, String searchedString,ExcelTypes excelType) {
+
+			String firstValueReceived = null;
+			String secondValueReceived = null;
+			
+			
+			String file="";//name of excel file
+			if(excelType==ExcelTypes.Excel1) {
+				file = System.getProperty("user.dir") + "//src//resource//TestDataSheet.xls";
+			}
+			else if(excelType==ExcelTypes.Excel2) {
+				file = System.getProperty("user.dir") + "//src//resource//TestDataForPastFutureAbsences.xlsx";	
+			}
+			else if(excelType==ExcelTypes.Excel3) {
+				file = System.getProperty("user.dir") + "//src//resource//ParentImport.xlsx";	
+			}
+			
+		//	File file = new File(System.getProperty("user.dir") + "//src//resource//TestDataSheet.xls");
+			FileInputStream fs = null;
+			try {
+				fs = new FileInputStream(file);
+			} catch (FileNotFoundException e) {
+				e.printStackTrace();
+			}
+			HSSFWorkbook wb = null;
+			try {
+				wb = new HSSFWorkbook(fs);
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+			HSSFSheet sh = wb.getSheet(sheetName);
+
+			int rowCount = sh.getLastRowNum() - sh.getFirstRowNum();
+			
+			String[] singlerow = new String[2];
+			
+			// Create a loop over all the rows of excel file to read it
+			for (int i = 0; i < rowCount + 1; i++) {
+				Row row = sh.getRow(i);
+				for (int j = 0; j < row.getLastCellNum(); j++) {
+					row.getCell(j).setCellType(CellType.STRING);
+					if ((row.getCell(j).getStringCellValue().equals(searchedString))){
+						firstValueReceived = row.getCell(j+1).getStringCellValue();
+						secondValueReceived = row.getCell(j+2).getStringCellValue();
+						singlerow[0]=firstValueReceived;
+						singlerow[1]=secondValueReceived;
+						break;
+				}
+
+			}
+
+		}
+		return (singlerow);
+
+		}
+		
+		//Writing into an excel
+		public void writeExcelxls(String sheetName, String searchedString, String value,ExcelTypes excelType) {
+			
+			
+			String file="";//name of excel file
+			if(excelType==ExcelTypes.Excel1) {
+				file = System.getProperty("user.dir") + "//src//resource//TestDataSheet.xls";
+			}
+			else if(excelType==ExcelTypes.Excel2) {
+				file = System.getProperty("user.dir") + "//src//resource//TestDataForPastFutureAbsences.xlsx";	
+			}
+			else if(excelType==ExcelTypes.Excel3) {
+				file = System.getProperty("user.dir") + "//src//resource//ParentImport.xlsx";	
+			}
+			
+		//	File file = new File(System.getProperty("user.dir") + "//src//resource//TestDataSheet.xls");
+			FileInputStream fs = null;
+			try {
+				fs = new FileInputStream(file);
+			} catch (FileNotFoundException e1) {
+				e1.printStackTrace();
+			}
+			HSSFWorkbook wb = null;
+			try {
+				wb = new HSSFWorkbook(fs);
+			} catch (IOException e1) {
+				e1.printStackTrace();
+			}
+			HSSFSheet sh = wb.getSheet(sheetName);
+
+			int rowCount = sh.getLastRowNum() - sh.getFirstRowNum();
+
+			for (int i = 0; i < rowCount + 1; i++) {
+				Row row = sh.getRow(i);
+				// Create a loop through the cell values in a row
+				for (int j = 0; j < row.getLastCellNum(); j++) {
+					// Get to exact cell in excel data
+					if ((row.getCell(j).getStringCellValue().equals(searchedString))) {
+						org.apache.poi.ss.usermodel.Cell cell = row.createCell(++j);
+						cell.setCellValue(value);
+					}
+
+				}
+
+			}
+
+			try {
+				// Write the workbook in file system
+				FileOutputStream out = new FileOutputStream(file);
+				wb.write(out);
+				out.close();
+				System.out.println("Excel file written successfully on disk.");
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+		
+		
+		// Reading from excel and return the value on the basis of a key
+		public String readExcelxlsx(String sheetName, String searchedString,ExcelTypes excelType) {
+
+			String valueReceived = null;
+		
+			String file="";//name of excel file
+			if(excelType==ExcelTypes.Excel1) {
+				file = System.getProperty("user.dir") + "//src//resource//TestDataSheet.xls";
+			}
+			else if(excelType==ExcelTypes.Excel2) {
+				file = System.getProperty("user.dir") + "//src//resource//TestDataForPastFutureAbsences.xlsx";	
+			}
+			else if(excelType==ExcelTypes.Excel3) {
+				file = System.getProperty("user.dir") + "//src//resource//ParentImport.xlsx";	
+			}
+			
+			//	File file = new File(System.getProperty("user.dir") + "//src//resource//TestDataSheet.xls");
+			FileInputStream fs = null;
+			try {
+				fs = new FileInputStream(file);
+			} catch (FileNotFoundException e) {
+				e.printStackTrace();
+			}
+			XSSFWorkbook wb = null;
+			try {
+				wb = new XSSFWorkbook(fs);
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+			XSSFSheet sh = wb.getSheet(sheetName);
+
+			int rowCount = sh.getLastRowNum() - sh.getFirstRowNum();
+
+			// Create a loop over all the rows of excel file to read it
+			for (int i = 0; i < rowCount + 1; i++) {
+				Row row = sh.getRow(i);
+				for (int j = 0; j < row.getLastCellNum(); j++) {
+					row.getCell(j).setCellType(CellType.STRING);
+					if ((row.getCell(j).getStringCellValue().equals(searchedString)))
+						valueReceived = row.getCell(++j).getStringCellValue();
+					break;
+				}
+
+			}
+			return valueReceived;
+		}
+
+		
+		// Reading from excel and returning a string of values by checking the String Name
+		public String[] readExcelMultiValuexlsx(String sheetName, String searchedString,ExcelTypes excelType) {
+
+			String firstValueReceived = null;
+			String secondValueReceived = null;
+			
+			String file="";//name of excel file
+			if(excelType==ExcelTypes.Excel1) {
+				file = System.getProperty("user.dir") + "//src//resource//TestDataSheet.xls";
+			}
+			else if(excelType==ExcelTypes.Excel2) {
+				file = System.getProperty("user.dir") + "//src//resource//TestDataForPastFutureAbsences.xlsx";	
+			}
+			else if(excelType==ExcelTypes.Excel3) {
+				file = System.getProperty("user.dir") + "//src//resource//ParentImport.xlsx";	
+			}
+			
+			// File file = new File(System.getProperty("user.dir") + "//src//resource//TestDataSheet.xls");
+			FileInputStream fs = null;
+			try {
+				fs = new FileInputStream(file);
+			} catch (FileNotFoundException e) {
+				e.printStackTrace();
+			}
+			XSSFWorkbook wb = null;
+			try {
+				wb = new XSSFWorkbook(fs);
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+			XSSFSheet sh = wb.getSheet(sheetName);
+
+			int rowCount = sh.getLastRowNum() - sh.getFirstRowNum();
+			
+			String[] singlerow = new String[2];
+			
+			// Create a loop over all the rows of excel file to read it
+			for (int i = 0; i < rowCount + 1; i++) {
+				Row row = sh.getRow(i);
+				for (int j = 0; j < row.getLastCellNum(); j++) {
+					row.getCell(j).setCellType(CellType.STRING);
+					if ((row.getCell(j).getStringCellValue().equals(searchedString))){
+						firstValueReceived = row.getCell(j+1).getStringCellValue();
+						secondValueReceived = row.getCell(j+2).getStringCellValue();
+						singlerow[0]=firstValueReceived;
+						singlerow[1]=secondValueReceived;
+						break;
+				}
+
+			}
+
+		}
+		return (singlerow);
+
+		}
+		
+		//Writing into an excel
+		public void writeExcelxlsx(String sheetName, String searchedString, String value,ExcelTypes excelType) {
+			
+			
+
+			String file="";//name of excel file
+			if(excelType==ExcelTypes.Excel1) {
+				file = System.getProperty("user.dir") + "//src//resource//TestDataSheet.xls";
+			}
+			else if(excelType==ExcelTypes.Excel2) {
+				file = System.getProperty("user.dir") + "//src//resource//TestDataForPastFutureAbsences.xlsx";	
+			}
+			else if(excelType==ExcelTypes.Excel3) {
+				file = System.getProperty("user.dir") + "//src//resource//ParentImport.xlsx";	
+			}
+			
+			
+			//File file = new File(System.getProperty("user.dir") + "//src//resource//TestDataSheet.xls");
+			FileInputStream fs = null;
+			try {
+				fs = new FileInputStream(file);
+			} catch (FileNotFoundException e1) {
+				e1.printStackTrace();
+			}
+			XSSFWorkbook wb = null;
+			try {
+				wb = new XSSFWorkbook(fs);
+			} catch (IOException e1) {
+				e1.printStackTrace();
+			}
+			XSSFSheet sh = wb.getSheet(sheetName);
+
+			int rowCount = sh.getLastRowNum() - sh.getFirstRowNum();
+
+			for (int i = 0; i < rowCount + 1; i++) {
+				Row row = sh.getRow(i);
+				// Create a loop through the cell values in a row
+				for (int j = 0; j < row.getLastCellNum(); j++) {
+					// Get to exact cell in excel data
+					if ((row.getCell(j).getStringCellValue().equals(searchedString))) {
+						org.apache.poi.ss.usermodel.Cell cell = row.createCell(++j);
+						cell.setCellValue(value);
+					}
+
+				}
+
+			}
+
+			try {
+				// Write the workbook in file system
+				FileOutputStream out = new FileOutputStream(file);
+				wb.write(out);
+				out.close();
+				System.out.println("Excel file written successfully on disk.");
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+
+	
+	
+	
+	
+	
 	
 	/*
 	 * // Takes Screenshot public void takeScreenshot(String path) throws

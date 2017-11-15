@@ -898,12 +898,12 @@ public class ExcelReadEvent {
 		}
 		
 		InputStream fs = new FileInputStream(FilePath);
-		//HSSFWorkbook wb = new HSSFWorkbook(fs);
+		
 		XSSFWorkbook wb = new XSSFWorkbook(fs);
 		
 
 		// TO get the access to the sheet
-	//	HSSFSheet sh=wb.getSheetAt(sheet);
+	
 		XSSFSheet sh=wb.getSheetAt(sheet);
 		
 		
@@ -946,4 +946,74 @@ public class ExcelReadEvent {
 		}
 		
 	}
+	
+	
+public boolean readFromExcelxls(int sheet, int row,ExcelTypes excelType) throws Exception {
+	
+		
+		boolean noFound = false;
+		String FilePath="";
+		if(excelType==ExcelTypes.Excel1) {
+		FilePath = System.getProperty("user.dir") + "//src//resource//TestDataSheet.xlsx";
+		}
+		else if(excelType==ExcelTypes.Excel2) {
+			FilePath = System.getProperty("user.dir") + "//src//resource//TestDataForPastFutureAbsences.xlsx";	
+		}
+		else if(excelType==ExcelTypes.Excel3) {
+			FilePath = System.getProperty("user.dir") + "//src//resource//ParentImport.xlsx";	
+		}
+		else {
+			return false;
+		}
+		
+		InputStream fs = new FileInputStream(FilePath);
+		HSSFWorkbook wb = new HSSFWorkbook(fs);
+		
+		// TO get the access to the sheet
+		HSSFSheet sh= wb.getSheetAt(sheet);
+		
+		
+		
+		
+		// To get the number of rows present in sheet
+		//int totalNoOfRows = sh.getRow(0).getPhysicalNumberOfCells();
+		
+		// To get the number of columns present in sheet
+		
+		int totalNoOfCols = sh.getRow(0).getLastCellNum();
+		String[] singlerow = new String[totalNoOfCols];
+		HSSFCell strcellvalue = null;
+		DataFormatter df = new DataFormatter();
+		for (int col = 0; col < totalNoOfCols; col++) {
+			strcellvalue = sh.getRow(row).getCell(col); 
+			singlerow[col] = df.formatCellValue(strcellvalue);
+			
+		}
+	
+		if(singlerow[2].contains("abc")){
+			noFound=true;
+		}
+		
+		if(singlerow[2].contains("no")){
+			noFound=true;
+		}
+
+		if(excelType==ExcelTypes.Excel1) {
+		return excel1Work(sheet, noFound, singlerow);
+		}
+		else if(excelType==ExcelTypes.Excel2) {
+			return excel2Work(sheet, noFound, singlerow);
+			}
+		else if(excelType==ExcelTypes.Excel3) {
+			return excel3Work(sheet, noFound, singlerow);
+			}
+			
+		else {
+			return false;
+		}
+		
+	}
+	
+	
+	
 }

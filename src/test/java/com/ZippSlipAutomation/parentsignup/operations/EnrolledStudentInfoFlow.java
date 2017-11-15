@@ -93,8 +93,8 @@ public class EnrolledStudentInfoFlow {
 
 				parentSignUpFlowRepository.getIamDoneButton().getElement().click();
 				Thread.sleep(1000);
-
-				excelWrite.writeresultinexcel(sheet, 2, x1, "yes");
+				//excelWrite.writeresultinexcel(sheet, 2, x1, "yes");
+				excelWrite.writeresultinexcelxls(sheet, 2, x1, "yes",ExcelTypes.Excel1);
 				break;
 			}
 		}
