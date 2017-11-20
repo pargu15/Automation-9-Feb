@@ -6,8 +6,8 @@ import org.openqa.selenium.support.FindBy;
 import com.ZippSlipAutomation.utilities.ReturnElement;
 
 public class PastFutureAbsencesResponseRepository {
-	
-	
+
+
 	@FindBy(id = "btnAddeNewUser")
 	private WebElement oNewAbsenceNote;
 
@@ -15,9 +15,9 @@ public class PastFutureAbsencesResponseRepository {
 		return new ReturnElement(oNewAbsenceNote, Thread.currentThread().getStackTrace()[1].getMethodName());
 
 	}
-	
-	
-	
+
+
+
 	@FindBy(xpath = ".//input[contains(@class,'future-absence')]")
 	private WebElement oMarkNewAbsences;
 
@@ -25,7 +25,7 @@ public class PastFutureAbsencesResponseRepository {
 		return new ReturnElement(oMarkNewAbsences, Thread.currentThread().getStackTrace()[1].getMethodName());
 
 	}
-	
+
 	@FindBy(id = "btnDate1")
 	private WebElement oCalendar;
 
@@ -33,8 +33,8 @@ public class PastFutureAbsencesResponseRepository {
 		return new ReturnElement(oCalendar, Thread.currentThread().getStackTrace()[1].getMethodName());
 
 	}
-	
-	
+
+
 	@FindBy(xpath = ".//span[contains(.,'Next')]")
 	private WebElement oSelectAbsenceMonth;
 
@@ -42,7 +42,7 @@ public class PastFutureAbsencesResponseRepository {
 		return new ReturnElement(oSelectAbsenceMonth, Thread.currentThread().getStackTrace()[1].getMethodName());
 
 	}
-	
+
 	@FindBy(xpath = ".//a[contains(.,'9')]")
 	private WebElement oSelectAbsenceDate;
 
@@ -50,7 +50,7 @@ public class PastFutureAbsencesResponseRepository {
 		return new ReturnElement(oSelectAbsenceDate, Thread.currentThread().getStackTrace()[1].getMethodName());
 
 	}
-	
+
 	@FindBy(id = "ui-datepicker-div")
 	private WebElement oCalendarSelect;
 
@@ -58,8 +58,8 @@ public class PastFutureAbsencesResponseRepository {
 		return new ReturnElement(oCalendarSelect, Thread.currentThread().getStackTrace()[1].getMethodName());
 
 	}
-	
-	
+
+
 	@FindBy(xpath = ".//input[contains(@class,'addChild')]")
 	private WebElement oAddBtn;
 
@@ -67,7 +67,7 @@ public class PastFutureAbsencesResponseRepository {
 		return new ReturnElement(oAddBtn, Thread.currentThread().getStackTrace()[1].getMethodName());
 
 	}
-	
+
 	@FindBy(xpath = ".//a[contains(.,'Absences')]")
 	private WebElement oAbsencesMainMenu;
 
@@ -76,7 +76,7 @@ public class PastFutureAbsencesResponseRepository {
 
 	}			
 
-	
+
 	@FindBy(id = "btnSendResponse")
 	private WebElement oPastAbsencesResponseBtn;
 
@@ -84,8 +84,8 @@ public class PastFutureAbsencesResponseRepository {
 		return new ReturnElement(oPastAbsencesResponseBtn, Thread.currentThread().getStackTrace()[1].getMethodName());
 
 	}
-	
-	
+
+
 	@FindBy(xpath = ".//*[contains(@id,'_txtAnswer') and contains(@class,'phonemask')]")
 	private WebElement oPhoneQuestion;
 
@@ -93,7 +93,7 @@ public class PastFutureAbsencesResponseRepository {
 		return new ReturnElement(oPhoneQuestion, Thread.currentThread().getStackTrace()[1].getMethodName());
 
 	}
-	
+
 	@FindBy(xpath = ".//*[contains(@id,'_txtDate')]")
 	private WebElement oDateQuestion;
 
@@ -101,7 +101,7 @@ public class PastFutureAbsencesResponseRepository {
 		return new ReturnElement(oDateQuestion, Thread.currentThread().getStackTrace()[1].getMethodName());
 
 	}
-	
+
 	@FindBy(xpath = ".//input[@class='frm_inputtext frm_medium']")
 	private WebElement oEmailQuestion;
 
@@ -109,35 +109,35 @@ public class PastFutureAbsencesResponseRepository {
 		return new ReturnElement(oEmailQuestion, Thread.currentThread().getStackTrace()[1].getMethodName());
 
 	}
-	
-	
+
+
 	@FindBy(xpath = ".//*[contains(@id,'_txtFirstName') and contains(@type,'text')]")
-		private WebElement oFirstNameQuestion;
+	private WebElement oFirstNameQuestion;
 
-		public ReturnElement getFirstNameQuestion() {
-			return new ReturnElement(oFirstNameQuestion, Thread.currentThread().getStackTrace()[1].getMethodName());
+	public ReturnElement getFirstNameQuestion() {
+		return new ReturnElement(oFirstNameQuestion, Thread.currentThread().getStackTrace()[1].getMethodName());
 
-		}
+	}
 
-		
+
 	@FindBy(xpath = ".//*[contains(@id,'_txtLastName') and contains(@type,'text')]")
-		private WebElement oLastNameQuestion;
+	private WebElement oLastNameQuestion;
 
-		public ReturnElement getLastNameQuestion() {
-			return new ReturnElement(oLastNameQuestion, Thread.currentThread().getStackTrace()[1].getMethodName());
-			
-		}
-		
-		
+	public ReturnElement getLastNameQuestion() {
+		return new ReturnElement(oLastNameQuestion, Thread.currentThread().getStackTrace()[1].getMethodName());
+
+	}
+
+
 	@FindBy(xpath = ".//*[contains(@id,'_txtMailingAddress') and contains(@class,'streetadd')]") 
 
-			private WebElement oMailingAddress;
+	private WebElement oMailingAddress;
 
-			public ReturnElement getMailingAddressQuestion() {
-				return new ReturnElement(oMailingAddress, Thread.currentThread().getStackTrace()[1].getMethodName());
+	public ReturnElement getMailingAddressQuestion() {
+		return new ReturnElement(oMailingAddress, Thread.currentThread().getStackTrace()[1].getMethodName());
 
-			}
-	
+	}
+
 	@FindBy(xpath = ".//*[contains(@id,'_txtMailingAddressCityTown') and contains(@class,'city')]") 
 
 	private WebElement oCityTown;
@@ -164,7 +164,7 @@ public class PastFutureAbsencesResponseRepository {
 		return new ReturnElement(oZippCode, Thread.currentThread().getStackTrace()[1].getMethodName());
 
 	}
-	
+
 	@FindBy(id = "txtElectronicSignature") 
 
 	private WebElement oElectronicPin;
@@ -173,7 +173,7 @@ public class PastFutureAbsencesResponseRepository {
 		return new ReturnElement(oElectronicPin, Thread.currentThread().getStackTrace()[1].getMethodName());
 
 	}
-	
+
 	@FindBy(id = "btnSendResponse") 
 
 	private WebElement oSendResponseBtn;
@@ -182,7 +182,7 @@ public class PastFutureAbsencesResponseRepository {
 		return new ReturnElement(oSendResponseBtn, Thread.currentThread().getStackTrace()[1].getMethodName());
 
 	}
-	
+
 
 	@FindBy(xpath = ".//a[contains(.,'Home')]") 
 
@@ -192,7 +192,6 @@ public class PastFutureAbsencesResponseRepository {
 		return new ReturnElement(oHomeScreen, Thread.currentThread().getStackTrace()[1].getMethodName());
 
 	}
-	
-	
+
+
 }
-	

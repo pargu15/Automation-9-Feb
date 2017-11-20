@@ -8,7 +8,7 @@ import com.ZippSlipAutomation.utilities.DriverInitiation;
 
 public class ZippGramConsentFlow {
 
-	
+
 	public void zippgramConsentFunctionality() throws Exception {
 		CommonFunctions commonFunctions = new CommonFunctions();
 
@@ -25,6 +25,6 @@ public class ZippGramConsentFlow {
 		zippGramConsentFlowRepository.getHomeScreen().getElement().click();
 		Thread.sleep(1000);
 	}
-	
-	
-	}
+
+
+}

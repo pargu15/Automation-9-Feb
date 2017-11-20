@@ -6,8 +6,8 @@ import org.openqa.selenium.support.FindBy;
 import com.ZippSlipAutomation.utilities.ReturnElement;
 
 public class ZippGramConsentFlowRepository {
-	
-	
+
+
 	@FindBy(xpath = ".//a[contains(.,'View ZippGram')]")
 	private WebElement oViewZippGram;
 
@@ -23,7 +23,7 @@ public class ZippGramConsentFlowRepository {
 		return new ReturnElement(oSelectPollOptn, Thread.currentThread().getStackTrace()[1].getMethodName());
 
 	}
-	
+
 	@FindBy(id = "btnSavePoll")
 	private WebElement oSavePollOptn;
 
@@ -31,7 +31,7 @@ public class ZippGramConsentFlowRepository {
 		return new ReturnElement(oSavePollOptn, Thread.currentThread().getStackTrace()[1].getMethodName());
 
 	}
-	
+
 	@FindBy(xpath = ".//a[contains(.,'Home')]") 
 
 	private WebElement oHomeScreen;
@@ -40,5 +40,5 @@ public class ZippGramConsentFlowRepository {
 		return new ReturnElement(oHomeScreen, Thread.currentThread().getStackTrace()[1].getMethodName());
 
 	}
-	
+
 }

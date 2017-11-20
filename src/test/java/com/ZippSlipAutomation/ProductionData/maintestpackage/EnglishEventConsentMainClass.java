@@ -27,9 +27,9 @@ import com.ZippSlipAutomation.utilities.ExcelTypes;
 import com.ZippSlipAutomation.utilities.URLTypes;
 
 public class EnglishEventConsentMainClass {
-	
+
 	LoginRepository loginRepository;
-	
+
 	//CommonFunctions commonFunctions = new CommonFunctions();
 
 	@BeforeClass
@@ -53,7 +53,7 @@ public class EnglishEventConsentMainClass {
 			CommonVariables.recipient = URLTypes.socialenglishparent;
 			System.out.println("Social English URL is running");
 		}
-		
+
 		if (commonFunctions.readExcel("NewLoginTest", "FormType").contains("BlankForm")) {
 			System.out.println("Blank Data Form is Selected");
 			CommonVariables.rownumber = 1;
@@ -65,49 +65,49 @@ public class EnglishEventConsentMainClass {
 		}
 	}
 
-	
+
 	@Test(priority=1)
 	public void readXlsData()
 	{
 		try
 		{
 			String FilePath = System.getProperty("user.dir") + "//src//resource//TestDataSheet.xls";
-		
-		FileInputStream fs = new FileInputStream(FilePath);
-		Workbook wb = Workbook.getWorkbook(fs);
 
-		// TO get the access to the sheet
-		//@param sheet need to pass
-		Sheet sh = wb.getSheet(9);
+			FileInputStream fs = new FileInputStream(FilePath);
+			Workbook wb = Workbook.getWorkbook(fs);
 
-		// To get the number of rows present in sheet
-		 int totalNoOfRows = sh.getRows();
+			// TO get the access to the sheet
+			//@param sheet need to pass
+			Sheet sh = wb.getSheet(9);
 
-		// To get the number of columns present in sheet
-		//int totalNoOfCols = sh.getColumns();
+			// To get the number of rows present in sheet
+			int totalNoOfRows = sh.getRows();
 
-		//String[] singlerow = new String[totalNoOfCols];
+			// To get the number of columns present in sheet
+			//int totalNoOfCols = sh.getColumns();
 
-		 for (int row = 1; row < totalNoOfRows; row++) {
-			
-			String emailID = sh.getCell(0,row).getContents();
-			String password = sh.getCell(1,row).getContents();
-			String child = sh.getCell(2,row).getContents();
-			
-			Login(emailID, password);
-			Thread.sleep(2000);
-			eventConsent(child);
-			Logout(emailID,child);
+			//String[] singlerow = new String[totalNoOfCols];
 
-		 }
+			for (int row = 1; row < totalNoOfRows; row++) {
+
+				String emailID = sh.getCell(0,row).getContents();
+				String password = sh.getCell(1,row).getContents();
+				String child = sh.getCell(2,row).getContents();
+
+				Login(emailID, password);
+				Thread.sleep(2000);
+				eventConsent(child);
+				Logout(emailID,child);
+
+			}
 		}
-		 catch(Exception e)
-		 {
-			 System.err.println(e);
-		 }
+		catch(Exception e)
+		{
+			System.err.println(e);
+		}
 	}
-	
-	
+
+
 
 	public void Login(String username, String password)
 	{
@@ -126,11 +126,11 @@ public class EnglishEventConsentMainClass {
 			Thread.sleep(2000);
 			System.out.println("Login successful for " + username );
 			Thread.sleep(2000);
-		
+
 		}
 		catch(Exception e)
 		{
-			
+
 		}
 	}
 
@@ -142,7 +142,7 @@ public class EnglishEventConsentMainClass {
 				EventConsentFlowRepository.class);
 
 		excelReadEvent.readFromExcel(1, CommonVariables.rownumber, ExcelTypes.Excel1);
-		
+
 		commonFunctions.waitUntilElementDisplayed(eventConsentFlowRepository.getViewAllButton().getElement());
 
 		eventConsentFlowRepository.getViewAllButton().getElement().click();
@@ -154,27 +154,27 @@ public class EnglishEventConsentMainClass {
 			commonFunctions.respondYesForFormEventforProductionData(childname);
 			Thread.sleep(2000);
 		}
-		
+
 		catch(Exception e){
 			System.err.println("Event could not be consented");
 		}
-		
+
 	}
-	
+
 	private void Logout(String user,String userchild) throws Exception {
-	
+
 		try{
 			Thread.sleep(2000);
 			LoginRepository.clickOnLogoutButton();
 			System.out.println("Consent completed for parent " + user + " & his/her child " + userchild  );
 		}
-		
+
 		catch(Exception e){
 			System.err.println("Couldn't Logout");
 		}
-		
+
 	}
-	
+
 	@AfterClass
 	public static void driverExit() throws IOException, InterruptedException {
 		System.out.println("End of Script");

@@ -5,9 +5,7 @@ import java.io.FileInputStream;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
-
 import com.ZippSlipAutomation.districtadmin.objectRepository.CreateSchoolPageRepository;
-import com.ZippSlipAutomation.parentsignup.objectRepository.ParentSignUpFlowRepository;
 import com.ZippSlipAutomation.utilities.CommonFunctions;
 import com.ZippSlipAutomation.utilities.CommonVariables;
 import com.ZippSlipAutomation.utilities.DriverInitiation;
@@ -36,22 +34,22 @@ public class AddNewSchoolInfoFlow {
 		Sheet sh = wb.getSheet(sheet);
 		int totalNoOfRows = sh.getRows();
 
-	//	commonFunctions.waitUntilElementDisplayed(parentSignUpFlowRepository.getEnterEnrolledStudentHeader().getElement());
+		//	commonFunctions.waitUntilElementDisplayed(parentSignUpFlowRepository.getEnterEnrolledStudentHeader().getElement());
 
 		for (int x = 0; x < totalNoOfRows; x++) {
 			excelReadEvent.readFromExcel(sheet, x, ExcelTypes.Excel1);
 			if (excelReadEvent.getDataStatus().contains("yes")) {
-				
+
 				commonFunctions.selectFromDropDown(createSchoolPageRepository.getSchoolState().getElement(), 3);
 				createSchoolPageRepository.getSchoolURL().getElement().sendKeys(excelReadEvent.getSchoolURL());
 				createSchoolPageRepository.getfocusout().getElement().click();
 				commonFunctions.verifyElementIsPresent(createSchoolPageRepository.getDuplicateMessageForURL());
-				
-				
+
+
 				createSchoolPageRepository.getAdminEmail().getElement().sendKeys(excelReadEvent.getAdminEmail());
 				createSchoolPageRepository.getfocusout().getElement().click();
 				commonFunctions.verifyElementIsPresent(createSchoolPageRepository.getDuplicateMessageForEmail());
-				
+
 				/*
 				parentSignUpFlowRepository.getStudentId().getElement().sendKeys(excelReadEvent.getEnrolledStudentID());
 				Thread.sleep(1000);
@@ -72,16 +70,16 @@ public class AddNewSchoolInfoFlow {
 				} catch (Exception e) {
 					System.err.println("Error message is not displayed");
 				}
-*/
+				 */
 				break;
 			}
 		}
-		
+
 
 		for (int x1 = 0; x1 < totalNoOfRows; x1++) {
 			excelReadEvent.readFromExcel(sheet, x1, ExcelTypes.Excel1);
 			if (excelReadEvent.getDataStatus().contains("no"))  {
-				
+
 				CommonVariables.schoolrownumber = x1;
 				//createSchoolPageRepository.getSchoolName().getElement().sendKeys(excelReadEvent.getSchoolName());
 				createSchoolPageRepository.getSavebtn().getElement().click();
@@ -89,7 +87,7 @@ public class AddNewSchoolInfoFlow {
 				commonFunctions.verifyElementIsPresent(createSchoolPageRepository.getErrorMessageForSchoolName());
 				createSchoolPageRepository.getSchoolName().getElement().sendKeys(excelReadEvent.getSchoolName());
 				Thread.sleep(1000);
-				
+
 				createSchoolPageRepository.getSavebtn().getElement().click();
 				commonFunctions.verifyElementIsPresent(createSchoolPageRepository.getErrorMessageForSchoolState());
 				Thread.sleep(1000);
@@ -115,13 +113,13 @@ public class AddNewSchoolInfoFlow {
 				Thread.sleep(1000);
 				commonFunctions.selectFromDropDown(createSchoolPageRepository.getGradeTo().getElement(), 8);
 				Thread.sleep(1000);
-			
+
 
 				createSchoolPageRepository.getSavebtn().getElement().click();
 				commonFunctions.verifyElementIsPresent(createSchoolPageRepository.getErrorMessageForSchoolURL());
 				createSchoolPageRepository.getSchoolURL().getElement().sendKeys(excelReadEvent.getSchoolURL());
 				commonFunctions.verifyElementIsPresent(createSchoolPageRepository.getconfirmationMessageForURL());
-				
+
 				Thread.sleep(1000);
 
 				createSchoolPageRepository.getSavebtn().getElement().click();
@@ -129,13 +127,13 @@ public class AddNewSchoolInfoFlow {
 				createSchoolPageRepository.getAdminFirstName().getElement().sendKeys(excelReadEvent.getAdminFirstName());
 				createSchoolPageRepository.getAdminLastName().getElement().sendKeys(excelReadEvent.getAdminlastName());
 				Thread.sleep(1000);
-				
+
 
 				createSchoolPageRepository.getSavebtn().getElement().click();
 				commonFunctions.verifyElementIsPresent(createSchoolPageRepository.getErrorMessageForAdminEmail());
 				createSchoolPageRepository.getAdminEmail().getElement().sendKeys(excelReadEvent.getAdminEmail());
 				commonFunctions.verifyElementIsPresent(createSchoolPageRepository.getconfirmationMessageForEmail());
-				
+
 				Thread.sleep(1000);
 
 
@@ -144,10 +142,10 @@ public class AddNewSchoolInfoFlow {
 				createSchoolPageRepository.getAdminPassword().getElement().sendKeys(excelReadEvent.getAdminPassword());
 				Thread.sleep(1000);
 
-				
+
 				createSchoolPageRepository.getSavebtn().getElement().click();
 				Thread.sleep(1000);
-				
+
 
 				try {
 					WebElement oSchoolAdded = DriverInitiation.getDriver().findElement(
@@ -158,7 +156,7 @@ public class AddNewSchoolInfoFlow {
 				} catch (Exception e) {
 					System.err.println("School not added");
 				}
-				
+
 				Thread.sleep(1000);
 				createSchoolPageRepository.getOKbtn().getElement().click();
 

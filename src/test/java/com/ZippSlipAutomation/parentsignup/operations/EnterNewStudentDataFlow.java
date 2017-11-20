@@ -50,14 +50,14 @@ public class EnterNewStudentDataFlow {
 
 		if (CommonVariables.recipient == URLTypes.socialenglishparentsignup) {
 			excelReadEvent.readFromExcel(3, CommonVariables.rownumber, ExcelTypes.Excel1);
-	//		excelWrite.writeresultinexcel(0, 0, 3, excelReadEvent.getParentEmail());
+			//		excelWrite.writeresultinexcel(0, 0, 3, excelReadEvent.getParentEmail());
 			commonFunctions.writeExcel("NewLoginTest", "SocialParentUserName", excelReadEvent.getParentEmail());
 		}
 
 		else if (CommonVariables.recipient == URLTypes.prodenglishparentsignup) {
 			excelReadEvent.readFromExcel(6, CommonVariables.rownumber, ExcelTypes.Excel1);
 			commonFunctions.writeExcel("NewLoginTest", "ProdParentUserName", excelReadEvent.getParentEmail());
-		//	excelWrite.writeresultinexcel(0, 0, 7, excelReadEvent.getParentEmail());
+			//	excelWrite.writeresultinexcel(0, 0, 7, excelReadEvent.getParentEmail());
 		}
 
 		if (CommonVariables.recipient == URLTypes.socialenglishparentsignup) {

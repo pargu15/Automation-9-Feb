@@ -39,7 +39,7 @@ public class PastFutureAbsencesResponseMainClass {
 
 		loginPage.logIntoApp();
 
-		
+
 	}
 
 	@Test(priority = 1)
@@ -48,7 +48,7 @@ public class PastFutureAbsencesResponseMainClass {
 		pastFutureAbsencesResponseFlow.pastAbsencesFunctionality();
 		Thread.sleep(5000);
 		pastFutureAbsencesResponseFlow.pastfutureAbsencesResponseFunctionality();
-		
+
 	}
 
 	@Test(priority = 2)

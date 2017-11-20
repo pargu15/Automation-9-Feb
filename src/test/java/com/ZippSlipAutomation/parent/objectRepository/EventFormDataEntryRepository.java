@@ -138,7 +138,7 @@ public class EventFormDataEntryRepository {
 		return new ReturnElement(oStreetType, Thread.currentThread().getStackTrace()[1].getMethodName());
 
 	}
-	
+
 	@FindBy(xpath = ".//*[contains(@id,'_ddlMailingStreetDirection') and contains(@class,'streetdirection')]") 
 
 	private WebElement oStreetDirection;
@@ -147,7 +147,7 @@ public class EventFormDataEntryRepository {
 		return new ReturnElement(oStreetDirection, Thread.currentThread().getStackTrace()[1].getMethodName());
 
 	}
-	
+
 	@FindBy(xpath = ".//*[contains(@id,'_txtMailingAddressApartment') and contains(@class,'apartment')]") 
 
 	private WebElement oMailingAddressApartment;

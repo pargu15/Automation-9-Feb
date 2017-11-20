@@ -2,19 +2,14 @@ package com.ZippSlipAutomation.districtadmin.operations;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-
-import com.ZippSlipAutomation.admin.objectRepository.UploadPastAbsencesRepository;
 import com.ZippSlipAutomation.districtadmin.objectRepository.ParentImportRepository;
 import com.ZippSlipAutomation.utilities.CommonFunctions;
 import com.ZippSlipAutomation.utilities.DriverInitiation;
 import com.ZippSlipAutomation.utilities.ExcelReadEvent;
 import com.ZippSlipAutomation.utilities.ExcelTypes;
-import com.ZippSlipAutomation.utilities.ReturnElement;
 
 public class ParentImportActions {
 	CommonFunctions commonFunctions = new CommonFunctions();
@@ -62,7 +57,7 @@ public class ParentImportActions {
 		ExcelReadEvent excelReadEvent = new ExcelReadEvent();
 		excelReadEvent.readFromExcelxlsx(0, 1, ExcelTypes.Excel3);
 
-		
+
 		parentImportRepository.getUserName().getElement()
 		.sendKeys(excelReadEvent.getLoginid());
 		System.out.println(excelReadEvent.getLoginid());
@@ -73,14 +68,25 @@ public class ParentImportActions {
 		System.out.println(excelReadEvent.getPassword());
 		Thread.sleep(1000);
 		parentImportRepository.getSubmitButton().getElement().click();
-
-		commonFunctions.waitUntilElementDisplayed(parentImportRepository.getSocialEnglishInstitutionName().getElement());
-
-		parentImportRepository.getSocialEnglishInstitutionName().getElement().click();
-		
-
 	}
 
+	public void verifyImportedParentInfo() throws Exception	
+	{
+		ExcelReadEvent excelReadEvent = new ExcelReadEvent();
+		excelReadEvent.readFromExcelxlsx(0, 1, ExcelTypes.Excel3);
+
+
+		parentImportRepository.getUserName().getElement()
+		.sendKeys(excelReadEvent.getLoginid());
+		System.out.println(excelReadEvent.getLoginid());
+		Thread.sleep(1000);
+
+		parentImportRepository.getPassword().getElement()
+		.sendKeys(excelReadEvent.getPassword());
+		System.out.println(excelReadEvent.getPassword());
+		Thread.sleep(1000);
+		parentImportRepository.getSubmitButton().getElement().click();
+	}
 
 }
 

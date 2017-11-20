@@ -19,7 +19,7 @@ public class AfterRegistrationFlow {
 	ExcelReadEvent excelReadEvent = new ExcelReadEvent();
 
 	public void afterRegistrationFunctionality() throws Exception {
-		
+
 		// commonFunctions.waitUntilElementDisplayed(socialParentSignUpRepository.getLoginAfterRegistration().getElement());
 		if (CommonVariables.recipient == URLTypes.socialenglishparentsignup) {
 			excelReadEvent.readFromExcel(3, CommonVariables.rownumber, ExcelTypes.Excel1);
@@ -28,7 +28,7 @@ public class AfterRegistrationFlow {
 		else if (CommonVariables.recipient == URLTypes.prodenglishparentsignup) {
 			excelReadEvent.readFromExcel(6, CommonVariables.rownumber, ExcelTypes.Excel1);
 		}
-		
+
 		Thread.sleep(5000);
 		parentSignUpFlowRepository.getLoginAfterRegistration().getElement().click();
 
@@ -39,14 +39,14 @@ public class AfterRegistrationFlow {
 			loginRepository.getPassword().getElement().sendKeys(commonFunctions.readExcel("NewLoginTest", "ProdParentPassword"));
 			Thread.sleep(1000);
 		}
-	
+
 		else if (CommonVariables.recipient == URLTypes.socialenglishparentsignup) {
 			loginRepository.getUserName().getElement().sendKeys(commonFunctions.readExcel("NewLoginTest", "SocialParentUserName"));
 			Thread.sleep(1000);
 			loginRepository.getPassword().getElement().sendKeys(commonFunctions.readExcel("NewLoginTest", "SocialParentPassword"));
 			Thread.sleep(1000);
 		}
-			
+
 		loginRepository.getSubmitButton().getElement().click();
 
 		System.out.println("New parent has been logged in");
@@ -55,7 +55,7 @@ public class AfterRegistrationFlow {
 		parentSignUpFlowRepository.getNewElectronicPin().getElement().sendKeys(excelReadEvent.getElectronicPin());
 		Thread.sleep(1000);
 		parentSignUpFlowRepository.getConfirmElectronicPin().getElement()
-				.sendKeys(excelReadEvent.getConfirmElectronicPin());
+		.sendKeys(excelReadEvent.getConfirmElectronicPin());
 		Thread.sleep(2000);
 		parentSignUpFlowRepository.getAddElectronicPin().getElement().click();
 		Thread.sleep(5000);

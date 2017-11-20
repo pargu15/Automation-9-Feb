@@ -45,7 +45,7 @@ public class EnrolledStudentInfoFlow {
 				parentSignUpFlowRepository.getDateOfBirth().getElement().click();
 				System.out.println(excelReadEvent.getEnrolledStudentDOB());
 				parentSignUpFlowRepository.getDateOfBirth().getElement()
-						.sendKeys(excelReadEvent.getEnrolledStudentDOB());
+				.sendKeys(excelReadEvent.getEnrolledStudentDOB());
 				Thread.sleep(1000);
 
 				parentSignUpFlowRepository.getAddStudentButton().getElement().click();
@@ -73,7 +73,7 @@ public class EnrolledStudentInfoFlow {
 
 				parentSignUpFlowRepository.getDateOfBirth().getElement().clear();
 				parentSignUpFlowRepository.getDateOfBirth().getElement()
-						.sendKeys(excelReadEvent.getEnrolledStudentDOB());
+				.sendKeys(excelReadEvent.getEnrolledStudentDOB());
 				Thread.sleep(1000);
 
 				parentSignUpFlowRepository.getAddStudentButton().getElement().click();
