@@ -12,9 +12,9 @@ public class UploadPastAbsencesActions {
 	CommonFunctions commonFunctions = new CommonFunctions();
 	UploadPastAbsencesRepository uploadPastAbsencesRepository = PageFactory.initElements(DriverInitiation.getDriver(),UploadPastAbsencesRepository.class);
 	ExcelReadEvent excelReadEvent = new ExcelReadEvent();
-	
+
 	public void uploadPastAbsences() throws Exception {
-		
+
 		Thread.sleep(2000);
 		commonFunctions.hoverOverElement(uploadPastAbsencesRepository.getAdministrationLink().getElement());
 		uploadPastAbsencesRepository.getImportTemplate().getElement().click();
@@ -29,8 +29,8 @@ public class UploadPastAbsencesActions {
 		Thread.sleep(2000);
 		uploadPastAbsencesRepository.getPopupImportBtn().getElement().click();
 		Thread.sleep(5000);
-		
+
 	}
-	
+
 
 }

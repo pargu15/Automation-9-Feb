@@ -13,8 +13,8 @@ public class ParentImportRepository {
 		return new ReturnElement(oAdministrationLink, Thread.currentThread().getStackTrace()[1].getMethodName());
 
 	}
-	
-	
+
+
 	@FindBy(xpath = "//span[contains(.,'Import Template Library')]")
 	private WebElement oImportTemplate;
 
@@ -22,7 +22,7 @@ public class ParentImportRepository {
 		return new ReturnElement(oImportTemplate, Thread.currentThread().getStackTrace()[1].getMethodName());
 
 	}
-	
+
 	@FindBy(id = "txtSearch")
 	private WebElement oTemplateSearch;
 
@@ -30,7 +30,7 @@ public class ParentImportRepository {
 		return new ReturnElement(oTemplateSearch, Thread.currentThread().getStackTrace()[1].getMethodName());
 
 	}
-	
+
 	@FindBy(id = "txtSearch")
 	private WebElement oSearchBtn;
 
@@ -38,8 +38,8 @@ public class ParentImportRepository {
 		return new ReturnElement(oSearchBtn, Thread.currentThread().getStackTrace()[1].getMethodName());
 
 	}
-	
-	
+
+
 	@FindBy(id = "rptTemplateList_btnImport_0")
 	private WebElement oImportBtn;
 
@@ -55,7 +55,7 @@ public class ParentImportRepository {
 		return new ReturnElement(ouploadfileBtn, Thread.currentThread().getStackTrace()[1].getMethodName());
 
 	}
-	
+
 	@FindBy(id = "popupImportButton")
 	private WebElement oPopupImportBtn;
 
@@ -63,7 +63,7 @@ public class ParentImportRepository {
 		return new ReturnElement(oPopupImportBtn, Thread.currentThread().getStackTrace()[1].getMethodName());
 
 	}
-	
+
 	@FindBy(xpath = ".//span[contains(.,' Refresh Logs')]")
 	private WebElement oRefreshLogsBtn;
 
@@ -71,7 +71,7 @@ public class ParentImportRepository {
 		return new ReturnElement(oRefreshLogsBtn, Thread.currentThread().getStackTrace()[1].getMethodName());
 
 	}
-	
+
 	@FindBy(id = "rptTemplateList_lbDelete_0")
 	private WebElement oDeleteTemplate;
 
@@ -102,7 +102,7 @@ public class ParentImportRepository {
 		return new ReturnElement(oPassword, Thread.currentThread().getStackTrace()[1].getMethodName());
 
 	}
-	
+
 	@FindBy(id = "MainContent_btnSignIn")
 	private WebElement oSubmitButton;
 
@@ -110,7 +110,7 @@ public class ParentImportRepository {
 		return new ReturnElement(oSubmitButton, Thread.currentThread().getStackTrace()[1].getMethodName());
 
 	}
-	
+
 	@FindBy(xpath = ".//*[@id='ulInstitution']/li[2]")
 	private WebElement oSocialEnglishInstitutionName;
 
@@ -119,4 +119,14 @@ public class ParentImportRepository {
 				Thread.currentThread().getStackTrace()[1].getMethodName());
 
 	}
+
+	@FindBy(xpath = ".//a[contains(.,'Home')]") 
+
+	private WebElement oHomeScreen;
+
+	public ReturnElement getHomeScreen() {
+		return new ReturnElement(oHomeScreen, Thread.currentThread().getStackTrace()[1].getMethodName());
+
+	}
+
 }

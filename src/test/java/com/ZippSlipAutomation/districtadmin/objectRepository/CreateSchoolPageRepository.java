@@ -14,7 +14,7 @@ public class CreateSchoolPageRepository {
 		return new ReturnElement(oSchoolListSelect, Thread.currentThread().getStackTrace()[1].getMethodName());
 
 	}
-	
+
 
 	@FindBy(xpath = "//a[@class='right blue-btn']")
 	private WebElement oCreateSchool;
@@ -31,7 +31,7 @@ public class CreateSchoolPageRepository {
 		return new ReturnElement(oSavebtn, Thread.currentThread().getStackTrace()[1].getMethodName());
 
 	}
-	
+
 	@FindBy(id = "MainContent_btnOkConfirm")
 	private WebElement oOKbtn;
 
@@ -39,68 +39,68 @@ public class CreateSchoolPageRepository {
 		return new ReturnElement(oOKbtn, Thread.currentThread().getStackTrace()[1].getMethodName());
 
 	}
-	
+
 	@FindBy(xpath = "//td[contains(.,'Name is Required')]")
 	private WebElement errorMessageForSchoolName;
 
 	public ReturnElement getErrorMessageForSchoolName() {
 		return new ReturnElement(errorMessageForSchoolName,Thread.currentThread().getStackTrace()[1].getMethodName());
 	}
-	
+
 	@FindBy(id = "MainContent_liSchoolAdmins")
 	private WebElement ofocusout;
 
 	public ReturnElement getfocusout() {
 		return new ReturnElement(ofocusout,Thread.currentThread().getStackTrace()[1].getMethodName());
 	}
-	
+
 	@FindBy(xpath = "//td[contains(.,'Please Select State.')]")
 	private WebElement errorMessageForSchoolState;
 
 	public ReturnElement getErrorMessageForSchoolState() {
 		return new ReturnElement(errorMessageForSchoolState,Thread.currentThread().getStackTrace()[1].getMethodName());
 	}
-	
-	
+
+
 	@FindBy(xpath = "//td[contains(.,'Institution key is required.')]")
 	private WebElement errorMessageForInstitutionkey;
 
 	public ReturnElement getErrorMessageForInstitutionkey() {
 		return new ReturnElement(errorMessageForInstitutionkey,Thread.currentThread().getStackTrace()[1].getMethodName());
 	}
-	
+
 	@FindBy(xpath = "//span[contains(.,'This institution key is taken already')]")
 	private WebElement duplicateMessageForURL;
 
 	public ReturnElement getDuplicateMessageForURL() {
 		return new ReturnElement(duplicateMessageForURL,Thread.currentThread().getStackTrace()[1].getMethodName());
 	}
-	
+
 	@FindBy(xpath = "//span[contains(.,'User with this Email Address already exists')]")
 	private WebElement duplicateMessageForEmail;
 
 	public ReturnElement getDuplicateMessageForEmail() {
 		return new ReturnElement(duplicateMessageForEmail,Thread.currentThread().getStackTrace()[1].getMethodName());
 	}
-	
-	
-	
-	
+
+
+
+
 	@FindBy(xpath = "//span[contains(.,'URL is available')]")
 	private WebElement confirmationMessageForURL;
 
 	public ReturnElement getconfirmationMessageForURL() {
 		return new ReturnElement(confirmationMessageForURL,Thread.currentThread().getStackTrace()[1].getMethodName());
 	}
-	
+
 	@FindBy(xpath = "//span[contains(.,'This userid is available')]")
 	private WebElement confirmationMessageForEmail;
 
 	public ReturnElement getconfirmationMessageForEmail() {
 		return new ReturnElement(confirmationMessageForEmail,Thread.currentThread().getStackTrace()[1].getMethodName());
 	}
-	
-	
+
+
 
 	@FindBy(xpath = "//td[contains(.,'School id is required.')]")
 	private WebElement errorMessageForSchoolID;
@@ -114,7 +114,7 @@ public class CreateSchoolPageRepository {
 
 	public ReturnElement getErrorMessageForGrade() {
 		return new ReturnElement(errorMessageForGrade,
-			Thread.currentThread().getStackTrace()[1].getMethodName());
+				Thread.currentThread().getStackTrace()[1].getMethodName());
 
 	}
 
@@ -136,21 +136,21 @@ public class CreateSchoolPageRepository {
 	}
 	@FindBy(xpath = "//td[contains(.,'Email is required')]")
 	private WebElement errorMessageForAdminEmail;
-	
+
 	public ReturnElement getErrorMessageForAdminEmail() {
 		return new ReturnElement(errorMessageForAdminEmail,Thread.currentThread().getStackTrace()[1].getMethodName());
 
 	}
-	
+
 	@FindBy(xpath = "//td[contains(.,'Password id required')]")
 	private WebElement errorMessageForAdminPassword;
 
 	public ReturnElement getErrorMessageForAdminPassword() {
 		return new ReturnElement(errorMessageForAdminPassword,Thread.currentThread().getStackTrace()[1].getMethodName());
 
-	
+
 	}
-	
+
 	@FindBy(id = "MainContent_txtSchoolName")
 	private WebElement oSchoolName;
 
@@ -225,5 +225,5 @@ public class CreateSchoolPageRepository {
 	public ReturnElement getAdminPassword() {
 		return new ReturnElement(oAdminPassword,Thread.currentThread().getStackTrace()[1].getMethodName());
 	}
-	
-		}
+
+}

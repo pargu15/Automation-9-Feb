@@ -1,15 +1,9 @@
 package com.ZippSlipAutomation.districtadmin.maintestpackage;
 
-import java.io.IOException;
-
-import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
-
 import com.ZippSlipAutomation.admin.objectRepository.LoginRepository;
 import com.ZippSlipAutomation.admin.operations.LoginPage;
-import com.ZippSlipAutomation.districtadmin.operations.AddNewSchoolInfoFlow;
-import com.ZippSlipAutomation.districtadmin.operations.CreateSchoolActions;
 import com.ZippSlipAutomation.districtadmin.operations.ParentImportActions;
 import com.ZippSlipAutomation.districtadmin.operations.ParentImportTemplateActions;
 import com.ZippSlipAutomation.utilities.CommonFunctions;
@@ -77,6 +71,13 @@ public class ParentImportMainClass {
 		ParentImportActions parentImportActions = new ParentImportActions();
 		parentImportActions.loginWithImportedParent();
 		Thread.sleep(5000);
+	}
 
+	@Test(priority = 5)
+	public static void verifyImportedParentInfo() throws Exception {
+		ParentImportActions parentImportActions = new ParentImportActions();
+		parentImportActions.verifyImportedParentInfo();
+		Thread.sleep(5000);
+		LoginRepository.clickOnLogoutButton();
 	}
 }

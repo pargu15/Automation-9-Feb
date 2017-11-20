@@ -13,14 +13,14 @@ public class UnpublishActivityActions {
 	CommonFunctions commonFunctions = new CommonFunctions();
 	EventPageRepository eventPageRepository = PageFactory.initElements(DriverInitiation.getDriver(),EventPageRepository.class);
 	ExcelReadEvent excelReadEvent = new ExcelReadEvent();
-	
+
 	public void selectPublishedEvent() throws Exception {
 
 		commonFunctions.waitUntilElementDisplayed(eventPageRepository.getParentActivitiesDropdown().getElement());
-		
+
 		commonFunctions.hoverOverElement(eventPageRepository.getParentActivitiesDropdown().getElement());
 		eventPageRepository.getEventFieldInDropdown().getElement().click();
-		
+
 		/*WebElement element = DriverInitiation.getDriver().findElement(By.className("AspNet-Menu-Link"));
 		JavascriptExecutor executor = (JavascriptExecutor)DriverInitiation.getDriver();
 		executor.executeScript("arguments[0].click();", element);*/

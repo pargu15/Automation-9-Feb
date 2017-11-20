@@ -150,7 +150,7 @@ public class LoginPage {
 		loginRepository.getSubmitButton().getElement().click();
 
 	}
-	
+
 	private void loginForSocialEnglishDistrictAdmin() throws Exception {
 
 		CommonFunctions commonFunctions = new CommonFunctions();

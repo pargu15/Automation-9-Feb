@@ -85,15 +85,15 @@ public class CreateActivityActions {
 		Thread.sleep(2000);
 
 	}
-	
-	
+
+
 	public void verifyCurrentlySelectedForms() throws Exception {
 		eventPageRepository.getSeeAllFormsButton().getElement().click();
 		Thread.sleep(2000);
 		excelReadEvent.readFromExcel(1, CommonVariables.rownumber, ExcelTypes.Excel1 );
 		DateTimeFormatter dtf = DateTimeFormatter.ofPattern("dd/MM/yyyy");
 		LocalDate localDate = LocalDate.now();
-		
+
 		eventPageRepository.getSearchformTextbox().getElement().sendKeys(excelReadEvent.getFormName() + " " + dtf.format(localDate));
 		eventPageRepository.getSearchformButton().getElement().click();
 		eventPageRepository.getRequiredformButton().getElement().click();
@@ -120,7 +120,7 @@ public class CreateActivityActions {
 
 		Thread.sleep(1000);
 	}
-*/
+	 */
 	public void verifySectionOnAdvancedSettingsButton() throws InterruptedException {
 
 		eventPageRepository.getAdvancedSettings().getElement().click();
