@@ -55,7 +55,7 @@ public class CreateZippGramMainClass {
 		CreateZippGramActions createZippGramActions = new CreateZippGramActions();
 		createZippGramActions.verifyZippGramNameIsMandatory();
 	}
-	
+
 	@Test(priority = 3)
 	public void addImageControl() throws Exception {
 		CreateZippGramActions createZippGramActions = new CreateZippGramActions();
@@ -68,19 +68,19 @@ public class CreateZippGramMainClass {
 		CreateZippGramActions createZippGramActions = new CreateZippGramActions();
 		createZippGramActions.addVideoControl();
 	}
-	
+
 	@Test(priority = 5)
 	public void addPollControl() throws Exception {
 		CreateZippGramActions createZippGramActions = new CreateZippGramActions();
 		createZippGramActions.addPollControl();
 	}
-	
+
 	@Test(priority = 6)
 	public void directToCommunicationPage() throws Exception {
 		CreateZippGramActions createZippGramActions = new CreateZippGramActions();
 		createZippGramActions.directToCommunicationPage();
 	}
-	
+
 
 	@Test(priority = 7)
 	public void communicationsPageFunctionality() throws Exception {
@@ -88,7 +88,7 @@ public class CreateZippGramMainClass {
 		communicationPage.communicationPageFunctionality();
 	}
 
-	
+
 	@AfterClass
 	public static void driverExit() throws IOException, InterruptedException {
 

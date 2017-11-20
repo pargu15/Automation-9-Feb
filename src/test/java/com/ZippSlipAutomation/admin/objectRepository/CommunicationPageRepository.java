@@ -78,7 +78,7 @@ public class CommunicationPageRepository {
 		return new ReturnElement(oProdAllStudentsGroupButton, Thread.currentThread().getStackTrace()[1].getMethodName());
 
 	}
-	
+
 	@FindBy(id = "a_11764")
 	private WebElement oSocialAllStudentsGroupButton;
 

@@ -34,7 +34,7 @@ public class EventPageRepository {
 		return new ReturnElement(oCopyExistingActivity, Thread.currentThread().getStackTrace()[1].getMethodName());
 
 	}
-	
+
 	@FindBy(xpath = ".//*[@id='MenuSchool']/ul/li[3]/a")
 	private WebElement oParentActivitiesDropdown;
 
@@ -42,7 +42,7 @@ public class EventPageRepository {
 		return new ReturnElement(oParentActivitiesDropdown, Thread.currentThread().getStackTrace()[1].getMethodName());
 
 	}
-	
+
 	@FindBy(xpath = ".//*[@id='MenuSchool:submenu:4']/li[1]/a")
 	private WebElement oEventFieldInDropdown;
 
@@ -50,7 +50,7 @@ public class EventPageRepository {
 		return new ReturnElement(oEventFieldInDropdown, Thread.currentThread().getStackTrace()[1].getMethodName());
 
 	}
-	
+
 	@FindBy(id = "MainContent_divCurrentStatus")
 	private WebElement oEventCurrentStatus;
 
@@ -58,7 +58,7 @@ public class EventPageRepository {
 		return new ReturnElement(oEventCurrentStatus, Thread.currentThread().getStackTrace()[1].getMethodName());
 
 	}
-	
+
 	@FindBy(id = "divChangeEventPublishStatus")
 	private WebElement oChangeEventPublishStatus;
 
@@ -66,7 +66,7 @@ public class EventPageRepository {
 		return new ReturnElement(oChangeEventPublishStatus, Thread.currentThread().getStackTrace()[1].getMethodName());
 
 	}
-	
+
 	@FindBy(id = "MainContent_btnOkConfrm")
 	private WebElement oClickOnConfirmToUnpublish;
 
@@ -74,8 +74,8 @@ public class EventPageRepository {
 		return new ReturnElement(oClickOnConfirmToUnpublish, Thread.currentThread().getStackTrace()[1].getMethodName());
 
 	}
-	
-	
+
+
 	@FindBy(id = "txtName")
 	private WebElement oEventName;
 
@@ -233,21 +233,21 @@ public class EventPageRepository {
 	public ReturnElement getParentStudentButton() {
 		return new ReturnElement(parentStudentButton, Thread.currentThread().getStackTrace()[1].getMethodName());
 	}
-	
+
 	@FindBy(id = "txtSearchForms")
 	private WebElement searchFormTextbox;
 
 	public ReturnElement getSearchformTextbox() {
 		return new ReturnElement(searchFormTextbox, Thread.currentThread().getStackTrace()[1].getMethodName());
 	}
-	
+
 	@FindBy(id = "btnSearchForms")
 	private WebElement searchFormButton;
 
 	public ReturnElement getSearchformButton() {
 		return new ReturnElement(searchFormButton, Thread.currentThread().getStackTrace()[1].getMethodName());
 	}
-	
+
 	@FindBy(xpath = "//p[contains(.,'AutomationTestForm_DataToBeEntered')]")
 	private WebElement formSelection;
 
@@ -256,7 +256,7 @@ public class EventPageRepository {
 	}
 	@FindBy(id = "MainContent_btnOk")
 	private WebElement FormSelectionOkButton;
-	
+
 	public ReturnElement getFormOkConfirmationButton() {
 		return new ReturnElement(FormSelectionOkButton, Thread.currentThread().getStackTrace()[1].getMethodName());
 	}
@@ -553,6 +553,6 @@ public class EventPageRepository {
 		return new ReturnElement(totalSum, Thread.currentThread().getStackTrace()[1].getMethodName());
 	}
 
-	
+
 
 }

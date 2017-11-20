@@ -8,7 +8,7 @@ import com.ZippSlipAutomation.utilities.DriverInitiation;
 import com.ZippSlipAutomation.utilities.ReturnElement;
 
 public class UploadPastAbsencesRepository {
-	
+
 	@FindBy(xpath = ".//span[contains(.,'Administration')]")
 	private WebElement oAdministrationLink;
 
@@ -16,8 +16,8 @@ public class UploadPastAbsencesRepository {
 		return new ReturnElement(oAdministrationLink, Thread.currentThread().getStackTrace()[1].getMethodName());
 
 	}
-	
-	
+
+
 	@FindBy(xpath = "//span[contains(.,'Import Template Library')]")
 	private WebElement oImportTemplate;
 
@@ -25,7 +25,7 @@ public class UploadPastAbsencesRepository {
 		return new ReturnElement(oImportTemplate, Thread.currentThread().getStackTrace()[1].getMethodName());
 
 	}
-	
+
 	@FindBy(id = "txtSearch")
 	private WebElement oTemplateSearch;
 
@@ -33,7 +33,7 @@ public class UploadPastAbsencesRepository {
 		return new ReturnElement(oTemplateSearch, Thread.currentThread().getStackTrace()[1].getMethodName());
 
 	}
-	
+
 	@FindBy(id = "txtSearch")
 	private WebElement oSearchBtn;
 
@@ -41,8 +41,8 @@ public class UploadPastAbsencesRepository {
 		return new ReturnElement(oSearchBtn, Thread.currentThread().getStackTrace()[1].getMethodName());
 
 	}
-	
-	
+
+
 	@FindBy(id = "rptTemplateList_btnImport_0")
 	private WebElement oImportBtn;
 
@@ -58,7 +58,7 @@ public class UploadPastAbsencesRepository {
 		return new ReturnElement(ouploadfileBtn, Thread.currentThread().getStackTrace()[1].getMethodName());
 
 	}
-	
+
 	@FindBy(id = "popupImportButton")
 	private WebElement oPopupImportBtn;
 
@@ -66,5 +66,5 @@ public class UploadPastAbsencesRepository {
 		return new ReturnElement(oPopupImportBtn, Thread.currentThread().getStackTrace()[1].getMethodName());
 
 	}
-	
-	}
+
+}

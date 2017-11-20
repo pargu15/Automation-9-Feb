@@ -6,7 +6,7 @@ import org.openqa.selenium.support.FindBy;
 import com.ZippSlipAutomation.utilities.ReturnElement;
 
 public class CreateZippGramPageRepository {
-	
+
 	@FindBy(id = "MainContent_CreateZippWireButton")
 	private WebElement oCreateZippGramBtn;
 
@@ -14,8 +14,8 @@ public class CreateZippGramPageRepository {
 		return new ReturnElement(oCreateZippGramBtn, Thread.currentThread().getStackTrace()[1].getMethodName());
 
 	}
-	
-	
+
+
 	@FindBy(id = "txtZippGramTitle")
 	private WebElement oZippGramName;
 
@@ -23,7 +23,7 @@ public class CreateZippGramPageRepository {
 		return new ReturnElement(oZippGramName, Thread.currentThread().getStackTrace()[1].getMethodName());
 
 	}
-	
+
 	@FindBy(id = "btnNext")
 	private WebElement oNextButton;
 
@@ -31,14 +31,14 @@ public class CreateZippGramPageRepository {
 		return new ReturnElement(oNextButton, Thread.currentThread().getStackTrace()[1].getMethodName());
 
 	}
-	
+
 	@FindBy(className = "ajax__validatorcallout_error_message_cell")
 	private WebElement errorMessageForZippGramname;
 
 	public ReturnElement getErrorMessageForZippGramname() {
 		return new ReturnElement(errorMessageForZippGramname, Thread.currentThread().getStackTrace()[1].getMethodName());
 	}
-	
+
 	@FindBy(xpath = ".//*[@id='1']/div[1]")
 	private WebElement oParagraph;
 
@@ -46,91 +46,91 @@ public class CreateZippGramPageRepository {
 		return new ReturnElement(oParagraph, Thread.currentThread().getStackTrace()[1].getMethodName());
 
 	}
-	
+
 	@FindBy(xpath = ".//*[@id='dragablecontrol']/div[2]/p/span[1]") 
-	
+
 	private WebElement oImage;
 
 	public ReturnElement getImageControl() {
 		return new ReturnElement(oImage, Thread.currentThread().getStackTrace()[1].getMethodName());
 	}
-	
+
 	@FindBy(xpath = ".//a[@onclick='UploadImage(this);']") 
-	
+
 	private WebElement ouploadImageBtn;
 
 	public ReturnElement getuploadImageBtn() {
 		return new ReturnElement(ouploadImageBtn, Thread.currentThread().getStackTrace()[1].getMethodName());
 	}
-	
-	
+
+
 	@FindBy(xpath = ".//*[@id='dragablecontrol']/div[3]/p/span[1]") 
-	
+
 	private WebElement oVideo;
 
 	public ReturnElement getVideoControl() {
 		return new ReturnElement(oVideo, Thread.currentThread().getStackTrace()[1].getMethodName());
 	}
-	
+
 
 	@FindBy(xpath = ".//a[contains(@id,'btn_vidprev')]") 
-	
+
 	private WebElement oAddVideo;
 
 	public ReturnElement getAddVideo() {
 		return new ReturnElement(oAddVideo, Thread.currentThread().getStackTrace()[1].getMethodName());
 	}
-	
+
 	@FindBy(id = "txtZippGramVideoPath") 
-	
+
 	private WebElement oVideoPath;
 
 	public ReturnElement getVideoPath() {
 		return new ReturnElement(oVideoPath, Thread.currentThread().getStackTrace()[1].getMethodName());
 	}
-	
+
 	@FindBy(xpath = "spnVideoPath") 
-	
+
 	private WebElement oErrorForVideo;
 
 	public ReturnElement ErrorForVideo() {
 		return new ReturnElement(oErrorForVideo, Thread.currentThread().getStackTrace()[1].getMethodName());
 	}
-	
+
 	@FindBy(id = "bntZippGramAddVideo") 
-	
+
 	private WebElement oVideoPathAddBtn;
 
 	public ReturnElement getVideoPathAddBtn() {
 		return new ReturnElement(oVideoPathAddBtn, Thread.currentThread().getStackTrace()[1].getMethodName());
 	}
-	
+
 	@FindBy(xpath = ".//*[@id='dragablecontrol']/div[4]/p") 
-	
+
 	private WebElement oPoll;
 
 	public ReturnElement getPollControl() {
 		return new ReturnElement(oPoll, Thread.currentThread().getStackTrace()[1].getMethodName());
 	}
-	
+
 	@FindBy(xpath = ".//a[contains(@id,'pollbtn_')]") 
-	
+
 	private WebElement oAddPoll;
 
 	public ReturnElement getAddPoll() {
 		return new ReturnElement(oAddPoll, Thread.currentThread().getStackTrace()[1].getMethodName());
 	}
-	
+
 	@FindBy(id = "txtQuestionText") 
-	
+
 	private WebElement oAddPollQues;
 
 	public ReturnElement getAddPollQues() {
 		return new ReturnElement(oAddPollQues, Thread.currentThread().getStackTrace()[1].getMethodName());
 	}
-	
+
 	@FindBy(id = "spnTxtQuestionTextValidation") 
-	
+
 	private WebElement oErrorForPollQues;
 
 	public ReturnElement getErrorForAddPollQues() {
@@ -138,42 +138,42 @@ public class CreateZippGramPageRepository {
 	}
 
 	@FindBy(id = "txtzipOptionText") 
-	
+
 	private WebElement oAddPollOptn;
 
 	public ReturnElement getAddPollOptn() {
 		return new ReturnElement(oAddPollOptn, Thread.currentThread().getStackTrace()[1].getMethodName());
 	}
-	
+
 	@FindBy(id = "spnZippOptionValidation") 
-	
+
 	private WebElement oErrorForPollOptn;
 
 	public ReturnElement getErrorForAddPollOptn() {
 		return new ReturnElement(oErrorForPollOptn, Thread.currentThread().getStackTrace()[1].getMethodName());
 	}
-	
+
 	@FindBy(xpath = "//input[contains(@onclick,'AddOptionsInPopUp()')]") 
-	
+
 	private WebElement oAddPollOptnBtn;
 
 	public ReturnElement getAddPollOptnBtn() {
 		return new ReturnElement(oAddPollOptnBtn, Thread.currentThread().getStackTrace()[1].getMethodName());
 	}
-	
-	
+
+
 	@FindBy(id = "btnPollOkclick") 
-	
+
 	private WebElement oSubmitPollQues;
 
 	public ReturnElement getSubmitPollQues() {
 		return new ReturnElement(oSubmitPollQues, Thread.currentThread().getStackTrace()[1].getMethodName());
 	}
-	
-	
-	
-	
-	
+
+
+
+
+
 	@FindBy(id = "MainContent_divCurrentStatus")
 	private WebElement oEventCurrentStatus;
 
@@ -181,7 +181,7 @@ public class CreateZippGramPageRepository {
 		return new ReturnElement(oEventCurrentStatus, Thread.currentThread().getStackTrace()[1].getMethodName());
 
 	}
-	
+
 	@FindBy(id = "divChangeEventPublishStatus")
 	private WebElement oChangeEventPublishStatus;
 
@@ -189,7 +189,7 @@ public class CreateZippGramPageRepository {
 		return new ReturnElement(oChangeEventPublishStatus, Thread.currentThread().getStackTrace()[1].getMethodName());
 
 	}
-	
+
 	@FindBy(id = "MainContent_btnOkConfrm")
 	private WebElement oClickOnConfirmToUnpublish;
 
@@ -197,8 +197,8 @@ public class CreateZippGramPageRepository {
 		return new ReturnElement(oClickOnConfirmToUnpublish, Thread.currentThread().getStackTrace()[1].getMethodName());
 
 	}
-	
-	
+
+
 	@FindBy(id = "txtName")
 	private WebElement oEventName;
 
@@ -207,7 +207,7 @@ public class CreateZippGramPageRepository {
 
 	}
 
-	
+
 
 	@FindBy(id = "ckActivityDescription")
 	private WebElement oDescription;

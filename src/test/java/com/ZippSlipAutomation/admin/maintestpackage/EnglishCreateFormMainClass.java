@@ -49,12 +49,12 @@ public class EnglishCreateFormMainClass {
 			System.out.println("Prefilled Data Form is Selected");
 			CommonVariables.rownumber = 2;
 		}
-		
+
 	}
-	
+
 	@Test(priority = 1)
 	public void selectFormList() throws Exception {
-		 
+
 		CreateFormActions createFormActions = new CreateFormActions();
 		createFormActions.selectCreateFormLink();
 
@@ -65,33 +65,33 @@ public class EnglishCreateFormMainClass {
 		CreateFormActions createFormActions = new CreateFormActions();
 		createFormActions.verifyFormNameIsMandatory();
 	}
-	
+
 	@Test(priority = 3)
 	public void addParagraphController() throws Exception {
 		CreateFormActions createFormActions = new CreateFormActions();
 		createFormActions.addParagraphController();
 	}
-	
+
 	@Test(priority = 4)
 	public void addTextBoxControl() throws Exception {
 		CreateFormActions createFormActions = new CreateFormActions();
 		createFormActions.addTextBoxControl();
 	}
-	
-	
+
+
 	@Test(priority = 5)
 	public void addSingleSelectControl() throws Exception {
 		CreateFormActions createFormActions = new CreateFormActions();
 		createFormActions.addSingleSelectControl();
 	}
-	
-	
+
+
 	@Test(priority = 6)
 	public void addMultipleSelectControl() throws Exception {
 		CreateFormActions createFormActions = new CreateFormActions();
 		createFormActions.addMultipleSelectControl();
 	}
-	
+
 	@Test(priority = 7)
 	public void addDropDownControl() throws Exception {
 		CreateFormActions createFormActions = new CreateFormActions();

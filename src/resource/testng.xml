@@ -1,27 +1,37 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="Default suite">
-  <test verbose="2" name="Default test">
-    <classes>
- 	   
- 	  <!-- class name="com.ZippSlipAutomation.admin.maintestpackage.UploadPastAbsencesMainClass"/ -->
-      <!-- class name="com.ZippSlipAutomation.parent.maintestpackage.PastFutureAbsencesResponseMainClass"/ -->
- 	  <!-- class name="com.ZippSlipAutomation.admin.maintestpackage.CreateZippGramMainClass"/ -->
- 	  <!-- class name="com.ZippSlipAutomation.parent.maintestpackage.ZippGramConsentMainClass"/ -->
- 	
-  	  <!-- class name="com.ZippSlipAutomation.districtadmin.maintestpackage.CreateSchoolMainClass"/ --> 
-      <!-- class name="com.ZippSlipAutomation.admin.maintestpackage.EnglishCreateFormMainClass"/  -->
-      
-      <!-- class name="com.ZippSlipAutomation.admin.maintestpackage.EnglishCreateActivityMainClass"/ -->
-      <!-- class name="com.ZippSlipAutomation.parentsignup.maintestpackage.ParentSignUpMainClass"/ -->
-      <!-- class name="com.ZippSlipAutomation.parent.maintestpackage.EnglishEventConsentMainClass"/ --> 
-      <!-- class name="com.ZippSlipAutomation.admin.maintestpackage.EnglishUnpublishActivityMainClass"/ --> 
-     
-     
-     <class name="com.ZippSlipAutomation.districtadmin.maintestpackage.ParentImportMainClass"/> 
-      
-         
-      <!--  class name="com.ZippSlipAutomation.ProductionData.maintestpackage.EnglishEventConsentMainClass"/ --> 
-    </classes>
-  </test> <!-- Default test -->
+	<test verbose="2" name="Default test">
+		<classes>
+
+			<!-- class name="com.ZippSlipAutomation.admin.maintestpackage.UploadPastAbsencesMainClass"/ -->
+			<!-- class name="com.ZippSlipAutomation.parent.maintestpackage.PastFutureAbsencesResponseMainClass"/ -->
+
+
+
+
+
+			<!-- class name="com.ZippSlipAutomation.admin.maintestpackage.CreateZippGramMainClass"/ -->
+			<!-- class name="com.ZippSlipAutomation.parent.maintestpackage.ZippGramConsentMainClass"/ -->
+
+
+
+
+
+			<!-- class name="com.ZippSlipAutomation.districtadmin.maintestpackage.CreateSchoolMainClass"/ -->
+			<!-- class name="com.ZippSlipAutomation.admin.maintestpackage.EnglishCreateFormMainClass"/ -->
+
+			<!-- class name="com.ZippSlipAutomation.admin.maintestpackage.EnglishCreateActivityMainClass"/ -->
+			<!-- class name="com.ZippSlipAutomation.parentsignup.maintestpackage.ParentSignUpMainClass"/ -->
+			<!-- class name="com.ZippSlipAutomation.parent.maintestpackage.EnglishEventConsentMainClass"/ -->
+			<!-- class name="com.ZippSlipAutomation.admin.maintestpackage.EnglishUnpublishActivityMainClass"/ -->
+
+
+			<class
+				name="com.ZippSlipAutomation.districtadmin.maintestpackage.ParentImportMainClass" />
+
+
+			<!-- class name="com.ZippSlipAutomation.ProductionData.maintestpackage.EnglishEventConsentMainClass"/ -->
+		</classes>
+	</test> <!-- Default test -->
 </suite> <!-- Default suite -->
