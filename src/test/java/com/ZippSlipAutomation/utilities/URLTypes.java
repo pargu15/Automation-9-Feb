@@ -8,11 +8,11 @@ public enum URLTypes {
 	prodenglishdistrictadmin,
 	prodenglishadmin,
 	prodfrenchadmin,
-	
+
 	socialenglishparent,
 	prodenglishparent,
-	
+
 	socialenglishparentsignup,
 	prodenglishparentsignup
-	
+
 }

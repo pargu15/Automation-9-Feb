@@ -1,4 +1,4 @@
- package com.ZippSlipAutomation.utilities;
+package com.ZippSlipAutomation.utilities;
 
 import java.security.Key;
 import java.security.Key;
@@ -38,7 +38,7 @@ public class EncryptNDecrypt {
 		return key;
 	}
 
-/*	public static void main(String[] args) throws Exception {
+	/*	public static void main(String[] args) throws Exception {
 		// System.out.println(EncryptNDecrypt.encrypt("admin1"));
 		 System.out.println(EncryptNDecrypt.decrypt("DveiFW9XuCWBpTqKwly1yQ=="));
 	}*/

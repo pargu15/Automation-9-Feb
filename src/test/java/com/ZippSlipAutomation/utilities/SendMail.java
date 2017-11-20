@@ -25,14 +25,14 @@ public class SendMail {
 		props.put("mail.smtp.starttls.enable", "true");
 		props.put("mail.smtp.auth", "true");
 		props.put("mail.smtp.port", "587");
-		
 
-				
+
+
 		// Get the Session object.
 		Session session = Session.getInstance(props, new javax.mail.Authenticator() {
-			
+
 			String password = EncryptNDecrypt.decrypt("S0/n04uI+wXAfled88SRBg==");
-			
+
 			protected PasswordAuthentication getPasswordAuthentication() {
 				return new PasswordAuthentication("sameer.arora@quovantis.com", password);
 			}
@@ -45,7 +45,7 @@ public class SendMail {
 
 			// Set To: header field of the header.
 			message.addRecipients(Message.RecipientType.TO, InternetAddress.parse("sameer.arora@quovantis.com"));
-			 message.addRecipients(Message.RecipientType.CC,	InternetAddress.parse("yashika.dawar@quovantis.com"));
+			message.addRecipients(Message.RecipientType.CC,	InternetAddress.parse("yashika.dawar@quovantis.com"));
 
 			// Set Subject: header field
 			message.setSubject("Test Mail");
@@ -61,7 +61,7 @@ public class SendMail {
 
 			// Set text message part
 			multipart.addBodyPart(messageBodyPart);
-/*
+			/*
 			// Part two is attachment
 			messageBodyPart = new MimeBodyPart();
 			String filename = "C://Users//sameer.arora//Desktop//Sameer//TestDataSheet.xls";
@@ -81,8 +81,8 @@ public class SendMail {
 			mex.printStackTrace();
 		}
 	}
-	
-/*
+
+	/*
 	public static void main(String[] args) throws Exception {
 		SendMail sendMail = new SendMail();
 		sendMail.emailSendFunction();

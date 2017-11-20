@@ -12,7 +12,6 @@ import java.io.IOException;
 import java.util.List;
 import java.util.NoSuchElementException;
 import java.util.concurrent.TimeUnit;
-
 import org.apache.poi.hssf.usermodel.HSSFSheet;
 import org.apache.poi.hssf.usermodel.HSSFWorkbook;
 import org.apache.poi.ss.usermodel.CellType;
@@ -103,7 +102,7 @@ public class CommonFunctions {
 				if (checkForErrorMessage()) {
 
 					EventFormDataEntryRepository.getTextQuestion().getElement()
-							.sendKeys(excelReadEvent.getTextQuestion());
+					.sendKeys(excelReadEvent.getTextQuestion());
 					Thread.sleep(1000);
 
 					eventConsentFlowRepository.getSaveNNextButton().getElement().click();
@@ -129,9 +128,9 @@ public class CommonFunctions {
 					eventConsentFlowRepository.getSaveNNextButton().getElement().click();
 					Thread.sleep(2000);
 					displayErrorMessage();
-					
+
 					EventFormDataEntryRepository.getPhoneQuestion().getElement()
-							.sendKeys(excelReadEvent.getPhoneNumber());
+					.sendKeys(excelReadEvent.getPhoneNumber());
 					Thread.sleep(1000);
 
 					eventConsentFlowRepository.getSaveNNextButton().getElement().click();
@@ -139,7 +138,7 @@ public class CommonFunctions {
 					displayErrorMessage();
 
 					EventFormDataEntryRepository.getDateQuestion().getElement()
-							.sendKeys(excelReadEvent.getDateQuestion());
+					.sendKeys(excelReadEvent.getDateQuestion());
 					Thread.sleep(1000);
 
 					eventConsentFlowRepository.getSaveNNextButton().getElement().click();
@@ -147,53 +146,53 @@ public class CommonFunctions {
 					displayErrorMessage();
 
 					EventFormDataEntryRepository.getEmailQuestion().getElement()
-							.sendKeys(excelReadEvent.getEmailQuestion());
+					.sendKeys(excelReadEvent.getEmailQuestion());
 					Thread.sleep(1000);
-				
+
 					eventConsentFlowRepository.getSaveNNextButton().getElement().click();
 					Thread.sleep(2000);
 					displayErrorMessage();
 
 					EventFormDataEntryRepository.getFirstNameQuestion().getElement()
-							.sendKeys(excelReadEvent.getFirstNameQuestion());
+					.sendKeys(excelReadEvent.getFirstNameQuestion());
 					Thread.sleep(1000);
 
 					EventFormDataEntryRepository.getLastNameQuestion().getElement()
-							.sendKeys(excelReadEvent.getLastNameQuestion());
+					.sendKeys(excelReadEvent.getLastNameQuestion());
 					Thread.sleep(1000);
-					
+
 					eventConsentFlowRepository.getSaveNNextButton().getElement().click();
 					Thread.sleep(2000);
 					displayErrorMessage();
-					
+
 					EventFormDataEntryRepository.getStreetNumberQuestion().getElement()
 					.sendKeys(excelReadEvent.getStreetNumberQuestion());
 					Thread.sleep(1000);
-					
+
 					EventFormDataEntryRepository.getMailingAddressQuestion().getElement()
-							.sendKeys(excelReadEvent.getMailingAddressQuestion());
+					.sendKeys(excelReadEvent.getMailingAddressQuestion());
 					Thread.sleep(1000);
-					
+
 					EventFormDataEntryRepository.getStreetTypeQuestion().getElement()
-							.sendKeys(excelReadEvent.getStreetTypeQuestion());
+					.sendKeys(excelReadEvent.getStreetTypeQuestion());
 					Thread.sleep(2000);
-					
+
 					selectFromDropDown(EventFormDataEntryRepository.getStreetDirectionQuestion().getElement(), 4);
 					Thread.sleep(1000);
-					
+
 					EventFormDataEntryRepository.getMailingAddressApartmentQuestion().getElement()
-							.sendKeys(excelReadEvent.getMailingAddressApartmentQuestion());
+					.sendKeys(excelReadEvent.getMailingAddressApartmentQuestion());
 					Thread.sleep(1000);
-					
+
 					EventFormDataEntryRepository.getCityTownQuestion().getElement()
-							.sendKeys(excelReadEvent.getCityTownQuestion());
+					.sendKeys(excelReadEvent.getCityTownQuestion());
 					Thread.sleep(1000);
-		
+
 					selectFromDropDown(EventFormDataEntryRepository.getAddressStatesQuestion().getElement(), 8);
 					Thread.sleep(1000);
-					
+
 					EventFormDataEntryRepository.getZippCodeQuestion().getElement()
-							.sendKeys(excelReadEvent.getZippCodeQuestion());
+					.sendKeys(excelReadEvent.getZippCodeQuestion());
 					Thread.sleep(1000);
 				}
 
@@ -236,7 +235,7 @@ public class CommonFunctions {
 				if (checkForErrorMessage()) {
 
 					EventFormDataEntryRepository.getTextQuestion().getElement()
-							.sendKeys(excelReadEvent.getTextQuestion());
+					.sendKeys(excelReadEvent.getTextQuestion());
 					Thread.sleep(1000);
 
 					eventConsentFlowRepository.getSaveNNextButton().getElement().click();
@@ -262,9 +261,9 @@ public class CommonFunctions {
 					eventConsentFlowRepository.getSaveNNextButton().getElement().click();
 					Thread.sleep(2000);
 					displayErrorMessage();
-					
+
 					EventFormDataEntryRepository.getPhoneQuestion().getElement()
-							.sendKeys(excelReadEvent.getPhoneNumber());
+					.sendKeys(excelReadEvent.getPhoneNumber());
 					Thread.sleep(1000);
 
 					eventConsentFlowRepository.getSaveNNextButton().getElement().click();
@@ -272,7 +271,7 @@ public class CommonFunctions {
 					displayErrorMessage();
 
 					EventFormDataEntryRepository.getDateQuestion().getElement()
-							.sendKeys(excelReadEvent.getDateQuestion());
+					.sendKeys(excelReadEvent.getDateQuestion());
 					Thread.sleep(1000);
 
 					eventConsentFlowRepository.getSaveNNextButton().getElement().click();
@@ -280,7 +279,7 @@ public class CommonFunctions {
 					displayErrorMessage();
 
 					EventFormDataEntryRepository.getEmailQuestion().getElement()
-							.sendKeys(excelReadEvent.getEmailQuestion());
+					.sendKeys(excelReadEvent.getEmailQuestion());
 					Thread.sleep(1000);
 
 					eventConsentFlowRepository.getSaveNNextButton().getElement().click();
@@ -288,49 +287,49 @@ public class CommonFunctions {
 					displayErrorMessage();
 
 					EventFormDataEntryRepository.getFirstNameQuestion().getElement()
-							.sendKeys(excelReadEvent.getFirstNameQuestion());
+					.sendKeys(excelReadEvent.getFirstNameQuestion());
 					Thread.sleep(1000);
 
 					EventFormDataEntryRepository.getLastNameQuestion().getElement()
-							.sendKeys(excelReadEvent.getLastNameQuestion());
+					.sendKeys(excelReadEvent.getLastNameQuestion());
 					Thread.sleep(1000);
-					
+
 					eventConsentFlowRepository.getSaveNNextButton().getElement().click();
 					Thread.sleep(2000);
 					displayErrorMessage();
-					
+
 					EventFormDataEntryRepository.getStreetNumberQuestion().getElement()
 					.sendKeys(excelReadEvent.getStreetNumberQuestion());
 					Thread.sleep(1000);
-					
+
 					EventFormDataEntryRepository.getMailingAddressQuestion().getElement()
-							.sendKeys(excelReadEvent.getMailingAddressQuestion());
+					.sendKeys(excelReadEvent.getMailingAddressQuestion());
 					Thread.sleep(1000);
-					
+
 					EventFormDataEntryRepository.getStreetTypeQuestion().getElement()
-							.sendKeys(excelReadEvent.getStreetTypeQuestion());
+					.sendKeys(excelReadEvent.getStreetTypeQuestion());
 					Thread.sleep(2000);
-					
+
 					selectFromDropDown(EventFormDataEntryRepository.getStreetDirectionQuestion().getElement(), 4);
 					Thread.sleep(1000);
-					
+
 					EventFormDataEntryRepository.getMailingAddressApartmentQuestion().getElement()
-							.sendKeys(excelReadEvent.getMailingAddressApartmentQuestion());
+					.sendKeys(excelReadEvent.getMailingAddressApartmentQuestion());
 					Thread.sleep(1000);
-					
+
 					EventFormDataEntryRepository.getCityTownQuestion().getElement()
-							.sendKeys(excelReadEvent.getCityTownQuestion());
+					.sendKeys(excelReadEvent.getCityTownQuestion());
 					Thread.sleep(1000);
-		
+
 					selectFromDropDown(EventFormDataEntryRepository.getAddressStatesQuestion().getElement(), 8);
 					Thread.sleep(1000);
-					
+
 					EventFormDataEntryRepository.getZippCodeQuestion().getElement()
-							.sendKeys(excelReadEvent.getZippCodeQuestion());
+					.sendKeys(excelReadEvent.getZippCodeQuestion());
 					Thread.sleep(1000);
-					
-					
-					
+
+
+
 				}
 
 			} else if (excelReadEvent.getEventName()
@@ -386,7 +385,7 @@ public class CommonFunctions {
 	}
 
 	//Test
-	
+
 	public void respondYesForFormEventforProductionData(String childname) throws Exception {
 
 		ExcelReadEvent excelReadEvent = new ExcelReadEvent();
@@ -427,7 +426,7 @@ public class CommonFunctions {
 				if (checkForErrorMessage()) {
 
 					EventFormDataEntryRepository.getTextQuestion().getElement()
-							.sendKeys(childname);
+					.sendKeys(childname);
 					Thread.sleep(1000);
 
 					EventFormDataEntryRepository.getSingleSelectOptionOne().getElement().click();
@@ -439,23 +438,23 @@ public class CommonFunctions {
 					selectFromDropDown(EventFormDataEntryRepository.getDropDownQuestion().getElement(), 1);
 
 					EventFormDataEntryRepository.getPhoneQuestion().getElement()
-							.sendKeys(excelReadEvent.getPhoneNumber());
+					.sendKeys(excelReadEvent.getPhoneNumber());
 					Thread.sleep(1000);
 
 					EventFormDataEntryRepository.getDateQuestion().getElement()
-							.sendKeys(excelReadEvent.getDateQuestion());
+					.sendKeys(excelReadEvent.getDateQuestion());
 					Thread.sleep(1000);
 
 					EventFormDataEntryRepository.getEmailQuestion().getElement()
-							.sendKeys(excelReadEvent.getEmailQuestion());
+					.sendKeys(excelReadEvent.getEmailQuestion());
 					Thread.sleep(1000);
 
 					EventFormDataEntryRepository.getFirstNameQuestion().getElement()
-							.sendKeys(childname);
+					.sendKeys(childname);
 					Thread.sleep(1000);
 
 					EventFormDataEntryRepository.getLastNameQuestion().getElement()
-							.sendKeys(excelReadEvent.getLastNameQuestion());
+					.sendKeys(excelReadEvent.getLastNameQuestion());
 					Thread.sleep(1000);
 
 				}
@@ -499,7 +498,7 @@ public class CommonFunctions {
 				if (checkForErrorMessage()) {
 
 					EventFormDataEntryRepository.getTextQuestion().getElement()
-							.sendKeys(childname);
+					.sendKeys(childname);
 					Thread.sleep(1000);
 
 					EventFormDataEntryRepository.getSingleSelectOptionOne().getElement().click();
@@ -511,24 +510,24 @@ public class CommonFunctions {
 					selectFromDropDown(EventFormDataEntryRepository.getDropDownQuestion().getElement(), 1);
 
 					EventFormDataEntryRepository.getPhoneQuestion().getElement()
-							.sendKeys(excelReadEvent.getPhoneNumber());
+					.sendKeys(excelReadEvent.getPhoneNumber());
 					Thread.sleep(1000);
 
 					EventFormDataEntryRepository.getDateQuestion().getElement()
-							.sendKeys(excelReadEvent.getDateQuestion());
+					.sendKeys(excelReadEvent.getDateQuestion());
 					Thread.sleep(1000);
 
 
 					EventFormDataEntryRepository.getEmailQuestion().getElement()
-							.sendKeys(excelReadEvent.getEmailQuestion());
+					.sendKeys(excelReadEvent.getEmailQuestion());
 					Thread.sleep(1000);
 
 					EventFormDataEntryRepository.getFirstNameQuestion().getElement()
-							.sendKeys(childname);
+					.sendKeys(childname);
 					Thread.sleep(1000);
 
 					EventFormDataEntryRepository.getLastNameQuestion().getElement()
-							.sendKeys(excelReadEvent.getLastNameQuestion());
+					.sendKeys(excelReadEvent.getLastNameQuestion());
 					Thread.sleep(1000);
 
 				}
@@ -562,7 +561,7 @@ public class CommonFunctions {
 		eventConsentFlowRepository.getSaveNNextButton().getElement().click();
 		Thread.sleep(15000);
 
-	//	eventConsentFlowRepository.getZippNoteTextBox().getElement().sendKeys("Testing note");
+		//	eventConsentFlowRepository.getZippNoteTextBox().getElement().sendKeys("Testing note");
 		Thread.sleep(2000);
 
 		try {
@@ -574,7 +573,7 @@ public class CommonFunctions {
 		}
 
 		try {
-			
+
 			waitUntilElementDisplayed(eventConsentFlowRepository.getDontShowMessageButton().getElement());
 			eventConsentFlowRepository.getDontShowMessageButton().getElement().click();
 			Thread.sleep(2000);
@@ -585,7 +584,7 @@ public class CommonFunctions {
 			System.out.println("Moving to verification part....");
 		}
 	}
-	
+
 	// Click on the event correct
 	public void clickOnEvent() throws Exception {
 		Thread.sleep(5000);
@@ -600,21 +599,21 @@ public class CommonFunctions {
 			}
 		} while (!eventcorrect);
 	}
-	
+
 	// Overloaded function Click on the event correct
-		public void clickOnEvent(String childname) throws Exception {
-			Thread.sleep(5000);
-			boolean eventcorrect = false;
-			do {
-				if (checkEventOnPage(childname)) {
-					eventcorrect = true;
-					Thread.sleep(15000);
-				} else {
-					eventConsentFlowRepository.getNextButton().getElement().click();
-					Thread.sleep(15000);
-				}
-			} while (!eventcorrect);
-		}
+	public void clickOnEvent(String childname) throws Exception {
+		Thread.sleep(5000);
+		boolean eventcorrect = false;
+		do {
+			if (checkEventOnPage(childname)) {
+				eventcorrect = true;
+				Thread.sleep(15000);
+			} else {
+				eventConsentFlowRepository.getNextButton().getElement().click();
+				Thread.sleep(15000);
+			}
+		} while (!eventcorrect);
+	}
 
 	// To verify if the element is present on the page or not
 	public void verifyElementIsPresent(ReturnElement object) {
@@ -651,32 +650,32 @@ public class CommonFunctions {
 		}
 		return eventdisplay;
 	}
-	
-	// Overloaded function to Check if the event is correct on the page
-		public boolean checkEventOnPage(String childname) throws Exception {
-			Thread.sleep(2000);
-			ExcelReadEvent excelReadEvent = new ExcelReadEvent();
-			excelReadEvent.readFromExcel(1, CommonVariables.rownumber, ExcelTypes.Excel1);
-			String eventname = excelReadEvent.getEventName();
-			
-			boolean eventdisplay = false;
-			List<WebElement> MobileDevices = DriverInitiation.getDriver().findElements(By.id("hlEventName"));
 
-			for (WebElement singlerow : MobileDevices) {
-				
-				if (singlerow.getText().contains(eventname)) {
-					eventdisplay = true;
-					System.out.println("Event is present");
-					WebElement oClickonEvent = DriverInitiation.getDriver()
-							.findElement(By.xpath(".//a[@id='hlEventName' and text()='" + eventname + "']/parent::*/parent::*/following-sibling::td[1]/a[@id='anchor' and text()='" + childname + "']/parent::*/preceding-sibling::td[1]//a[@id='hlEventName']"));
-					oClickonEvent.click();
-					break;
-				}
+	// Overloaded function to Check if the event is correct on the page
+	public boolean checkEventOnPage(String childname) throws Exception {
+		Thread.sleep(2000);
+		ExcelReadEvent excelReadEvent = new ExcelReadEvent();
+		excelReadEvent.readFromExcel(1, CommonVariables.rownumber, ExcelTypes.Excel1);
+		String eventname = excelReadEvent.getEventName();
+
+		boolean eventdisplay = false;
+		List<WebElement> MobileDevices = DriverInitiation.getDriver().findElements(By.id("hlEventName"));
+
+		for (WebElement singlerow : MobileDevices) {
+
+			if (singlerow.getText().contains(eventname)) {
+				eventdisplay = true;
+				System.out.println("Event is present");
+				WebElement oClickonEvent = DriverInitiation.getDriver()
+						.findElement(By.xpath(".//a[@id='hlEventName' and text()='" + eventname + "']/parent::*/parent::*/following-sibling::td[1]/a[@id='anchor' and text()='" + childname + "']/parent::*/preceding-sibling::td[1]//a[@id='hlEventName']"));
+				oClickonEvent.click();
+				break;
 			}
-			return eventdisplay;
 		}
-	
-	
+		return eventdisplay;
+	}
+
+
 	// Reading from excel and return the value on the basis of a key
 	public String readExcel(String sheetName, String searchedString) {
 
@@ -712,13 +711,13 @@ public class CommonFunctions {
 		return valueReceived;
 	}
 
-	
+
 	// Reading from excel and returning a string of values by checking the String Name
 	public String[] readExcelMultiValue(String sheetName, String searchedString) {
 
 		String firstValueReceived = null;
 		String secondValueReceived = null;
-		
+
 		File file = new File(System.getProperty("user.dir") + "//src//resource//TestDataSheet.xls");
 		FileInputStream fs = null;
 		try {
@@ -735,9 +734,9 @@ public class CommonFunctions {
 		HSSFSheet sh = wb.getSheet(sheetName);
 
 		int rowCount = sh.getLastRowNum() - sh.getFirstRowNum();
-		
+
 		String[] singlerow = new String[2];
-		
+
 		// Create a loop over all the rows of excel file to read it
 		for (int i = 0; i < rowCount + 1; i++) {
 			Row row = sh.getRow(i);
@@ -749,15 +748,15 @@ public class CommonFunctions {
 					singlerow[0]=firstValueReceived;
 					singlerow[1]=secondValueReceived;
 					break;
+				}
+
 			}
 
 		}
+		return (singlerow);
 
 	}
-	return (singlerow);
 
-	}
-	
 	//Writing into an excel
 	public void writeExcel(String sheetName, String searchedString, String value) {
 
@@ -877,132 +876,132 @@ public class CommonFunctions {
 		wait.until(elementIsDisplayed);
 		DriverInitiation.getDriver().manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 	}
-	
-	
-	
+
+
+
 	//Upload file Functionality
 	public static void setClipboardData(String string) {
 		//StringSelection is a class that can be used for copy and paste operations.
-		   StringSelection stringSelection = new StringSelection(string);
-		   Toolkit.getDefaultToolkit().getSystemClipboard().setContents(stringSelection, null);
-		}
-	
+		StringSelection stringSelection = new StringSelection(string);
+		Toolkit.getDefaultToolkit().getSystemClipboard().setContents(stringSelection, null);
+	}
+
 	public static void uploadFile(String fileLocation) {
-        try {
-        	//Setting clipboard with file location
-            setClipboardData(fileLocation);
-            //native key strokes for CTRL, V and ENTER keys
-            Robot robot = new Robot();
-            Thread.sleep(2000);
-            robot.keyPress(KeyEvent.VK_CONTROL);
-            robot.keyPress(KeyEvent.VK_V);
-            robot.keyRelease(KeyEvent.VK_V);
-            robot.keyRelease(KeyEvent.VK_CONTROL);
-            Thread.sleep(2000);
-            robot.keyPress(KeyEvent.VK_ENTER);
-            robot.keyRelease(KeyEvent.VK_ENTER);
-        } catch (Exception exp) {
-        	exp.printStackTrace();
-        }
-    }
-	
+		try {
+			//Setting clipboard with file location
+			setClipboardData(fileLocation);
+			//native key strokes for CTRL, V and ENTER keys
+			Robot robot = new Robot();
+			Thread.sleep(2000);
+			robot.keyPress(KeyEvent.VK_CONTROL);
+			robot.keyPress(KeyEvent.VK_V);
+			robot.keyRelease(KeyEvent.VK_V);
+			robot.keyRelease(KeyEvent.VK_CONTROL);
+			Thread.sleep(2000);
+			robot.keyPress(KeyEvent.VK_ENTER);
+			robot.keyRelease(KeyEvent.VK_ENTER);
+		} catch (Exception exp) {
+			exp.printStackTrace();
+		}
+	}
+
 	// Reading from excel and return the value on the basis of a key
-		public String readExcelxls(String sheetName, String searchedString,ExcelTypes excelType) {
+	public String readExcelxls(String sheetName, String searchedString,ExcelTypes excelType) {
 
-			String valueReceived = null;
-	
-			
-			String file="";//name of excel file
-			if(excelType==ExcelTypes.Excel1) {
-				file = System.getProperty("user.dir") + "//src//resource//TestDataSheet.xls";
-			}
-			else if(excelType==ExcelTypes.Excel2) {
-				file = System.getProperty("user.dir") + "//src//resource//TestDataForPastFutureAbsences.xlsx";	
-			}
-			else if(excelType==ExcelTypes.Excel3) {
-				file = System.getProperty("user.dir") + "//src//resource//ParentImport.xlsx";	
-			}
-			
-			//	File file = new File(System.getProperty("user.dir") + "//src//resource//TestDataSheet.xls");
-			FileInputStream fs = null;
-			try {
-				fs = new FileInputStream(file);
-			} catch (FileNotFoundException e) {
-				e.printStackTrace();
-			}
-			HSSFWorkbook wb = null;
-			try {
-				wb = new HSSFWorkbook(fs);
-			} catch (IOException e) {
-				e.printStackTrace();
-			}
-			HSSFSheet sh = wb.getSheet(sheetName);
+		String valueReceived = null;
 
-			int rowCount = sh.getLastRowNum() - sh.getFirstRowNum();
 
-			// Create a loop over all the rows of excel file to read it
-			for (int i = 0; i < rowCount + 1; i++) {
-				Row row = sh.getRow(i);
-				for (int j = 0; j < row.getLastCellNum(); j++) {
-					row.getCell(j).setCellType(CellType.STRING);
-					if ((row.getCell(j).getStringCellValue().equals(searchedString)))
-						valueReceived = row.getCell(++j).getStringCellValue();
-					break;
-				}
-
-			}
-			return valueReceived;
+		String file="";//name of excel file
+		if(excelType==ExcelTypes.Excel1) {
+			file = System.getProperty("user.dir") + "//src//resource//TestDataSheet.xls";
+		}
+		else if(excelType==ExcelTypes.Excel2) {
+			file = System.getProperty("user.dir") + "//src//resource//TestDataForPastFutureAbsences.xlsx";	
+		}
+		else if(excelType==ExcelTypes.Excel3) {
+			file = System.getProperty("user.dir") + "//src//resource//ParentImport.xlsx";	
 		}
 
-		
-		// Reading from excel and returning a string of values by checking the String Name
-		public String[] readExcelMultiValuexls(String sheetName, String searchedString,ExcelTypes excelType) {
-
-			String firstValueReceived = null;
-			String secondValueReceived = null;
-			
-			
-			String file="";//name of excel file
-			if(excelType==ExcelTypes.Excel1) {
-				file = System.getProperty("user.dir") + "//src//resource//TestDataSheet.xls";
-			}
-			else if(excelType==ExcelTypes.Excel2) {
-				file = System.getProperty("user.dir") + "//src//resource//TestDataForPastFutureAbsences.xlsx";	
-			}
-			else if(excelType==ExcelTypes.Excel3) {
-				file = System.getProperty("user.dir") + "//src//resource//ParentImport.xlsx";	
-			}
-			
 		//	File file = new File(System.getProperty("user.dir") + "//src//resource//TestDataSheet.xls");
-			FileInputStream fs = null;
-			try {
-				fs = new FileInputStream(file);
-			} catch (FileNotFoundException e) {
-				e.printStackTrace();
-			}
-			HSSFWorkbook wb = null;
-			try {
-				wb = new HSSFWorkbook(fs);
-			} catch (IOException e) {
-				e.printStackTrace();
-			}
-			HSSFSheet sh = wb.getSheet(sheetName);
+		FileInputStream fs = null;
+		try {
+			fs = new FileInputStream(file);
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		}
+		HSSFWorkbook wb = null;
+		try {
+			wb = new HSSFWorkbook(fs);
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		HSSFSheet sh = wb.getSheet(sheetName);
 
-			int rowCount = sh.getLastRowNum() - sh.getFirstRowNum();
-			
-			String[] singlerow = new String[2];
-			
-			// Create a loop over all the rows of excel file to read it
-			for (int i = 0; i < rowCount + 1; i++) {
-				Row row = sh.getRow(i);
-				for (int j = 0; j < row.getLastCellNum(); j++) {
-					row.getCell(j).setCellType(CellType.STRING);
-					if ((row.getCell(j).getStringCellValue().equals(searchedString))){
-						firstValueReceived = row.getCell(j+1).getStringCellValue();
-						secondValueReceived = row.getCell(j+2).getStringCellValue();
-						singlerow[0]=firstValueReceived;
-						singlerow[1]=secondValueReceived;
-						break;
+		int rowCount = sh.getLastRowNum() - sh.getFirstRowNum();
+
+		// Create a loop over all the rows of excel file to read it
+		for (int i = 0; i < rowCount + 1; i++) {
+			Row row = sh.getRow(i);
+			for (int j = 0; j < row.getLastCellNum(); j++) {
+				row.getCell(j).setCellType(CellType.STRING);
+				if ((row.getCell(j).getStringCellValue().equals(searchedString)))
+					valueReceived = row.getCell(++j).getStringCellValue();
+				break;
+			}
+
+		}
+		return valueReceived;
+	}
+
+
+	// Reading from excel and returning a string of values by checking the String Name
+	public String[] readExcelMultiValuexls(String sheetName, String searchedString,ExcelTypes excelType) {
+
+		String firstValueReceived = null;
+		String secondValueReceived = null;
+
+
+		String file="";//name of excel file
+		if(excelType==ExcelTypes.Excel1) {
+			file = System.getProperty("user.dir") + "//src//resource//TestDataSheet.xls";
+		}
+		else if(excelType==ExcelTypes.Excel2) {
+			file = System.getProperty("user.dir") + "//src//resource//TestDataForPastFutureAbsences.xlsx";	
+		}
+		else if(excelType==ExcelTypes.Excel3) {
+			file = System.getProperty("user.dir") + "//src//resource//ParentImport.xlsx";	
+		}
+
+		//	File file = new File(System.getProperty("user.dir") + "//src//resource//TestDataSheet.xls");
+		FileInputStream fs = null;
+		try {
+			fs = new FileInputStream(file);
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		}
+		HSSFWorkbook wb = null;
+		try {
+			wb = new HSSFWorkbook(fs);
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		HSSFSheet sh = wb.getSheet(sheetName);
+
+		int rowCount = sh.getLastRowNum() - sh.getFirstRowNum();
+
+		String[] singlerow = new String[2];
+
+		// Create a loop over all the rows of excel file to read it
+		for (int i = 0; i < rowCount + 1; i++) {
+			Row row = sh.getRow(i);
+			for (int j = 0; j < row.getLastCellNum(); j++) {
+				row.getCell(j).setCellType(CellType.STRING);
+				if ((row.getCell(j).getStringCellValue().equals(searchedString))){
+					firstValueReceived = row.getCell(j+1).getStringCellValue();
+					secondValueReceived = row.getCell(j+2).getStringCellValue();
+					singlerow[0]=firstValueReceived;
+					singlerow[1]=secondValueReceived;
+					break;
 				}
 
 			}
@@ -1010,161 +1009,161 @@ public class CommonFunctions {
 		}
 		return (singlerow);
 
+	}
+
+	//Writing into an excel
+	public void writeExcelxls(String sheetName, String searchedString, String value,ExcelTypes excelType) {
+
+
+		String file="";//name of excel file
+		if(excelType==ExcelTypes.Excel1) {
+			file = System.getProperty("user.dir") + "//src//resource//TestDataSheet.xls";
 		}
-		
-		//Writing into an excel
-		public void writeExcelxls(String sheetName, String searchedString, String value,ExcelTypes excelType) {
-			
-			
-			String file="";//name of excel file
-			if(excelType==ExcelTypes.Excel1) {
-				file = System.getProperty("user.dir") + "//src//resource//TestDataSheet.xls";
-			}
-			else if(excelType==ExcelTypes.Excel2) {
-				file = System.getProperty("user.dir") + "//src//resource//TestDataForPastFutureAbsences.xlsx";	
-			}
-			else if(excelType==ExcelTypes.Excel3) {
-				file = System.getProperty("user.dir") + "//src//resource//ParentImport.xlsx";	
-			}
-			
+		else if(excelType==ExcelTypes.Excel2) {
+			file = System.getProperty("user.dir") + "//src//resource//TestDataForPastFutureAbsences.xlsx";	
+		}
+		else if(excelType==ExcelTypes.Excel3) {
+			file = System.getProperty("user.dir") + "//src//resource//ParentImport.xlsx";	
+		}
+
 		//	File file = new File(System.getProperty("user.dir") + "//src//resource//TestDataSheet.xls");
-			FileInputStream fs = null;
-			try {
-				fs = new FileInputStream(file);
-			} catch (FileNotFoundException e1) {
-				e1.printStackTrace();
-			}
-			HSSFWorkbook wb = null;
-			try {
-				wb = new HSSFWorkbook(fs);
-			} catch (IOException e1) {
-				e1.printStackTrace();
-			}
-			HSSFSheet sh = wb.getSheet(sheetName);
+		FileInputStream fs = null;
+		try {
+			fs = new FileInputStream(file);
+		} catch (FileNotFoundException e1) {
+			e1.printStackTrace();
+		}
+		HSSFWorkbook wb = null;
+		try {
+			wb = new HSSFWorkbook(fs);
+		} catch (IOException e1) {
+			e1.printStackTrace();
+		}
+		HSSFSheet sh = wb.getSheet(sheetName);
 
-			int rowCount = sh.getLastRowNum() - sh.getFirstRowNum();
+		int rowCount = sh.getLastRowNum() - sh.getFirstRowNum();
 
-			for (int i = 0; i < rowCount + 1; i++) {
-				Row row = sh.getRow(i);
-				// Create a loop through the cell values in a row
-				for (int j = 0; j < row.getLastCellNum(); j++) {
-					// Get to exact cell in excel data
-					if ((row.getCell(j).getStringCellValue().equals(searchedString))) {
-						org.apache.poi.ss.usermodel.Cell cell = row.createCell(++j);
-						cell.setCellValue(value);
-					}
-
+		for (int i = 0; i < rowCount + 1; i++) {
+			Row row = sh.getRow(i);
+			// Create a loop through the cell values in a row
+			for (int j = 0; j < row.getLastCellNum(); j++) {
+				// Get to exact cell in excel data
+				if ((row.getCell(j).getStringCellValue().equals(searchedString))) {
+					org.apache.poi.ss.usermodel.Cell cell = row.createCell(++j);
+					cell.setCellValue(value);
 				}
 
 			}
 
-			try {
-				// Write the workbook in file system
-				FileOutputStream out = new FileOutputStream(file);
-				wb.write(out);
-				out.close();
-				System.out.println("Excel file written successfully on disk.");
-			} catch (Exception e) {
-				e.printStackTrace();
-			}
 		}
-		
-		
-		// Reading from excel and return the value on the basis of a key
-		public String readExcelxlsx(String sheetName, String searchedString,ExcelTypes excelType) {
 
-			String valueReceived = null;
-		
-			String file="";//name of excel file
-			if(excelType==ExcelTypes.Excel1) {
-				file = System.getProperty("user.dir") + "//src//resource//TestDataSheet.xls";
-			}
-			else if(excelType==ExcelTypes.Excel2) {
-				file = System.getProperty("user.dir") + "//src//resource//TestDataForPastFutureAbsences.xlsx";	
-			}
-			else if(excelType==ExcelTypes.Excel3) {
-				file = System.getProperty("user.dir") + "//src//resource//ParentImport.xlsx";	
-			}
-			
-			//	File file = new File(System.getProperty("user.dir") + "//src//resource//TestDataSheet.xls");
-			FileInputStream fs = null;
-			try {
-				fs = new FileInputStream(file);
-			} catch (FileNotFoundException e) {
-				e.printStackTrace();
-			}
-			XSSFWorkbook wb = null;
-			try {
-				wb = new XSSFWorkbook(fs);
-			} catch (IOException e) {
-				e.printStackTrace();
-			}
-			XSSFSheet sh = wb.getSheet(sheetName);
+		try {
+			// Write the workbook in file system
+			FileOutputStream out = new FileOutputStream(file);
+			wb.write(out);
+			out.close();
+			System.out.println("Excel file written successfully on disk.");
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
 
-			int rowCount = sh.getLastRowNum() - sh.getFirstRowNum();
 
-			// Create a loop over all the rows of excel file to read it
-			for (int i = 0; i < rowCount + 1; i++) {
-				Row row = sh.getRow(i);
-				for (int j = 0; j < row.getLastCellNum(); j++) {
-					row.getCell(j).setCellType(CellType.STRING);
-					if ((row.getCell(j).getStringCellValue().equals(searchedString)))
-						valueReceived = row.getCell(++j).getStringCellValue();
+	// Reading from excel and return the value on the basis of a key
+	public String readExcelxlsx(String sheetName, String searchedString,ExcelTypes excelType) {
+
+		String valueReceived = null;
+
+		String file="";//name of excel file
+		if(excelType==ExcelTypes.Excel1) {
+			file = System.getProperty("user.dir") + "//src//resource//TestDataSheet.xls";
+		}
+		else if(excelType==ExcelTypes.Excel2) {
+			file = System.getProperty("user.dir") + "//src//resource//TestDataForPastFutureAbsences.xlsx";	
+		}
+		else if(excelType==ExcelTypes.Excel3) {
+			file = System.getProperty("user.dir") + "//src//resource//ParentImport.xlsx";	
+		}
+
+		//	File file = new File(System.getProperty("user.dir") + "//src//resource//TestDataSheet.xls");
+		FileInputStream fs = null;
+		try {
+			fs = new FileInputStream(file);
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		}
+		XSSFWorkbook wb = null;
+		try {
+			wb = new XSSFWorkbook(fs);
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		XSSFSheet sh = wb.getSheet(sheetName);
+
+		int rowCount = sh.getLastRowNum() - sh.getFirstRowNum();
+
+		// Create a loop over all the rows of excel file to read it
+		for (int i = 0; i < rowCount + 1; i++) {
+			Row row = sh.getRow(i);
+			for (int j = 0; j < row.getLastCellNum(); j++) {
+				row.getCell(j).setCellType(CellType.STRING);
+				if ((row.getCell(j).getStringCellValue().equals(searchedString)))
+					valueReceived = row.getCell(++j).getStringCellValue();
+				break;
+			}
+
+		}
+		return valueReceived;
+	}
+
+
+	// Reading from excel and returning a string of values by checking the String Name
+	public String[] readExcelMultiValuexlsx(String sheetName, String searchedString,ExcelTypes excelType) {
+
+		String firstValueReceived = null;
+		String secondValueReceived = null;
+
+		String file="";//name of excel file
+		if(excelType==ExcelTypes.Excel1) {
+			file = System.getProperty("user.dir") + "//src//resource//TestDataSheet.xls";
+		}
+		else if(excelType==ExcelTypes.Excel2) {
+			file = System.getProperty("user.dir") + "//src//resource//TestDataForPastFutureAbsences.xlsx";	
+		}
+		else if(excelType==ExcelTypes.Excel3) {
+			file = System.getProperty("user.dir") + "//src//resource//ParentImport.xlsx";	
+		}
+
+		// File file = new File(System.getProperty("user.dir") + "//src//resource//TestDataSheet.xls");
+		FileInputStream fs = null;
+		try {
+			fs = new FileInputStream(file);
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		}
+		XSSFWorkbook wb = null;
+		try {
+			wb = new XSSFWorkbook(fs);
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		XSSFSheet sh = wb.getSheet(sheetName);
+
+		int rowCount = sh.getLastRowNum() - sh.getFirstRowNum();
+
+		String[] singlerow = new String[2];
+
+		// Create a loop over all the rows of excel file to read it
+		for (int i = 0; i < rowCount + 1; i++) {
+			Row row = sh.getRow(i);
+			for (int j = 0; j < row.getLastCellNum(); j++) {
+				row.getCell(j).setCellType(CellType.STRING);
+				if ((row.getCell(j).getStringCellValue().equals(searchedString))){
+					firstValueReceived = row.getCell(j+1).getStringCellValue();
+					secondValueReceived = row.getCell(j+2).getStringCellValue();
+					singlerow[0]=firstValueReceived;
+					singlerow[1]=secondValueReceived;
 					break;
-				}
-
-			}
-			return valueReceived;
-		}
-
-		
-		// Reading from excel and returning a string of values by checking the String Name
-		public String[] readExcelMultiValuexlsx(String sheetName, String searchedString,ExcelTypes excelType) {
-
-			String firstValueReceived = null;
-			String secondValueReceived = null;
-			
-			String file="";//name of excel file
-			if(excelType==ExcelTypes.Excel1) {
-				file = System.getProperty("user.dir") + "//src//resource//TestDataSheet.xls";
-			}
-			else if(excelType==ExcelTypes.Excel2) {
-				file = System.getProperty("user.dir") + "//src//resource//TestDataForPastFutureAbsences.xlsx";	
-			}
-			else if(excelType==ExcelTypes.Excel3) {
-				file = System.getProperty("user.dir") + "//src//resource//ParentImport.xlsx";	
-			}
-			
-			// File file = new File(System.getProperty("user.dir") + "//src//resource//TestDataSheet.xls");
-			FileInputStream fs = null;
-			try {
-				fs = new FileInputStream(file);
-			} catch (FileNotFoundException e) {
-				e.printStackTrace();
-			}
-			XSSFWorkbook wb = null;
-			try {
-				wb = new XSSFWorkbook(fs);
-			} catch (IOException e) {
-				e.printStackTrace();
-			}
-			XSSFSheet sh = wb.getSheet(sheetName);
-
-			int rowCount = sh.getLastRowNum() - sh.getFirstRowNum();
-			
-			String[] singlerow = new String[2];
-			
-			// Create a loop over all the rows of excel file to read it
-			for (int i = 0; i < rowCount + 1; i++) {
-				Row row = sh.getRow(i);
-				for (int j = 0; j < row.getLastCellNum(); j++) {
-					row.getCell(j).setCellType(CellType.STRING);
-					if ((row.getCell(j).getStringCellValue().equals(searchedString))){
-						firstValueReceived = row.getCell(j+1).getStringCellValue();
-						secondValueReceived = row.getCell(j+2).getStringCellValue();
-						singlerow[0]=firstValueReceived;
-						singlerow[1]=secondValueReceived;
-						break;
 				}
 
 			}
@@ -1172,73 +1171,73 @@ public class CommonFunctions {
 		}
 		return (singlerow);
 
+	}
+
+	//Writing into an excel
+	public void writeExcelxlsx(String sheetName, String searchedString, String value,ExcelTypes excelType) {
+
+
+
+		String file="";//name of excel file
+		if(excelType==ExcelTypes.Excel1) {
+			file = System.getProperty("user.dir") + "//src//resource//TestDataSheet.xls";
 		}
-		
-		//Writing into an excel
-		public void writeExcelxlsx(String sheetName, String searchedString, String value,ExcelTypes excelType) {
-			
-			
+		else if(excelType==ExcelTypes.Excel2) {
+			file = System.getProperty("user.dir") + "//src//resource//TestDataForPastFutureAbsences.xlsx";	
+		}
+		else if(excelType==ExcelTypes.Excel3) {
+			file = System.getProperty("user.dir") + "//src//resource//ParentImport.xlsx";	
+		}
 
-			String file="";//name of excel file
-			if(excelType==ExcelTypes.Excel1) {
-				file = System.getProperty("user.dir") + "//src//resource//TestDataSheet.xls";
-			}
-			else if(excelType==ExcelTypes.Excel2) {
-				file = System.getProperty("user.dir") + "//src//resource//TestDataForPastFutureAbsences.xlsx";	
-			}
-			else if(excelType==ExcelTypes.Excel3) {
-				file = System.getProperty("user.dir") + "//src//resource//ParentImport.xlsx";	
-			}
-			
-			
-			//File file = new File(System.getProperty("user.dir") + "//src//resource//TestDataSheet.xls");
-			FileInputStream fs = null;
-			try {
-				fs = new FileInputStream(file);
-			} catch (FileNotFoundException e1) {
-				e1.printStackTrace();
-			}
-			XSSFWorkbook wb = null;
-			try {
-				wb = new XSSFWorkbook(fs);
-			} catch (IOException e1) {
-				e1.printStackTrace();
-			}
-			XSSFSheet sh = wb.getSheet(sheetName);
 
-			int rowCount = sh.getLastRowNum() - sh.getFirstRowNum();
+		//File file = new File(System.getProperty("user.dir") + "//src//resource//TestDataSheet.xls");
+		FileInputStream fs = null;
+		try {
+			fs = new FileInputStream(file);
+		} catch (FileNotFoundException e1) {
+			e1.printStackTrace();
+		}
+		XSSFWorkbook wb = null;
+		try {
+			wb = new XSSFWorkbook(fs);
+		} catch (IOException e1) {
+			e1.printStackTrace();
+		}
+		XSSFSheet sh = wb.getSheet(sheetName);
 
-			for (int i = 0; i < rowCount + 1; i++) {
-				Row row = sh.getRow(i);
-				// Create a loop through the cell values in a row
-				for (int j = 0; j < row.getLastCellNum(); j++) {
-					// Get to exact cell in excel data
-					if ((row.getCell(j).getStringCellValue().equals(searchedString))) {
-						org.apache.poi.ss.usermodel.Cell cell = row.createCell(++j);
-						cell.setCellValue(value);
-					}
+		int rowCount = sh.getLastRowNum() - sh.getFirstRowNum();
 
+		for (int i = 0; i < rowCount + 1; i++) {
+			Row row = sh.getRow(i);
+			// Create a loop through the cell values in a row
+			for (int j = 0; j < row.getLastCellNum(); j++) {
+				// Get to exact cell in excel data
+				if ((row.getCell(j).getStringCellValue().equals(searchedString))) {
+					org.apache.poi.ss.usermodel.Cell cell = row.createCell(++j);
+					cell.setCellValue(value);
 				}
 
 			}
 
-			try {
-				// Write the workbook in file system
-				FileOutputStream out = new FileOutputStream(file);
-				wb.write(out);
-				out.close();
-				System.out.println("Excel file written successfully on disk.");
-			} catch (Exception e) {
-				e.printStackTrace();
-			}
 		}
 
-	
-	
-	
-	
-	
-	
+		try {
+			// Write the workbook in file system
+			FileOutputStream out = new FileOutputStream(file);
+			wb.write(out);
+			out.close();
+			System.out.println("Excel file written successfully on disk.");
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+
+
+
+
+
+
+
 	/*
 	 * // Takes Screenshot public void takeScreenshot(String path) throws
 	 * IOException { File scrFile = ((TakesScreenshot)
