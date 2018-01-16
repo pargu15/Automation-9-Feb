@@ -41,5 +41,28 @@ public class UnpublishActivityActions {
 		Thread.sleep(5000);
 
 	}
+	
+	public void selectExportForms() throws Exception {
+
+		//commonFunctions.waitUntilElementDisplayed(eventPageRepository.getFormExportDiv().getElement());
+		eventPageRepository.getFormExportDiv().getElement().click();
+		eventPageRepository.getSelectExportForm().getElement().click();
+		eventPageRepository.getSubmitExportBtn().getElement().click();
+		Thread.sleep(5000);
+		eventPageRepository.getClosePopUpBtn().getElement().click();
+		Thread.sleep(1000);
+		
+	}
+
+	public void selectPrintForms() throws Exception {
+
+		//commonFunctions.waitUntilElementDisplayed(eventPageRepository.getFormExportDiv().getElement());
+		eventPageRepository.getPrintFormDiv().getElement().click();
+		eventPageRepository.getSelectExportForm().getElement().click();
+		eventPageRepository.getSubmitPrintBtn().getElement().click();
+		Thread.sleep(5000);
+		
+	}
+
 
 }

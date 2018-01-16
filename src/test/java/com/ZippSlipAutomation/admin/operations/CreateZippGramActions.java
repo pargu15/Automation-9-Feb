@@ -26,7 +26,6 @@ public class CreateZippGramActions {
 		//commonFunctions.waitUntilElementDisplayed(createZippGramPageRepository.getActivityDropDown().getElement());
 
 		logger.debug("Test Case Started: Get_Title_of_Estimate_Details_Page");
-		System.out.println("yes11");
 		createZippGramPageRepository.getCreateZippGram().getElement().click();
 		Thread.sleep(4000);
 
@@ -40,7 +39,7 @@ public class CreateZippGramActions {
 		Thread.sleep(2000);
 		commonFunctions.verifyElementIsPresent(createZippGramPageRepository.getErrorMessageForZippGramname());
 		logger.debug("Clicking the Create Zippgram Link3");
-		createZippGramPageRepository.getZippGramName().getElement().sendKeys("ZippGram by Parag");
+		createZippGramPageRepository.getZippGramName().getElement().sendKeys("Test ZippGram");
 		//	createZippGramPageRepository.getZippGramName().getElement().sendKeys(excelReadEvent.getZippGramName());
 		Thread.sleep(1000);
 		createZippGramPageRepository.getParagraph().getElement().sendKeys("ZippGram by Parag");

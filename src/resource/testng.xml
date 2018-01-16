@@ -4,6 +4,10 @@
 	<test verbose="2" name="Default test">
 		<classes>
 
+
+			<!-- class name="com.ZippSlipAutomation.districtadmin.maintestpackage.CreateFormPacketMainClass"/ -->
+
+
 			<!-- class name="com.ZippSlipAutomation.admin.maintestpackage.UploadPastAbsencesMainClass"/ -->
 			<!-- class name="com.ZippSlipAutomation.parent.maintestpackage.PastFutureAbsencesResponseMainClass"/ -->
 
@@ -13,8 +17,8 @@
 
 			<!-- class name="com.ZippSlipAutomation.admin.maintestpackage.CreateZippGramMainClass"/ -->
 			<!-- class name="com.ZippSlipAutomation.parent.maintestpackage.ZippGramConsentMainClass"/ -->
-
-
+			<!-- class name="com.ZippSlipAutomation.admin.maintestpackage.UnpublishZippGramMainClass"/ -->
+			<class name="com.ZippSlipAutomation.parentsignup.maintestpackage.CommonLoginParentSignUpMainClass"/>
 
 
 
@@ -24,11 +28,11 @@
 			<!-- class name="com.ZippSlipAutomation.admin.maintestpackage.EnglishCreateActivityMainClass"/ -->
 			<!-- class name="com.ZippSlipAutomation.parentsignup.maintestpackage.ParentSignUpMainClass"/ -->
 			<!-- class name="com.ZippSlipAutomation.parent.maintestpackage.EnglishEventConsentMainClass"/ -->
+			<!-- class name="com.ZippSlipAutomation.admin.maintestpackage.FormExportMainClass"/ -->
 			<!-- class name="com.ZippSlipAutomation.admin.maintestpackage.EnglishUnpublishActivityMainClass"/ -->
 
 
-			<class
-				name="com.ZippSlipAutomation.districtadmin.maintestpackage.ParentImportMainClass" />
+			<!-- class name="com.ZippSlipAutomation.districtadmin.maintestpackage.ParentImportMainClass"/ -->
 
 
 			<!-- class name="com.ZippSlipAutomation.ProductionData.maintestpackage.EnglishEventConsentMainClass"/ -->

@@ -46,7 +46,7 @@ public class CreateActivityActions {
 		eventPageRepository.getNextButton().getElement().click();
 		Thread.sleep(2000);
 		commonFunctions.verifyElementIsPresent(eventPageRepository.getErrorMessageForParticipantType());
-		eventPageRepository.getParentStudentButton().getElement().click();
+		eventPageRepository.getParentButton().getElement().click();
 		Thread.sleep(1000);
 	}
 
@@ -80,8 +80,8 @@ public class CreateActivityActions {
 
 	public void verifyParticipantType() throws InterruptedException {
 
-		commonFunctions.verifyElementIsPresent(eventPageRepository.getParentStudentButton());
-		eventPageRepository.getParentStudentButton().getElement().click();
+		commonFunctions.verifyElementIsPresent(eventPageRepository.getParentButton());
+		eventPageRepository.getParentButton().getElement().click();
 		Thread.sleep(2000);
 
 	}
@@ -96,8 +96,11 @@ public class CreateActivityActions {
 
 		eventPageRepository.getSearchformTextbox().getElement().sendKeys(excelReadEvent.getFormName() + " " + dtf.format(localDate));
 		eventPageRepository.getSearchformButton().getElement().click();
+		Thread.sleep(1000);
 		eventPageRepository.getRequiredformButton().getElement().click();
+		Thread.sleep(1000);
 		eventPageRepository.getFormOkConfirmationButton().getElement().click();
+		Thread.sleep(1000);
 		if (eventPageRepository.getCurrentSelectedFormsSection().getElement().getText()
 				.contains(excelReadEvent.getFormName())) {
 			System.out.println("Form has been attached");
@@ -204,4 +207,13 @@ public class CreateActivityActions {
 
 	}
 
+	public void communicationPageFunctionality() throws InterruptedException {
+
+		eventPageRepository.getNextButton().getElement().click();
+		Thread.sleep(4000);
+
+		commonFunctions.checkForModalWindow();
+		Thread.sleep(4000);
+
+	}
 }

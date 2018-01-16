@@ -11,7 +11,7 @@ import com.ZippSlipAutomation.utilities.ReturnElement;
 
 public class EventPageRepository {
 
-	@FindBy(id = "MainContent_CreateActivityButton")
+	@FindBy(id = "CreateActivityButton")
 	private WebElement oActivityDropDown;
 
 	public ReturnElement getActivityDropDown() {
@@ -42,7 +42,56 @@ public class EventPageRepository {
 		return new ReturnElement(oParentActivitiesDropdown, Thread.currentThread().getStackTrace()[1].getMethodName());
 
 	}
+	
+	@FindBy(xpath = "//*[@id=\"divExportToExcel\"]/a")
+	private WebElement oFormExportDiv;
 
+	public ReturnElement getFormExportDiv() {
+		return new ReturnElement(oFormExportDiv, Thread.currentThread().getStackTrace()[1].getMethodName());
+
+	}
+	
+	@FindBy(id = "chkParentHeader")
+	private WebElement oSelectExportForm;
+
+	public ReturnElement getSelectExportForm() {
+		return new ReturnElement(oSelectExportForm, Thread.currentThread().getStackTrace()[1].getMethodName());
+
+	}
+	
+	@FindBy(id = "btnExportExcel")
+	private WebElement oSubmitExportBtn;
+
+	public ReturnElement getSubmitExportBtn() {
+		return new ReturnElement(oSubmitExportBtn, Thread.currentThread().getStackTrace()[1].getMethodName());
+
+	}
+	
+	@FindBy(xpath = "//*[@id=\"MainContent_divPrintAlongTakePack\"]/a")
+	private WebElement oPrintFormDiv;
+
+	public ReturnElement getPrintFormDiv() {
+		return new ReturnElement(oPrintFormDiv, Thread.currentThread().getStackTrace()[1].getMethodName());
+
+	}
+	
+	@FindBy(id = "btnPrintForm")
+	private WebElement oSubmitPrintBtn;
+
+	public ReturnElement getSubmitPrintBtn() {
+		return new ReturnElement(oSubmitPrintBtn, Thread.currentThread().getStackTrace()[1].getMethodName());
+
+	}
+	
+	@FindBy(id = "MainContent_a1")
+	private WebElement oClosePopUp;
+
+	public ReturnElement getClosePopUpBtn() {
+		return new ReturnElement(oClosePopUp, Thread.currentThread().getStackTrace()[1].getMethodName());
+
+	}
+	
+	
 	@FindBy(xpath = ".//*[@id='MenuSchool:submenu:4']/li[1]/a")
 	private WebElement oEventFieldInDropdown;
 
@@ -50,7 +99,7 @@ public class EventPageRepository {
 		return new ReturnElement(oEventFieldInDropdown, Thread.currentThread().getStackTrace()[1].getMethodName());
 
 	}
-
+	
 	@FindBy(id = "MainContent_divCurrentStatus")
 	private WebElement oEventCurrentStatus;
 
@@ -227,11 +276,11 @@ public class EventPageRepository {
 				Thread.currentThread().getStackTrace()[1].getMethodName());
 	}
 
-	@FindBy(id = "rbStudentParentBoth")
-	private WebElement parentStudentButton;
+	@FindBy(id = "rbParentOnly")
+	private WebElement parentButton;
 
-	public ReturnElement getParentStudentButton() {
-		return new ReturnElement(parentStudentButton, Thread.currentThread().getStackTrace()[1].getMethodName());
+	public ReturnElement getParentButton() {
+		return new ReturnElement(parentButton, Thread.currentThread().getStackTrace()[1].getMethodName());
 	}
 
 	@FindBy(id = "txtSearchForms")

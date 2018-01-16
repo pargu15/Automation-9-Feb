@@ -170,14 +170,28 @@ public class CreateZippGramPageRepository {
 		return new ReturnElement(oSubmitPollQues, Thread.currentThread().getStackTrace()[1].getMethodName());
 	}
 
+	@FindBy(xpath = ".//*[@id='MenuSchool']/ul/li[3]/a")
+	private WebElement oParentActivitiesDropdown;
+
+	public ReturnElement getParentActivitiesDropdown() {
+		return new ReturnElement(oParentActivitiesDropdown, Thread.currentThread().getStackTrace()[1].getMethodName());
+
+	}
 
 
+	@FindBy(xpath = ".//*[@id='MenuSchool:submenu:4']/li[3]/a/span")
+	private WebElement oZippGramFieldInDropdown;
 
+	public ReturnElement getZippGramFieldInDropdown() {
+		return new ReturnElement(oZippGramFieldInDropdown, Thread.currentThread().getStackTrace()[1].getMethodName());
+
+	}
+	
 
 	@FindBy(id = "MainContent_divCurrentStatus")
 	private WebElement oEventCurrentStatus;
 
-	public ReturnElement getEventCurrentStatus() {
+	public ReturnElement getZippGramCurrentStatus() {
 		return new ReturnElement(oEventCurrentStatus, Thread.currentThread().getStackTrace()[1].getMethodName());
 
 	}
@@ -185,7 +199,7 @@ public class CreateZippGramPageRepository {
 	@FindBy(id = "divChangeEventPublishStatus")
 	private WebElement oChangeEventPublishStatus;
 
-	public ReturnElement getChangeEventPublishStatus() {
+	public ReturnElement getChangeZippGramPublishStatus() {
 		return new ReturnElement(oChangeEventPublishStatus, Thread.currentThread().getStackTrace()[1].getMethodName());
 
 	}
