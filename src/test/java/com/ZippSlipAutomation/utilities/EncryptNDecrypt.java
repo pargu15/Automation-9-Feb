@@ -4,8 +4,8 @@ import java.security.Key;
 import java.security.Key;
 import javax.crypto.Cipher;
 import javax.crypto.spec.SecretKeySpec;
-import sun.misc.BASE64Decoder;
-import sun.misc.BASE64Encoder;
+import java.util.Base64;
+
 
 @SuppressWarnings({ "unused", "restriction" })
 public class EncryptNDecrypt {
@@ -17,7 +17,8 @@ public class EncryptNDecrypt {
 		Cipher cipher = Cipher.getInstance(EncryptNDecrypt.ALGORITHM);
 		cipher.init(Cipher.ENCRYPT_MODE, key);
 		byte[] encryptedByteValue = cipher.doFinal(value.getBytes("utf-8"));
-		String encryptedValue64 = new BASE64Encoder().encode(encryptedByteValue);
+		String encryptedValue64 = Base64.getEncoder().encodeToString(encryptedByteValue);
+	//String encryptedValue64 = new BASE64Encoder().encode(encryptedByteValue);
 		return encryptedValue64;
 
 	}
@@ -26,7 +27,8 @@ public class EncryptNDecrypt {
 		Key key = generateKey();
 		Cipher cipher = Cipher.getInstance(EncryptNDecrypt.ALGORITHM);
 		cipher.init(Cipher.DECRYPT_MODE, key);
-		byte[] decryptedValue64 = new BASE64Decoder().decodeBuffer(value);
+		byte[] decryptedValue64 = Base64.getDecoder().decode(value);
+	//	byte[] decryptedValue64 = new BASE64Decoder().decodeBuffer(value);
 		byte[] decryptedByteValue = cipher.doFinal(decryptedValue64);
 		String decryptedValue = new String(decryptedByteValue, "utf-8");
 		return decryptedValue;

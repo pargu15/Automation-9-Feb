@@ -33,15 +33,19 @@ import com.ZippSlipAutomation.parent.objectRepository.EventConsentFlowRepository
 import com.ZippSlipAutomation.parent.objectRepository.EventFormDataEntryRepository;
 import com.ZippSlipAutomation.parent.objectRepository.ProdEventFormDataVerifyRepository;
 import com.ZippSlipAutomation.parent.objectRepository.SocialEventFormDataVerifyRepository;
+import com.ZippSlipAutomation.parent.objectRepository.ZippGramConsentFlowRepository;
 
 public class CommonFunctions {
 
+	ZippGramConsentFlowRepository zippGramConsentFlowRepository = PageFactory.initElements(DriverInitiation.getDriver(),
+			ZippGramConsentFlowRepository.class);
 	EventPageRepository eventPageRepository = PageFactory.initElements(DriverInitiation.getDriver(),
 			EventPageRepository.class);
 
 	EventConsentFlowRepository eventConsentFlowRepository = PageFactory.initElements(DriverInitiation.getDriver(),
 			EventConsentFlowRepository.class);
 
+	
 	EventFormDataEntryRepository EventFormDataEntryRepository = PageFactory
 			.initElements(DriverInitiation.getDriver(), EventFormDataEntryRepository.class);
 
@@ -599,6 +603,21 @@ public class CommonFunctions {
 			}
 		} while (!eventcorrect);
 	}
+	
+	// Click on the ZippGram correct
+		public void clickOnZippGram() throws Exception {
+			Thread.sleep(5000);
+			boolean zippGramcorrect = false;
+			do {
+				if (checkZippGramOnPage()) {
+					zippGramcorrect = true;
+					Thread.sleep(15000);
+				} else {
+					zippGramConsentFlowRepository.getNextButton().getElement().click();
+					Thread.sleep(15000);
+				}
+			} while (!zippGramcorrect);
+		}
 
 	// Overloaded function Click on the event correct
 	public void clickOnEvent(String childname) throws Exception {
@@ -651,6 +670,32 @@ public class CommonFunctions {
 		return eventdisplay;
 	}
 
+	// Check if the ZippGram is correct on the page
+		public boolean checkZippGramOnPage() throws Exception {
+			Thread.sleep(2000);
+		//	ExcelReadEvent excelReadEvent = new ExcelReadEvent();
+	//		excelReadEvent.readFromExcel(1, CommonVariables.rownumber, ExcelTypes.Excel1);
+	//		String eventname = excelReadEvent.getEventName();
+			String zippGramname = "Test ZippGram";
+			boolean zippGramdisplay = false;
+			List<WebElement> MobileDevices = DriverInitiation.getDriver().findElements(By.id("hlEventName"));
+
+			for (WebElement singlerow : MobileDevices) {
+				if (singlerow.getText().contains(zippGramname)) {
+					zippGramdisplay = true;
+					System.out.println("ZippGram is present");
+					WebElement oClickonZippGram = DriverInitiation.getDriver()
+							.findElement(By.xpath("//a[@id='hlEventName' and text()='" + zippGramname + "']"));
+					oClickonZippGram.click();
+					break;
+				}
+			}
+			return zippGramdisplay;
+		}
+	
+	
+	
+	
 	// Overloaded function to Check if the event is correct on the page
 	public boolean checkEventOnPage(String childname) throws Exception {
 		Thread.sleep(2000);

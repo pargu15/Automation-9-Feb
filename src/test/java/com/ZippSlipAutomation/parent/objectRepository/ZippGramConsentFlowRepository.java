@@ -24,6 +24,44 @@ public class ZippGramConsentFlowRepository {
 
 	}
 
+	@FindBy(xpath = ".//a[contains(.,'Home')]") 
+
+	private WebElement oImageCheck;
+
+	public ReturnElement getImageCheck(){
+		return new ReturnElement(oImageCheck, Thread.currentThread().getStackTrace()[1].getMethodName());
+
+	}
+	
+	@FindBy(xpath = ".//a[contains(.,'Home')]") 
+
+	private WebElement oVideoCheck;
+
+	public ReturnElement getVideoCheck() {
+		return new ReturnElement(oVideoCheck, Thread.currentThread().getStackTrace()[1].getMethodName());
+
+	}
+
+	
+	@FindBy(xpath = ".//a[contains(.,'Home')]") 
+
+	private WebElement oPollCheck;
+
+	public ReturnElement getPollCheck() {
+		return new ReturnElement(oPollCheck, Thread.currentThread().getStackTrace()[1].getMethodName());
+
+	}
+
+	
+	@FindBy(id = "Pager_lbNext")
+	private WebElement oNextButton;
+
+	public ReturnElement getNextButton() {
+		return new ReturnElement(oNextButton, Thread.currentThread().getStackTrace()[1].getMethodName());
+
+	}
+	
+	
 	@FindBy(id = "btnSavePoll")
 	private WebElement oSavePollOptn;
 

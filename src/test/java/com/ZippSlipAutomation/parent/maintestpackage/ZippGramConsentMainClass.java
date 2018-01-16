@@ -41,12 +41,19 @@ public class ZippGramConsentMainClass {
 
 	}
 
+		
 	@Test(priority = 1)
+	public void verifyElementsArePresentOnZippGram() throws Exception {
+		ZippGramConsentFlow zippGramConsentFlow = new ZippGramConsentFlow();
+		zippGramConsentFlow.verifyElementsArePresentOnZippGram();
+	}
+	
+	@Test(priority = 2)
 	public void zippgramConsent() throws Exception {
 		ZippGramConsentFlow zippGramConsentFlow = new ZippGramConsentFlow();
 		zippGramConsentFlow.zippgramConsentFunctionality();
 	}
-
+	
 	@AfterClass
 	public static void driverExit() throws IOException {
 		LoginRepository.clickOnLogoutButton();
