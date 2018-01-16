@@ -14,7 +14,16 @@ public class ParentSignUpFlowRepository {
 		return new ReturnElement(oCreateParentAccountButton, Thread.currentThread().getStackTrace()[1].getMethodName());
 
 	}
+	
+	@FindBy(xpath = "//*[@id=\"divUserSelection\"]/div[1]/div/div[2]")
+	private WebElement oSelectParentRole;
 
+	public ReturnElement getSelectParentRole() {
+		return new ReturnElement(oSelectParentRole, Thread.currentThread().getStackTrace()[1].getMethodName());
+
+	}
+	
+	
 	@FindBy(xpath = ".//*[@id='divFirstStepHeader']/h1")
 	private WebElement oRegisterPageHeader;
 
@@ -63,6 +72,14 @@ public class ParentSignUpFlowRepository {
 
 	}
 
+	@FindBy(id = "txtMobile")
+	private WebElement oMobileNo;
+
+	public ReturnElement getMobileNo() {
+		return new ReturnElement(oMobileNo, Thread.currentThread().getStackTrace()[1].getMethodName());
+
+	}
+	
 	@FindBy(id = "txtMobilePhoneNumber")
 	private WebElement oMobileNumber;
 
@@ -78,7 +95,43 @@ public class ParentSignUpFlowRepository {
 		return new ReturnElement(oCreateAccountButton, Thread.currentThread().getStackTrace()[1].getMethodName());
 
 	}
+	
+	@FindBy(id = "btnSubmit")
+	private WebElement oContinueButton;
 
+	public ReturnElement getContinueButton() {
+		return new ReturnElement(oContinueButton, Thread.currentThread().getStackTrace()[1].getMethodName());
+
+	}
+	
+	@FindBy(id = "txtInstitutions")
+	private WebElement oSearchInstitution;
+
+	public ReturnElement getSearchInstitution() {
+		return new ReturnElement(oSearchInstitution, Thread.currentThread().getStackTrace()[1].getMethodName());
+
+	}
+	
+	@FindBy(xpath = ".//*[contains(@id,'ui-id-')]")
+	private WebElement oSelectInstitution;
+
+	public ReturnElement getSelectInstitution() {
+		return new ReturnElement(oSelectInstitution, Thread.currentThread().getStackTrace()[1].getMethodName());
+
+	}
+	
+	
+	
+	@FindBy(id = "btnContinue")
+	private WebElement oValidateInstitution;
+
+	public ReturnElement getValidateInstitution() {
+		return new ReturnElement(oValidateInstitution, Thread.currentThread().getStackTrace()[1].getMethodName());
+
+	}
+	
+	
+	
 	@FindBy(xpath = ".//*[@id='divEnrolledChildStepHeader']/div/h1")
 	private WebElement oEnterEnrolledStudentHeader;
 
