@@ -44,12 +44,14 @@ public class AddNewSchoolInfoFlow {
 				createSchoolPageRepository.getSchoolURL().getElement().sendKeys(excelReadEvent.getSchoolURL());
 				createSchoolPageRepository.getfocusout().getElement().click();
 				commonFunctions.verifyElementIsPresent(createSchoolPageRepository.getDuplicateMessageForURL());
+				
 
 
 				createSchoolPageRepository.getAdminEmail().getElement().sendKeys(excelReadEvent.getAdminEmail());
 				createSchoolPageRepository.getfocusout().getElement().click();
 				commonFunctions.verifyElementIsPresent(createSchoolPageRepository.getDuplicateMessageForEmail());
-
+				DriverInitiation.getDriver().navigate().refresh();
+				
 				/*
 				parentSignUpFlowRepository.getStudentId().getElement().sendKeys(excelReadEvent.getEnrolledStudentID());
 				Thread.sleep(1000);
@@ -118,7 +120,7 @@ public class AddNewSchoolInfoFlow {
 				createSchoolPageRepository.getSavebtn().getElement().click();
 				commonFunctions.verifyElementIsPresent(createSchoolPageRepository.getErrorMessageForSchoolURL());
 				createSchoolPageRepository.getSchoolURL().getElement().sendKeys(excelReadEvent.getSchoolURL());
-				commonFunctions.verifyElementIsPresent(createSchoolPageRepository.getconfirmationMessageForURL());
+				//commonFunctions.verifyElementIsPresent(createSchoolPageRepository.getconfirmationMessageForURL());
 
 				Thread.sleep(1000);
 
@@ -132,7 +134,7 @@ public class AddNewSchoolInfoFlow {
 				createSchoolPageRepository.getSavebtn().getElement().click();
 				commonFunctions.verifyElementIsPresent(createSchoolPageRepository.getErrorMessageForAdminEmail());
 				createSchoolPageRepository.getAdminEmail().getElement().sendKeys(excelReadEvent.getAdminEmail());
-				commonFunctions.verifyElementIsPresent(createSchoolPageRepository.getconfirmationMessageForEmail());
+			//	commonFunctions.verifyElementIsPresent(createSchoolPageRepository.getconfirmationMessageForEmail());
 
 				Thread.sleep(1000);
 

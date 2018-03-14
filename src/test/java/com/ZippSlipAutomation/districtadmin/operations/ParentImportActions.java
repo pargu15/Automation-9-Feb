@@ -76,16 +76,6 @@ public class ParentImportActions {
 		excelReadEvent.readFromExcelxlsx(0, 1, ExcelTypes.Excel3);
 
 
-		parentImportRepository.getUserName().getElement()
-		.sendKeys(excelReadEvent.getLoginid());
-		System.out.println(excelReadEvent.getLoginid());
-		Thread.sleep(1000);
-
-		parentImportRepository.getPassword().getElement()
-		.sendKeys(excelReadEvent.getPassword());
-		System.out.println(excelReadEvent.getPassword());
-		Thread.sleep(1000);
-		parentImportRepository.getSubmitButton().getElement().click();
 	}
 
 }

@@ -18,7 +18,7 @@ public class PastFutureAbsencesResponseRepository {
 
 
 
-	@FindBy(xpath = ".//input[contains(@class,'future-absence')]")
+	@FindBy(xpath = ".//input[contains(@class,'zs-header-button')]")
 	private WebElement oMarkNewAbsences;
 
 	public ReturnElement getMarkNewAbsences() {

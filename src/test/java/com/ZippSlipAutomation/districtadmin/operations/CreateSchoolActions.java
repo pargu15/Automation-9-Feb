@@ -24,7 +24,7 @@ public class CreateSchoolActions {
 	}
 
 	public void selectCreateSchoolLink() throws Exception {
-
+		commonFunctions.waitUntilElementDisplayed(createSchoolPageRepository.getCreateSchool().getElement());
 		createSchoolPageRepository.getCreateSchool().getElement().click();
 		Thread.sleep(2000);
 	}

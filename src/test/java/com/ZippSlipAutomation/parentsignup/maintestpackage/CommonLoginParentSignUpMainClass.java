@@ -38,7 +38,7 @@ public class CommonLoginParentSignUpMainClass {
 
 		if (commonFunctions.readExcel("NewLoginTest", "UrlType").contains("Prod")) {
 		//  DriverInitiation.getDriver().get(commonFunctions.readExcel("NewLoginTest", "ProdURL"));
-			DriverInitiation.getDriver().get("http://social.zippslip.com/ZippSlips/PermissionManager/login");
+			DriverInitiation.getDriver().get("https://www.zippslip.com/ZippSlip/PermissionManager/login");
 			CommonVariables.recipient = URLTypes.prodenglishparentsignup;
 			System.out.println("Prod English URL is running");
 		}

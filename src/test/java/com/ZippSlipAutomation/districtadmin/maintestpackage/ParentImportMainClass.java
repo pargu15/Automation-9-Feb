@@ -34,8 +34,10 @@ public class ParentImportMainClass {
 			DriverInitiation.getDriver().get(commonFunctions.readExcel("NewLoginTest", "SocialURL"));
 			CommonVariables.recipient = URLTypes.socialenglishdistrictadmin;
 			System.out.println("Social English URL is running");
+		
 		}
 		loginPage.logIntoApp();
+		
 	}
 
 
@@ -72,6 +74,7 @@ public class ParentImportMainClass {
 		parentImportActions.loginWithImportedParent();
 		Thread.sleep(5000);
 	}
+
 
 	@Test(priority = 5)
 	public static void verifyImportedParentInfo() throws Exception {

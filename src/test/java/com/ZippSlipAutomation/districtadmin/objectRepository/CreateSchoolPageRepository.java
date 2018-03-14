@@ -16,7 +16,7 @@ public class CreateSchoolPageRepository {
 	}
 
 
-	@FindBy(xpath = "//a[@class='right blue-btn']")
+	@FindBy(id = "spnCreateInstitutionHeader")
 	private WebElement oCreateSchool;
 
 	public ReturnElement getCreateSchool() {
@@ -69,7 +69,7 @@ public class CreateSchoolPageRepository {
 		return new ReturnElement(errorMessageForInstitutionkey,Thread.currentThread().getStackTrace()[1].getMethodName());
 	}
 
-	@FindBy(xpath = "//span[contains(.,'This institution key is taken already')]")
+	@FindBy(xpath = "//span[contains(.,'URL is Already in use in this state by other School')]")
 	private WebElement duplicateMessageForURL;
 
 	public ReturnElement getDuplicateMessageForURL() {

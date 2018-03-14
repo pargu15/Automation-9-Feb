@@ -58,8 +58,8 @@ public class ZippGramConsentMainClass {
 	public static void driverExit() throws IOException {
 		LoginRepository.clickOnLogoutButton();
 		System.out.println("End of Script");
-		DriverInitiation.getDriver().close();
-		DriverInitiation.getDriver().quit();
+		//DriverInitiation.getDriver().close();
+	//	DriverInitiation.getDriver().quit();
 	}
 
 }

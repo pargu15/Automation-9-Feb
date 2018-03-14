@@ -56,10 +56,21 @@ public class CommonLoginRegisterWithZippSlipFlow {
 		parentSignUpFlowRepository.getContinueButton().getElement().click();
 		Thread.sleep(1000);
 		
-		parentSignUpFlowRepository.getSearchInstitution().getElement().sendKeys("River");
+		if (commonFunctions.readExcel("NewLoginTest", "UrlType").contains("Prod")) {
+			Thread.sleep(2000);
+		parentSignUpFlowRepository.getSearchInstitution().getElement().sendKeys("Test district");
 		Thread.sleep(1000);
-		
 		parentSignUpFlowRepository.getSelectInstitution().getElement().click();
+		}
+		
+		else if (commonFunctions.readExcel("NewLoginTest", "UrlType").contains("Social")) {
+			Thread.sleep(1000);
+		parentSignUpFlowRepository.getSearchInstitution().getElement().sendKeys("Super");
+		Thread.sleep(1000);
+		parentSignUpFlowRepository.getSelectInstitution().getElement().click();
+			}
+		
+		
 		Thread.sleep(1000);
 		
 		parentSignUpFlowRepository.getValidateInstitution().getElement().click();
