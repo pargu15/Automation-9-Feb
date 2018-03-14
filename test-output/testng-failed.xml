@@ -5,11 +5,58 @@
     <classes>
       <class name="com.ZippSlipAutomation.admin.maintestpackage.EnglishCreateActivityMainClass">
         <methods>
+          <include name="verifyAttachmentsSection"/>
+          <include name="verifyEventNameIsMandatory"/>
+          <include name="verifySectionOnAdvancedSettingsButton"/>
           <include name="verifyCurrentlySelectedForms"/>
-          <include name="driverInitiate"/>
+          <include name="verifyTotalFees"/>
+          <include name="verifyPopupOnSeeAllForms"/>
           <include name="driverExit"/>
+          <include name="verifyFieldsOnConfirmPopupForNoLocation"/>
+          <include name="selectParticipantType"/>
+          <include name="verifyConfirmationPopupForNoLocation"/>
+          <include name="driverInitiate"/>
+          <include name="verifyCashInstructionsTextbox"/>
+          <include name="verifyFeeTable"/>
+          <include name="directToCommunicationPage"/>
         </methods>
       </class> <!-- com.ZippSlipAutomation.admin.maintestpackage.EnglishCreateActivityMainClass -->
+      <class name="com.ZippSlipAutomation.admin.maintestpackage.EnglishUnpublishActivityMainClass">
+        <methods>
+          <include name="driverInitiate"/>
+          <include name="selectPublishedActivity"/>
+          <include name="unpublishSelectedEvent"/>
+        </methods>
+      </class> <!-- com.ZippSlipAutomation.admin.maintestpackage.EnglishUnpublishActivityMainClass -->
+      <class name="com.ZippSlipAutomation.parent.maintestpackage.EnglishEventConsentMainClass">
+        <methods>
+          <include name="verificationConsentedEvent"/>
+          <include name="eventConsent"/>
+          <include name="driverInitiate"/>
+        </methods>
+      </class> <!-- com.ZippSlipAutomation.parent.maintestpackage.EnglishEventConsentMainClass -->
+      <class name="com.ZippSlipAutomation.admin.maintestpackage.FormExportMainClass">
+        <methods>
+          <include name="selectPrintForms"/>
+          <include name="selectPublishedActivity"/>
+          <include name="driverInitiate"/>
+          <include name="selectExportForm"/>
+          <include name="unpublishSelectedEvent"/>
+        </methods>
+      </class> <!-- com.ZippSlipAutomation.admin.maintestpackage.FormExportMainClass -->
+      <class name="com.ZippSlipAutomation.parentsignup.maintestpackage.ParentSignUpMainClass">
+        <methods>
+          <include name="aterRegistrationFlowFunctionality"/>
+          <include name="enrolledStudentDataVerificationFlow"/>
+          <include name="parentDataVerificationFlow"/>
+          <include name="registerWithZippSlipFunctionality"/>
+          <include name="directToProfilePage"/>
+          <include name="newStudentDataFunctionality"/>
+          <include name="enrolledStudentDataFunctionality"/>
+          <include name="newAddedStudentDataVerificationFlow"/>
+          <include name="driverInitiate"/>
+        </methods>
+      </class> <!-- com.ZippSlipAutomation.parentsignup.maintestpackage.ParentSignUpMainClass -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
