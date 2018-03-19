@@ -15,6 +15,11 @@ public enum URLTypes {
 	prodenglishparent,
 
 	socialenglishparentsignup,
-	prodenglishparentsignup
+	prodenglishparentsignup,
 
+	socialenglishSubscription,
+	prodenglishSubscription
+
+	
+	
 }
