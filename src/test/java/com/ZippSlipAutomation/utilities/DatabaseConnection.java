@@ -26,8 +26,8 @@
 	  try 
 	  {
 	
-		// 	 connection = DriverManager.getConnection("jdbc:sqlserver://zsdb.zippslip.com/ZippSlip","parag","Parag15#jain");
-	  connection = DriverManager.getConnection("jdbc:sqlserver://test.zippslip.com; databaseName = zippslip58","parag","Parag15#jain");
+	 //   connection = DriverManager.getConnection("jdbc:sqlserver://zsdb.zippslip.com; databaseName = ZippSlip","parag","Parag15#jain");
+	connection = DriverManager.getConnection("jdbc:sqlserver://test.zippslip.com; databaseName = zippslip58","parag","Parag15#jain");
 	  // connection = DriverManager.getConnection(conUrl);
 	   statement = connection.createStatement();
 	   String sql = "select top 1 * from otp order by CreatedOn desc";

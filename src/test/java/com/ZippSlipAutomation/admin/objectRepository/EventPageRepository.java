@@ -11,15 +11,15 @@ import com.ZippSlipAutomation.utilities.ReturnElement;
 
 public class EventPageRepository {
 
-	@FindBy(id = "CreateActivityButton")
-	private WebElement oActivityDropDown;
+	@FindBy(xpath = "//*[@id=\"MainContent_divActivity\"]/div[3]/a")
+	private WebElement oActivity;
 
-	public ReturnElement getActivityDropDown() {
-		return new ReturnElement(oActivityDropDown, Thread.currentThread().getStackTrace()[1].getMethodName());
+	public ReturnElement getActivity() {
+		return new ReturnElement(oActivity, Thread.currentThread().getStackTrace()[1].getMethodName());
 
 	}
 
-	@FindBy(id = "MainContent_SelectActivityControl1_btnCreateEvent")
+	@FindBy(id = "SelectActivityControl_btnCreateEvent")
 	private WebElement oCreateEvent;
 
 	public ReturnElement getCreateEventButton() {

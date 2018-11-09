@@ -109,11 +109,27 @@ public class ParentSignUpMainClass {
 	}
 
 	@Test(priority = 4)
-	public void aterRegistrationFlowFunctionality() throws Exception {
+	public void afterRegistrationFlowFunctionality() throws Exception {
 		AfterRegistrationFlow afterRegistrationFlow = new AfterRegistrationFlow();
 		afterRegistrationFlow.afterRegistrationFunctionality();
 	}
-
+	
+	@Test(priority = 5)
+	public void addEnrolledStudentFromDashboard() throws Exception {
+		EnrolledStudentInfoFlow enrolledStudentInfoFlow = new EnrolledStudentInfoFlow();
+		if (CommonVariables.recipient == URLTypes.prodenglishparentsignup) {
+			enrolledStudentInfoFlow.enterEnrolledStudentData(7);
+		} else if (CommonVariables.recipient == URLTypes.socialenglishparentsignup) {
+			enrolledStudentInfoFlow.enterEnrolledStudentData(4);
+		}
+	}
+	
+	@Test(priority = 6)
+	public void addNewStudentFromDashboard() throws Exception {
+		EnterNewStudentDataFlow enterNewStudentDataFlow = new EnterNewStudentDataFlow();
+		enterNewStudentDataFlow.enterNewStudentDataFunctionality();
+	}
+/*
 	@Test(priority = 5)
 	public void directToProfilePage() throws Exception {
 		RegistrationDataVerification registrationDataVerification = new RegistrationDataVerification();
@@ -137,7 +153,7 @@ public class ParentSignUpMainClass {
 		RegistrationDataVerification registrationDataVerification = new RegistrationDataVerification();
 		registrationDataVerification.newAddedStudentDataVerificationFunctionality();
 	}
-
+*/
 	@AfterClass
 	public static void driverExit() throws IOException {
 		LoginRepository.clickOnLogoutButton();
