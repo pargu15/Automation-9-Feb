@@ -97,8 +97,9 @@ public class CreateFormActions {
 		formCreationPageRepository.getAddOptionButton().getElement().click();
 		formCreationPageRepository.getOptionTextArea().getElement().sendKeys("PushNotification");
 		formCreationPageRepository.getAddOptionButton().getElement().click();
+		Thread.sleep(2000);
 		formCreationPageRepository.getPopupSaveButton().getElement().click();
-		Thread.sleep(1000);
+		Thread.sleep(2000);
 	}
 
 	public void addMultipleSelectControl() throws Exception {
@@ -117,8 +118,9 @@ public class CreateFormActions {
 		formCreationPageRepository.getAddOptionButton().getElement().click();
 		formCreationPageRepository.getOptionTextArea().getElement().sendKeys("Other");
 		formCreationPageRepository.getAddOptionButton().getElement().click();
+		Thread.sleep(2000);
 		formCreationPageRepository.getPopupSaveButton().getElement().click();
-		Thread.sleep(1000);
+		Thread.sleep(2000);
 	}
 
 	public void addDropDownControl() throws Exception {
@@ -134,6 +136,7 @@ public class CreateFormActions {
 		formCreationPageRepository.getAddOptionButton().getElement().click();
 		formCreationPageRepository.getOptionTextArea().getElement().sendKeys("No");
 		formCreationPageRepository.getAddOptionButton().getElement().click();
+		Thread.sleep(2000);
 		formCreationPageRepository.getPopupSaveButton().getElement().click();
 		Thread.sleep(1000);
 	}
