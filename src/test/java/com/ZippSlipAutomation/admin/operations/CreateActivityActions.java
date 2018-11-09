@@ -23,8 +23,8 @@ public class CreateActivityActions {
 
 	public void selectActivityType() throws Exception {
 
-		commonFunctions.waitUntilElementDisplayed(eventPageRepository.getActivityDropDown().getElement());
-		eventPageRepository.getActivityDropDown().getElement().click();
+		commonFunctions.waitUntilElementDisplayed(eventPageRepository.getActivity().getElement());
+		eventPageRepository.getActivity().getElement().click();
 		Thread.sleep(2000);
 		eventPageRepository.getCreateEventButton().getElement().click();
 		Thread.sleep(4000);

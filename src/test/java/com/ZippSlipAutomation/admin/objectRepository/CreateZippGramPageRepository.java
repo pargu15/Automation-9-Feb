@@ -7,7 +7,7 @@ import com.ZippSlipAutomation.utilities.ReturnElement;
 
 public class CreateZippGramPageRepository {
 
-	@FindBy(id = "MainContent_CreateZippWireButton")
+	@FindBy(xpath = "//*[@id=\"MainContent_divSentZippGram\"]/div[3]/a")
 	private WebElement oCreateZippGramBtn;
 
 	public ReturnElement getCreateZippGram() {
